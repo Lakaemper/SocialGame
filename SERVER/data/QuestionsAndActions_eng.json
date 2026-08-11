@@ -2038,5 +2038,1205 @@
     "situation": "You are on a weekend. Finish now with a good result or improve it for another week.",
     "action_low": "Finish",
     "action_high": "Improve"
+  },
+  {
+    "id": 341,
+    "situation": "Ice cream",
+    "action_low": "Vanilla",
+    "action_high": "Fancy pistachio gelato"
+  },
+  {
+    "id": 342,
+    "situation": "Coffee order",
+    "action_low": "Black coffee",
+    "action_high": "Triple caramel oat-milk macchiato"
+  },
+  {
+    "id": 343,
+    "situation": "Pizza topping",
+    "action_low": "Pepperoni",
+    "action_high": "Pineapple"
+  },
+  {
+    "id": 344,
+    "situation": "Late night snack",
+    "action_low": "Bowl of cereal",
+    "action_high": "Cold leftover pizza"
+  },
+  {
+    "id": 345,
+    "situation": "Sushi",
+    "action_low": "California roll",
+    "action_high": "Raw uni"
+  },
+  {
+    "id": 346,
+    "situation": "Breakfast",
+    "action_low": "Bowl of cereal",
+    "action_high": "Avocado toast"
+  },
+  {
+    "id": 347,
+    "situation": "Burger",
+    "action_low": "Classic cheeseburger",
+    "action_high": "Truffle wagyu burger"
+  },
+  {
+    "id": 348,
+    "situation": "Hot sauce",
+    "action_low": "Mild",
+    "action_high": "Ghost pepper"
+  },
+  {
+    "id": 349,
+    "situation": "Wine",
+    "action_low": "Boxed wine",
+    "action_high": "Vintage champagne"
+  },
+  {
+    "id": 350,
+    "situation": "Fast food",
+    "action_low": "Drive-thru combo",
+    "action_high": "Fine dining seven-course meal"
+  },
+  {
+    "id": 351,
+    "situation": "Candy",
+    "action_low": "Chocolate bar",
+    "action_high": "Sour gummy worms"
+  },
+  {
+    "id": 352,
+    "situation": "Brunch drink",
+    "action_low": "Orange juice",
+    "action_high": "Bottomless mimosas"
+  },
+  {
+    "id": 353,
+    "situation": "Steak",
+    "action_low": "Well-done",
+    "action_high": "Blue rare"
+  },
+  {
+    "id": 354,
+    "situation": "Cheese",
+    "action_low": "Mild cheddar",
+    "action_high": "Stinky blue cheese"
+  },
+  {
+    "id": 355,
+    "situation": "Soda",
+    "action_low": "Classic cola",
+    "action_high": "Exotic bubble tea"
+  },
+  {
+    "id": 356,
+    "situation": "Concert",
+    "action_low": "Local cover band",
+    "action_high": "Taylor Swift stadium tour"
+  },
+  {
+    "id": 357,
+    "situation": "Karaoke song",
+    "action_low": "Sweet Caroline",
+    "action_high": "Bohemian Rhapsody"
+  },
+  {
+    "id": 358,
+    "situation": "Music genre",
+    "action_low": "Elevator jazz",
+    "action_high": "Death metal"
+  },
+  {
+    "id": 359,
+    "situation": "Boy band era",
+    "action_low": "Backstreet Boys",
+    "action_high": "BTS"
+  },
+  {
+    "id": 360,
+    "situation": "Celebrity crush",
+    "action_low": "Ryan Gosling",
+    "action_high": "Timothée Chalamet"
+  },
+  {
+    "id": 361,
+    "situation": "Festival",
+    "action_low": "Local jazz fest",
+    "action_high": "Coachella"
+  },
+  {
+    "id": 362,
+    "situation": "Dance move",
+    "action_low": "Slow sway",
+    "action_high": "Full choreography"
+  },
+  {
+    "id": 363,
+    "situation": "Singing in the car",
+    "action_low": "Humming along",
+    "action_high": "Full concert performance"
+  },
+  {
+    "id": 364,
+    "situation": "Music format",
+    "action_low": "Dusty vinyl records",
+    "action_high": "Curated Spotify playlist"
+  },
+  {
+    "id": 365,
+    "situation": "Music video era",
+    "action_low": "MTV classics",
+    "action_high": "Viral TikTok dance"
+  },
+  {
+    "id": 366,
+    "situation": "Air guitar",
+    "action_low": "Shy little strum",
+    "action_high": "Full rockstar solo"
+  },
+  {
+    "id": 367,
+    "situation": "Duet partner",
+    "action_low": "Grandma",
+    "action_high": "Beyoncé"
+  },
+  {
+    "id": 368,
+    "situation": "Ringtone",
+    "action_low": "Classic marimba",
+    "action_high": "Viral TikTok sound"
+  },
+  {
+    "id": 369,
+    "situation": "Musical instrument",
+    "action_low": "Recorder",
+    "action_high": "Electric guitar"
+  },
+  {
+    "id": 370,
+    "situation": "Award show",
+    "action_low": "Read the highlights next day",
+    "action_high": "Live red carpet coverage"
+  },
+  {
+    "id": 371,
+    "situation": "Movie night",
+    "action_low": "Rom-com",
+    "action_high": "Slasher horror"
+  },
+  {
+    "id": 372,
+    "situation": "Streaming binge",
+    "action_low": "One episode",
+    "action_high": "Entire season overnight"
+  },
+  {
+    "id": 373,
+    "situation": "Movie snack",
+    "action_low": "Plain popcorn",
+    "action_high": "Loaded nachos"
+  },
+  {
+    "id": 374,
+    "situation": "Superhero",
+    "action_low": "Batman",
+    "action_high": "Deadpool"
+  },
+  {
+    "id": 375,
+    "situation": "Reality TV",
+    "action_low": "Cooking competition",
+    "action_high": "Dating show drama"
+  },
+  {
+    "id": 376,
+    "situation": "Rewatch",
+    "action_low": "Comfort sitcom",
+    "action_high": "New prestige drama"
+  },
+  {
+    "id": 377,
+    "situation": "Documentary topic",
+    "action_low": "Nature",
+    "action_high": "True crime"
+  },
+  {
+    "id": 378,
+    "situation": "Movie ending",
+    "action_low": "Happy ending",
+    "action_high": "Twist ending"
+  },
+  {
+    "id": 379,
+    "situation": "Rom-com lead",
+    "action_low": "The girl next door",
+    "action_high": "The billionaire"
+  },
+  {
+    "id": 380,
+    "situation": "Cinema experience",
+    "action_low": "Home couch",
+    "action_high": "IMAX recliner seats"
+  },
+  {
+    "id": 381,
+    "situation": "Franchise",
+    "action_low": "Marvel",
+    "action_high": "Star Wars"
+  },
+  {
+    "id": 382,
+    "situation": "Sitcom",
+    "action_low": "The Office",
+    "action_high": "Friends"
+  },
+  {
+    "id": 383,
+    "situation": "Villain",
+    "action_low": "Loveable rogue",
+    "action_high": "Pure evil mastermind"
+  },
+  {
+    "id": 384,
+    "situation": "Cartoon",
+    "action_low": "Saturday morning classics",
+    "action_high": "Anime"
+  },
+  {
+    "id": 385,
+    "situation": "Talk show host",
+    "action_low": "Cozy daytime chat",
+    "action_high": "Late-night comedy roast"
+  },
+  {
+    "id": 386,
+    "situation": "Sport to watch",
+    "action_low": "Chess",
+    "action_high": "Extreme skateboarding"
+  },
+  {
+    "id": 387,
+    "situation": "Gym style",
+    "action_low": "Slow yoga",
+    "action_high": "Intense CrossFit"
+  },
+  {
+    "id": 388,
+    "situation": "Team sport",
+    "action_low": "Casual backyard soccer",
+    "action_high": "Pro stadium football"
+  },
+  {
+    "id": 389,
+    "situation": "Winter sport",
+    "action_low": "Ice skating rink",
+    "action_high": "Downhill skiing"
+  },
+  {
+    "id": 390,
+    "situation": "Water sport",
+    "action_low": "Lazy river float",
+    "action_high": "Cliff diving"
+  },
+  {
+    "id": 391,
+    "situation": "Marathon",
+    "action_low": "Watch from the sidelines",
+    "action_high": "Run it yourself"
+  },
+  {
+    "id": 392,
+    "situation": "Sports fandom",
+    "action_low": "Casual fan",
+    "action_high": "Face-painted superfan"
+  },
+  {
+    "id": 393,
+    "situation": "Home workout",
+    "action_low": "Gentle stretching",
+    "action_high": "Intense HIIT bootcamp"
+  },
+  {
+    "id": 394,
+    "situation": "Extreme sport",
+    "action_low": "Zip-lining",
+    "action_high": "Skydiving"
+  },
+  {
+    "id": 395,
+    "situation": "Ball game",
+    "action_low": "Ping pong",
+    "action_high": "Rugby"
+  },
+  {
+    "id": 396,
+    "situation": "Fitness tracker",
+    "action_low": "Ignore the step count",
+    "action_high": "Obsess over closing the rings"
+  },
+  {
+    "id": 397,
+    "situation": "Fantasy league",
+    "action_low": "Skip it",
+    "action_high": "Draft day is sacred"
+  },
+  {
+    "id": 398,
+    "situation": "Vacation style",
+    "action_low": "Beach resort",
+    "action_high": "Backpacking through the jungle"
+  },
+  {
+    "id": 399,
+    "situation": "Hotel",
+    "action_low": "Budget motel",
+    "action_high": "Overwater bungalow"
+  },
+  {
+    "id": 400,
+    "situation": "Road trip",
+    "action_low": "Playlist and snacks",
+    "action_high": "GPS-free adventure"
+  },
+  {
+    "id": 401,
+    "situation": "Airport wait",
+    "action_low": "Nap at the gate",
+    "action_high": "Lounge with cocktails"
+  },
+  {
+    "id": 402,
+    "situation": "Camping",
+    "action_low": "Tent in the backyard",
+    "action_high": "Deep wilderness with bears"
+  },
+  {
+    "id": 403,
+    "situation": "City break",
+    "action_low": "Museums",
+    "action_high": "Nightclubs"
+  },
+  {
+    "id": 404,
+    "situation": "Souvenir",
+    "action_low": "Fridge magnet",
+    "action_high": "Full designer shopping spree"
+  },
+  {
+    "id": 405,
+    "situation": "Passport stamps",
+    "action_low": "One familiar country",
+    "action_high": "As many countries as possible"
+  },
+  {
+    "id": 406,
+    "situation": "Travel pace",
+    "action_low": "Slow relaxing days",
+    "action_high": "Every hour packed with activities"
+  },
+  {
+    "id": 407,
+    "situation": "Cruise",
+    "action_low": "Quiet reading deck",
+    "action_high": "All-night casino"
+  },
+  {
+    "id": 408,
+    "situation": "Language abroad",
+    "action_low": "Google Translate",
+    "action_high": "Fluent before you land"
+  },
+  {
+    "id": 409,
+    "situation": "Luggage",
+    "action_low": "One carry-on",
+    "action_high": "Three overweight suitcases"
+  },
+  {
+    "id": 410,
+    "situation": "Adventure activity",
+    "action_low": "Sightseeing bus tour",
+    "action_high": "Paragliding off a cliff"
+  },
+  {
+    "id": 411,
+    "situation": "Beach day",
+    "action_low": "Sunbathing",
+    "action_high": "Jet skiing"
+  },
+  {
+    "id": 412,
+    "situation": "Travel companion",
+    "action_low": "Solo silence",
+    "action_high": "Big noisy group"
+  },
+  {
+    "id": 413,
+    "situation": "Outfit",
+    "action_low": "Sweatpants",
+    "action_high": "Full sequin gown"
+  },
+  {
+    "id": 414,
+    "situation": "Shoes",
+    "action_low": "Comfy sneakers",
+    "action_high": "Sky-high heels"
+  },
+  {
+    "id": 415,
+    "situation": "Hair color",
+    "action_low": "Natural brown",
+    "action_high": "Neon pink"
+  },
+  {
+    "id": 416,
+    "situation": "Accessory",
+    "action_low": "Simple watch",
+    "action_high": "Diamond-studded everything"
+  },
+  {
+    "id": 417,
+    "situation": "Suit color",
+    "action_low": "Classic navy",
+    "action_high": "Bold hot pink"
+  },
+  {
+    "id": 418,
+    "situation": "Sunglasses",
+    "action_low": "Basic aviators",
+    "action_high": "Oversized designer frames"
+  },
+  {
+    "id": 419,
+    "situation": "Tattoo",
+    "action_low": "None",
+    "action_high": "Full sleeve"
+  },
+  {
+    "id": 420,
+    "situation": "Nail art",
+    "action_low": "Plain manicure",
+    "action_high": "Wild rhinestone design"
+  },
+  {
+    "id": 421,
+    "situation": "Shopping",
+    "action_low": "Thrift store finds",
+    "action_high": "Luxury boutique haul"
+  },
+  {
+    "id": 422,
+    "situation": "Socks",
+    "action_low": "Plain white",
+    "action_high": "Loud clashing pattern"
+  },
+  {
+    "id": 423,
+    "situation": "Perfume",
+    "action_low": "Light and clean",
+    "action_high": "Overpowering and exotic"
+  },
+  {
+    "id": 424,
+    "situation": "Wardrobe color",
+    "action_low": "All black",
+    "action_high": "Rainbow of colors"
+  },
+  {
+    "id": 425,
+    "situation": "Social platform",
+    "action_low": "Facebook",
+    "action_high": "TikTok"
+  },
+  {
+    "id": 426,
+    "situation": "Selfie",
+    "action_low": "No filter",
+    "action_high": "Full glam filter"
+  },
+  {
+    "id": 427,
+    "situation": "Text vs call",
+    "action_low": "Quick text",
+    "action_high": "Surprise phone call"
+  },
+  {
+    "id": 428,
+    "situation": "Online status",
+    "action_low": "Always online",
+    "action_high": "Permanent airplane mode"
+  },
+  {
+    "id": 429,
+    "situation": "Group chat",
+    "action_low": "Silent observer",
+    "action_high": "Meme-spamming chaos"
+  },
+  {
+    "id": 430,
+    "situation": "Photo dump",
+    "action_low": "Curated and edited",
+    "action_high": "Messy raw dump"
+  },
+  {
+    "id": 431,
+    "situation": "Dating app bio",
+    "action_low": "One-liner",
+    "action_high": "Full paragraph essay"
+  },
+  {
+    "id": 432,
+    "situation": "Notifications",
+    "action_low": "Silence everything",
+    "action_high": "Every ping turned on"
+  },
+  {
+    "id": 433,
+    "situation": "Video call",
+    "action_low": "Camera off",
+    "action_high": "Full ring-light glow-up"
+  },
+  {
+    "id": 434,
+    "situation": "Emoji use",
+    "action_low": "One thumbs up",
+    "action_high": "Twelve emojis per message"
+  },
+  {
+    "id": 435,
+    "situation": "Online shopping",
+    "action_low": "Add to cart, wait a week",
+    "action_high": "One-click impulse buy"
+  },
+  {
+    "id": 436,
+    "situation": "Influencer style",
+    "action_low": "Down-to-earth vlogger",
+    "action_high": "Glamorous lifestyle guru"
+  },
+  {
+    "id": 437,
+    "situation": "Weekend hobby",
+    "action_low": "Puzzle at home",
+    "action_high": "Rock climbing outdoors"
+  },
+  {
+    "id": 438,
+    "situation": "Craft",
+    "action_low": "Knitting",
+    "action_high": "Pottery throwing"
+  },
+  {
+    "id": 439,
+    "situation": "Collecting",
+    "action_low": "Postcards",
+    "action_high": "Sneakers"
+  },
+  {
+    "id": 440,
+    "situation": "Board games",
+    "action_low": "Classic Monopoly",
+    "action_high": "Complex strategy game"
+  },
+  {
+    "id": 441,
+    "situation": "Reading",
+    "action_low": "Beach paperback",
+    "action_high": "Dense fantasy epic"
+  },
+  {
+    "id": 442,
+    "situation": "Gardening",
+    "action_low": "One houseplant",
+    "action_high": "Full backyard jungle"
+  },
+  {
+    "id": 443,
+    "situation": "DIY project",
+    "action_low": "Simple shelf",
+    "action_high": "Full room renovation"
+  },
+  {
+    "id": 444,
+    "situation": "Photography",
+    "action_low": "Phone snapshots",
+    "action_high": "Professional camera gear"
+  },
+  {
+    "id": 445,
+    "situation": "Cooking",
+    "action_low": "Follow the recipe exactly",
+    "action_high": "Improvise wildly"
+  },
+  {
+    "id": 446,
+    "situation": "Puzzle size",
+    "action_low": "100 pieces",
+    "action_high": "5000-piece masterpiece"
+  },
+  {
+    "id": 447,
+    "situation": "Party role",
+    "action_low": "Wallflower",
+    "action_high": "Life of the party"
+  },
+  {
+    "id": 448,
+    "situation": "Party game",
+    "action_low": "Charades",
+    "action_high": "Truth or dare"
+  },
+  {
+    "id": 449,
+    "situation": "Dance floor",
+    "action_low": "Watch from the side",
+    "action_high": "First one dancing"
+  },
+  {
+    "id": 450,
+    "situation": "Birthday party",
+    "action_low": "Quiet dinner",
+    "action_high": "Wild rager"
+  },
+  {
+    "id": 451,
+    "situation": "Costume party",
+    "action_low": "Simple mask",
+    "action_high": "Full elaborate costume"
+  },
+  {
+    "id": 452,
+    "situation": "Karaoke bar",
+    "action_low": "Sing backup",
+    "action_high": "Grab the mic first"
+  },
+  {
+    "id": 453,
+    "situation": "Cocktail",
+    "action_low": "Classic beer",
+    "action_high": "Flaming tropical cocktail"
+  },
+  {
+    "id": 454,
+    "situation": "Party favor",
+    "action_low": "Goodie bag",
+    "action_high": "Confetti cannon"
+  },
+  {
+    "id": 455,
+    "situation": "New Year's Eve",
+    "action_low": "Home on the couch",
+    "action_high": "Times Square crowd"
+  },
+  {
+    "id": 456,
+    "situation": "Bar choice",
+    "action_low": "Quiet pub",
+    "action_high": "Packed nightclub"
+  },
+  {
+    "id": 457,
+    "situation": "Party host",
+    "action_low": "Potluck",
+    "action_high": "Catered extravaganza"
+  },
+  {
+    "id": 458,
+    "situation": "After-party",
+    "action_low": "Head home",
+    "action_high": "Chase the sunrise"
+  },
+  {
+    "id": 459,
+    "situation": "First date",
+    "action_low": "Coffee shop",
+    "action_high": "Helicopter tour"
+  },
+  {
+    "id": 460,
+    "situation": "Date night",
+    "action_low": "Home-cooked dinner",
+    "action_high": "Fancy tasting menu"
+  },
+  {
+    "id": 461,
+    "situation": "Romantic gesture",
+    "action_low": "Handwritten note",
+    "action_high": "Skywriting"
+  },
+  {
+    "id": 462,
+    "situation": "Proposal",
+    "action_low": "Quiet at home",
+    "action_high": "Jumbotron at a stadium"
+  },
+  {
+    "id": 463,
+    "situation": "Date outfit",
+    "action_low": "Jeans and t-shirt",
+    "action_high": "Full formal wear"
+  },
+  {
+    "id": 464,
+    "situation": "First kiss",
+    "action_low": "Doorstep peck",
+    "action_high": "Movie-style dramatic kiss"
+  },
+  {
+    "id": 465,
+    "situation": "Anniversary gift",
+    "action_low": "Homemade card",
+    "action_high": "Diamond jewelry"
+  },
+  {
+    "id": 466,
+    "situation": "Blind date",
+    "action_low": "Tea at a quiet café",
+    "action_high": "Whitewater rafting together"
+  },
+  {
+    "id": 467,
+    "situation": "Love language",
+    "action_low": "Quality time",
+    "action_high": "Extravagant gifts"
+  },
+  {
+    "id": 468,
+    "situation": "Wedding",
+    "action_low": "Backyard ceremony",
+    "action_high": "Destination extravaganza"
+  },
+  {
+    "id": 469,
+    "situation": "Valentine's Day",
+    "action_low": "Skip it",
+    "action_high": "Go all out"
+  },
+  {
+    "id": 470,
+    "situation": "Flirting style",
+    "action_low": "Shy glances",
+    "action_high": "Bold pickup lines"
+  },
+  {
+    "id": 471,
+    "situation": "Morning routine",
+    "action_low": "Snooze five times",
+    "action_high": "Up before sunrise"
+  },
+  {
+    "id": 472,
+    "situation": "Bedroom",
+    "action_low": "Minimalist",
+    "action_high": "Covered in posters"
+  },
+  {
+    "id": 473,
+    "situation": "Cleaning",
+    "action_low": "Once a month",
+    "action_high": "Spotless every day"
+  },
+  {
+    "id": 474,
+    "situation": "Living room",
+    "action_low": "Cozy and cluttered",
+    "action_high": "Sleek and modern"
+  },
+  {
+    "id": 475,
+    "situation": "Kitchen gadget",
+    "action_low": "Basic toaster",
+    "action_high": "Fancy espresso machine"
+  },
+  {
+    "id": 476,
+    "situation": "Decor style",
+    "action_low": "Thrifted eclectic",
+    "action_high": "Matching showroom set"
+  },
+  {
+    "id": 477,
+    "situation": "Weekend chore",
+    "action_low": "Ignore it",
+    "action_high": "Deep clean everything"
+  },
+  {
+    "id": 478,
+    "situation": "Roommate style",
+    "action_low": "Neat freak",
+    "action_high": "Happy mess"
+  },
+  {
+    "id": 479,
+    "situation": "Houseplants",
+    "action_low": "Fake plastic ones",
+    "action_high": "Rainforest of real ones"
+  },
+  {
+    "id": 480,
+    "situation": "Bed making",
+    "action_low": "Never",
+    "action_high": "Hotel-perfect every morning"
+  },
+  {
+    "id": 481,
+    "situation": "Lighting",
+    "action_low": "Bright overhead lights",
+    "action_high": "Mood candles everywhere"
+  },
+  {
+    "id": 482,
+    "situation": "Home smell",
+    "action_low": "Unscented",
+    "action_high": "Signature candle collection"
+  },
+  {
+    "id": 483,
+    "situation": "Phone",
+    "action_low": "Basic flip phone",
+    "action_high": "Latest foldable flagship"
+  },
+  {
+    "id": 484,
+    "situation": "Smart home",
+    "action_low": "No gadgets",
+    "action_high": "Voice-controls everything"
+  },
+  {
+    "id": 485,
+    "situation": "Gaming setup",
+    "action_low": "Handheld console",
+    "action_high": "Full RGB battle station"
+  },
+  {
+    "id": 486,
+    "situation": "Laptop",
+    "action_low": "Hand-me-down",
+    "action_high": "Top-of-the-line"
+  },
+  {
+    "id": 487,
+    "situation": "Wearable tech",
+    "action_low": "No watch",
+    "action_high": "Smart ring, watch, and glasses"
+  },
+  {
+    "id": 488,
+    "situation": "Streaming device",
+    "action_low": "One subscription",
+    "action_high": "Every service at once"
+  },
+  {
+    "id": 489,
+    "situation": "Charging cable",
+    "action_low": "Tangled drawer",
+    "action_high": "Perfectly labeled organizer"
+  },
+  {
+    "id": 490,
+    "situation": "Password",
+    "action_low": "Same one everywhere",
+    "action_high": "Fortress of unique passwords"
+  },
+  {
+    "id": 491,
+    "situation": "Smart speaker",
+    "action_low": "None",
+    "action_high": "One in every room"
+  },
+  {
+    "id": 492,
+    "situation": "Camera drone",
+    "action_low": "Never flown one",
+    "action_high": "Own a professional drone"
+  },
+  {
+    "id": 493,
+    "situation": "VR headset",
+    "action_low": "Never tried",
+    "action_high": "Live in the metaverse"
+  },
+  {
+    "id": 494,
+    "situation": "Tech upgrade",
+    "action_low": "Use it till it breaks",
+    "action_high": "Newest model every year"
+  },
+  {
+    "id": 495,
+    "situation": "Video game genre",
+    "action_low": "Cozy farming sim",
+    "action_high": "Intense first-person shooter"
+  },
+  {
+    "id": 496,
+    "situation": "Trivia night",
+    "action_low": "Guess and giggle",
+    "action_high": "Study beforehand"
+  },
+  {
+    "id": 497,
+    "situation": "Card game",
+    "action_low": "Go Fish",
+    "action_high": "High-stakes poker"
+  },
+  {
+    "id": 498,
+    "situation": "Arcade",
+    "action_low": "Skee-ball",
+    "action_high": "Claw machine obsession"
+  },
+  {
+    "id": 499,
+    "situation": "Chess vs checkers",
+    "action_low": "Checkers",
+    "action_high": "Chess"
+  },
+  {
+    "id": 500,
+    "situation": "Escape room",
+    "action_low": "Follow the group",
+    "action_high": "Take charge and solve it"
+  },
+  {
+    "id": 501,
+    "situation": "Mobile game",
+    "action_low": "Casual puzzle",
+    "action_high": "Competitive battle royale"
+  },
+  {
+    "id": 502,
+    "situation": "Board game night",
+    "action_low": "Cooperative game",
+    "action_high": "Cutthroat competitive game"
+  },
+  {
+    "id": 503,
+    "situation": "Retro gaming",
+    "action_low": "Old-school pixel games",
+    "action_high": "Cutting-edge VR"
+  },
+  {
+    "id": 504,
+    "situation": "Puzzle hunt",
+    "action_low": "Sudoku",
+    "action_high": "Elaborate scavenger hunt"
+  },
+  {
+    "id": 505,
+    "situation": "Pet",
+    "action_low": "Goldfish",
+    "action_high": "Great Dane"
+  },
+  {
+    "id": 506,
+    "situation": "Dog walk",
+    "action_low": "Quick lap around the block",
+    "action_high": "Full hiking adventure"
+  },
+  {
+    "id": 507,
+    "situation": "Pet grooming",
+    "action_low": "Basic bath",
+    "action_high": "Professional spa day"
+  },
+  {
+    "id": 508,
+    "situation": "Pet costume",
+    "action_low": "None",
+    "action_high": "Full themed outfit"
+  },
+  {
+    "id": 509,
+    "situation": "Pet food",
+    "action_low": "Basic kibble",
+    "action_high": "Gourmet homemade meals"
+  },
+  {
+    "id": 510,
+    "situation": "Pet name",
+    "action_low": "Simple, like Max",
+    "action_high": "Elaborate, like Sir Fluffington III"
+  },
+  {
+    "id": 511,
+    "situation": "Cat vs dog",
+    "action_low": "Cat person",
+    "action_high": "Dog person"
+  },
+  {
+    "id": 512,
+    "situation": "Pet bed",
+    "action_low": "Cardboard box",
+    "action_high": "Custom furniture"
+  },
+  {
+    "id": 513,
+    "situation": "Favorite season",
+    "action_low": "Cozy autumn",
+    "action_high": "Sunny summer"
+  },
+  {
+    "id": 514,
+    "situation": "Rainy day",
+    "action_low": "Stay in and nap",
+    "action_high": "Dance in the rain"
+  },
+  {
+    "id": 515,
+    "situation": "Snow day",
+    "action_low": "Hot cocoa inside",
+    "action_high": "Snowball fight outside"
+  },
+  {
+    "id": 516,
+    "situation": "Heatwave",
+    "action_low": "Stay in the AC",
+    "action_high": "Beach all day"
+  },
+  {
+    "id": 517,
+    "situation": "Thunderstorm",
+    "action_low": "Hide under blankets",
+    "action_high": "Watch from the porch"
+  },
+  {
+    "id": 518,
+    "situation": "Winter activity",
+    "action_low": "Hot tub",
+    "action_high": "Polar bear plunge"
+  },
+  {
+    "id": 519,
+    "situation": "Spring cleaning",
+    "action_low": "Skip it",
+    "action_high": "Declutter everything"
+  },
+  {
+    "id": 520,
+    "situation": "Summer heat",
+    "action_low": "Chase the ice cream truck",
+    "action_high": "Backyard sprinkler"
+  },
+  {
+    "id": 521,
+    "situation": "Halloween costume",
+    "action_low": "Simple and classic",
+    "action_high": "Over-the-top elaborate"
+  },
+  {
+    "id": 522,
+    "situation": "Christmas",
+    "action_low": "Quiet family dinner",
+    "action_high": "Full light-up yard display"
+  },
+  {
+    "id": 523,
+    "situation": "Thanksgiving dish",
+    "action_low": "Plain turkey",
+    "action_high": "Wild new recipe"
+  },
+  {
+    "id": 524,
+    "situation": "Birthday cake",
+    "action_low": "Store-bought",
+    "action_high": "Elaborate homemade masterpiece"
+  },
+  {
+    "id": 525,
+    "situation": "Holiday music",
+    "action_low": "Skip it entirely",
+    "action_high": "Blast it from November on"
+  },
+  {
+    "id": 526,
+    "situation": "Fireworks",
+    "action_low": "Watch from the couch",
+    "action_high": "Front row on the beach"
+  },
+  {
+    "id": 527,
+    "situation": "Gift wrapping",
+    "action_low": "Gift bag",
+    "action_high": "Perfectly wrapped with bow"
+  },
+  {
+    "id": 528,
+    "situation": "New Year's resolution",
+    "action_low": "Ignore it by February",
+    "action_high": "Track it all year"
+  },
+  {
+    "id": 529,
+    "situation": "April Fools",
+    "action_low": "Never prank anyone",
+    "action_high": "Elaborate prank mastermind"
+  },
+  {
+    "id": 530,
+    "situation": "Holiday travel",
+    "action_low": "Stay home",
+    "action_high": "Fly across the world"
+  },
+  {
+    "id": 531,
+    "situation": "Guilty pleasure show",
+    "action_low": "Trashy reality TV",
+    "action_high": "Soap opera drama"
+  },
+  {
+    "id": 532,
+    "situation": "Snack at 2am",
+    "action_low": "Plain crackers",
+    "action_high": "Entire tub of ice cream"
+  },
+  {
+    "id": 533,
+    "situation": "Guilty pleasure song",
+    "action_low": "Hum it under your breath",
+    "action_high": "Belt it out on karaoke night"
+  },
+  {
+    "id": 534,
+    "situation": "Procrastination",
+    "action_low": "Five extra minutes",
+    "action_high": "An afternoon lost to scrolling"
+  },
+  {
+    "id": 535,
+    "situation": "Gossip",
+    "action_low": "Stay out of it",
+    "action_high": "Know all the tea"
+  },
+  {
+    "id": 536,
+    "situation": "Selfie count",
+    "action_low": "One and done",
+    "action_high": "Fifty before picking the best"
+  },
+  {
+    "id": 537,
+    "situation": "Nap",
+    "action_low": "Quick fifteen minutes",
+    "action_high": "Full REM-cycle marathon"
+  },
+  {
+    "id": 538,
+    "situation": "Online shopping cart",
+    "action_low": "Just the basics",
+    "action_high": "Add everything, regret later"
+  },
+  {
+    "id": 539,
+    "situation": "Comfort food",
+    "action_low": "Slice of toast",
+    "action_high": "Entire bag of chips"
+  },
+  {
+    "id": 540,
+    "situation": "Skincare routine",
+    "action_low": "Splash of water",
+    "action_high": "Twelve-step routine"
   }
 ]

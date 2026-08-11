@@ -1,44 +1,71 @@
 {% extends "base.html" %}
-{% block title %}{{ game.name }}{% endblock %}
+{% block title %}Read the Room!{% endblock %}
 {% block content %}
-    <h1>{{ game.name }}</h1>
-    <p class="hint">Question {{ round_number }} of {{ total_rounds }}</p>
+    {% if step == 'wait' %}
+        <h1>Read the Room!</h1>
+    {% endif %}
 
-    {% if step == 'answer' %}
-        <p class="situation">{{ question.situation }}</p>
-        <form method="post" action="{{ url_for('play_answer') }}">
-            <div class="slider-block">
-                <div class="slider-labels">
-                    <span>{{ question.action_low }}</span>
-                    <span>{{ question.action_high }}</span>
-                </div>
-                <input type="range" name="value" min="-10" max="10" value="0" step="1">
-            </div>
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
+    {% if step == 'play' %}
+        <div id="intro-overlay" class="intro-overlay">
+            <p class="intro-text">Question {{ round_number }} of {{ total_rounds }}</p>
+        </div>
 
-    {% elif step == 'predict' %}
-        <p class="situation">{{ question.situation }}</p>
-        <p class="hint">Predict what each other player chose.</p>
-        <form method="post" action="{{ url_for('play_predict') }}">
-            {% for other in other_players %}
+        <div id="question-content" class="hidden">
+            <p class="situation">{{ question.situation }}</p>
+
+            <hr class="separator separator-light">
+
+            <form method="post" action="{{ url_for('play_submit') }}">
+                <h2 class="center-heading">What would <span class="hl-you">YOU</span> do?</h2>
                 <div class="slider-block">
-                    <p class="predict-name">{{ other }}</p>
                     <div class="slider-labels">
-                        <span>{{ question.action_low }}</span>
-                        <span>{{ question.action_high }}</span>
+                        <span class="slider-label-low">{{ question.action_low }}</span>
+                        <span class="slider-label-sep">|</span>
+                        <span class="slider-label-high">{{ question.action_high }}</span>
                     </div>
-                    <input type="range" name="prediction_{{ other }}" min="-10" max="10" value="0" step="1">
+                    <input type="range" name="value" min="-10" max="10" value="0" step="1">
                 </div>
-            {% endfor %}
-            <button class="btn btn-primary" type="submit">Submit predictions</button>
-        </form>
 
-    {% elif step == 'wait_reveal' %}
-        <p>Waiting for other players to finish their predictions&hellip;</p>
+                <hr class="separator separator-light">
+
+                <h2 class="center-heading">What would <span class="hl-them">THEY</span> do?</h2>
+                {% for other in other_players %}
+                    <div class="slider-block">
+                        <p class="predict-name">{{ other }}</p>
+                        <input type="range" class="slider-them" name="prediction_{{ other }}" min="-10" max="10" value="0" step="1">
+                    </div>
+                {% endfor %}
+
+                <div class="button-center">
+                    <button class="btn btn-primary" type="submit">OK</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            setTimeout(function () {
+                document.getElementById("intro-overlay").style.display = "none";
+                document.getElementById("question-content").classList.remove("hidden");
+            }, 1000);
+        </script>
+
+    {% elif step == 'wait' %}
+        <p class="hint">Question {{ round_number }} of {{ total_rounds }}</p>
+        <p>Waiting for other players to answer&hellip;</p>
 
     {% elif step == 'reveal' %}
-        <p class="situation">{{ question.situation }}</p>
+        <p class="situation question-number">Score Card Question {{ round_number }}</p>
+
+        <h2 class="center-heading"><span class="hl-you">YOUR</span> points for being predictable:</h2>
+        <p class="hint">Your answer: {{ own_answer }}</p>
+        {% if own_mean is not none %}
+            <p class="hint">Friends guessed on average {{ own_mean }} (&plusmn;{{ own_std }})</p>
+        {% endif %}
+        <p class="hint"><span class="points-highlight">Points: {{ own_points }}</span></p>
+
+        <hr class="separator separator-light">
+
+        <h2 class="center-heading"><span class="hl-you">YOUR</span> points for reading the room:</h2>
         <table class="reveal-table">
             <thead>
                 <tr><th>Player</th><th>Actual</th><th>Your guess</th><th>Points</th></tr>
@@ -54,7 +81,11 @@
                 {% endfor %}
             </tbody>
         </table>
-        <p class="hint">Round points: {{ round_points }} &mdash; Total: {{ total_score }}</p>
+        <p class="hint"><span class="points-highlight">Points: {{ guess_total }}</span></p>
+
+        <hr class="separator">
+
+        <p class="hint"><span class="points-highlight">Round total: {{ round_points }}</span></p>
 
         <h2>Standings</h2>
         <ul class="details">
@@ -64,14 +95,15 @@
         </ul>
 
         <form method="post" action="{{ url_for('play_continue') }}">
-            <button class="btn btn-primary" type="submit">Continue</button>
+            <div class="button-center">
+                <button class="btn btn-primary" type="submit">
+                    {% if is_last_round %}Show Final Score{% else %}Next{% endif %}
+                </button>
+            </div>
         </form>
-
-    {% elif step == 'wait_next' %}
-        <p>Waiting for other players to continue&hellip;</p>
     {% endif %}
 
-    {% if step in ('wait_reveal', 'wait_next') %}
+    {% if step == 'wait' %}
         <script>
             const statusUrl = {{ url_for('play_status')|tojson }};
             const initialStep = {{ step|tojson }};

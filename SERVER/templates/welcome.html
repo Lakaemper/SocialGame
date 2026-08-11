@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Welcome to {{ game.name }}{% endblock %}
+{% block title %}Welcome{% endblock %}
 {% block content %}
-    <h1>Welcome to {{ game.name }}</h1>
+    <h1>Welcome to Read the Room!</h1>
 
     {% if error %}
         <ul class="errors">
@@ -10,12 +10,12 @@
     {% endif %}
 
     <form method="post" action="{{ url_for('welcome') }}">
-        <label for="name">Your name</label>
+        <label for="name" class="label-large">What's YOUR name?</label>
         <input type="text" id="name" name="name" autofocus>
 
         <div class="button-row">
             <a class="btn btn-secondary" href="{{ url_for('index') }}">Quit</a>
-            <button class="btn btn-primary" type="submit">Join</button>
+            <button class="btn btn-primary btn-lg" type="submit">Join</button>
         </div>
     </form>
 {% endblock %}

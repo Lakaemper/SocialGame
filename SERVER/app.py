@@ -1,6 +1,8 @@
 import json
+import math
 import os
 import random
+import statistics
 
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 
@@ -10,20 +12,26 @@ app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-key")
 # Only one game can be active at a time.
 current_game = None
 
-QUESTIONS_PATH = os.path.join(os.path.dirname(__file__), "data", "QuestionsAndActions.json")
-with open(QUESTIONS_PATH, encoding="utf-8") as f:
-    QUESTION_POOL = json.load(f)
+DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+LANGUAGES = {
+    "en": {"label": "English", "file": "QuestionsAndActions_eng.json"},
+    "de": {"label": "Deutsch", "file": "QuestionsAndAnswers_ger.json"},
+}
+
+QUESTION_POOLS = {}
+for lang_code, lang_info in LANGUAGES.items():
+    with open(os.path.join(DATA_DIR, lang_info["file"]), encoding="utf-8") as f:
+        QUESTION_POOLS[lang_code] = json.load(f)
 
 
 def init_game_state(game):
-    num_rounds = min(game["num_questions"], len(QUESTION_POOL))
-    questions = random.sample(QUESTION_POOL, num_rounds)
+    question_pool = QUESTION_POOLS[game["language"]]
+    num_rounds = min(game["num_questions"], len(question_pool))
+    questions = random.sample(question_pool, num_rounds)
     game["game_state"] = {
         "questions": questions,
-        "round_index": 0,
-        "rounds": [{"answers": {}, "predictions": {}, "continued": []} for _ in range(num_rounds)],
+        "rounds": [{"answers": {}, "predictions": {}} for _ in range(num_rounds)],
         "scores": {name: 0 for name in game["players"]},
-        "finished": False,
     }
 
 
@@ -33,39 +41,63 @@ def ensure_game_state(game):
     return game.get("game_state")
 
 
-def player_step(game, player_name):
+def player_step(game, player_name, round_index):
     gs = game["game_state"]
-    if gs["finished"]:
-        return "finished", gs["round_index"]
+    if round_index >= len(gs["questions"]):
+        return "finished", round_index
 
-    round_index = gs["round_index"]
     round_data = gs["rounds"][round_index]
     num_players = game["num_players"]
 
     if player_name not in round_data["answers"]:
-        return "answer", round_index
-    if player_name not in round_data["predictions"]:
-        return "predict", round_index
-    if len(round_data["predictions"]) < num_players:
-        return "wait_reveal", round_index
-    if player_name not in round_data["continued"]:
-        return "reveal", round_index
-    return "wait_next", round_index
+        return "play", round_index
+    if len(round_data["answers"]) < num_players:
+        return "wait", round_index
+    return "reveal", round_index
+
+
+def guess_score(round_data, player_name):
+    predictions = round_data["predictions"][player_name]
+    return sum(
+        max(0, 10 - abs(predicted - round_data["answers"][other]))
+        for other, predicted in predictions.items()
+    )
+
+
+def own_score_breakdown(game, round_data, player_name):
+    guesses_about_me = [
+        round_data["predictions"][other][player_name]
+        for other in game["players"]
+        if other != player_name
+    ]
+    my_answer = round_data["answers"][player_name]
+
+    if not guesses_about_me:
+        return {"mean": None, "std": None, "my_answer": my_answer, "own_score": 0}
+
+    mean = statistics.mean(guesses_about_me)
+    std = max(statistics.pstdev(guesses_about_me), 1)
+    z = (my_answer - mean) / std
+    own_score = 10 * math.exp(-0.5 * z ** 2)
+
+    return {
+        "mean": mean,
+        "std": std,
+        "my_answer": my_answer,
+        "own_score": own_score,
+    }
 
 
 def award_round_scores(game, round_data):
     scores = game["game_state"]["scores"]
-    for predictor, predictions in round_data["predictions"].items():
-        round_total = 0
-        for other, predicted in predictions.items():
-            actual = round_data["answers"][other]
-            round_total += 10 - abs(predicted - actual)
-        scores[predictor] += round_total
+    for player_name in game["players"]:
+        own = own_score_breakdown(game, round_data, player_name)
+        scores[player_name] += round(own["own_score"]) + guess_score(round_data, player_name)
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", game_exists=current_game is not None)
 
 
 @app.route("/manage")
@@ -93,36 +125,37 @@ def create_game():
         return redirect(url_for("manage_game"))
 
     if request.method == "GET":
-        return render_template("create.html")
+        return render_template("create.html", languages=LANGUAGES, language="en")
 
-    name = request.form.get("name", "").strip()
     password = request.form.get("password", "").strip()
     num_players = request.form.get("num_players", "").strip()
     num_questions = request.form.get("num_questions", "").strip()
+    language = request.form.get("language", "").strip()
 
     errors = []
-    if not name:
-        errors.append("Name of game is required.")
     if not num_players.isdigit() or int(num_players) < 1:
         errors.append("Number of players must be a positive number.")
     if not num_questions.isdigit() or int(num_questions) < 1:
         errors.append("Number of questions must be a positive number.")
+    if language not in LANGUAGES:
+        errors.append("Please choose a valid language.")
 
     if errors:
         return render_template(
             "create.html",
             errors=errors,
-            name=name,
             password=password,
             num_players=num_players,
             num_questions=num_questions,
+            language=language,
+            languages=LANGUAGES,
         )
 
     current_game = {
-        "name": name,
         "password": password,
         "num_players": int(num_players),
         "num_questions": int(num_questions),
+        "language": language,
         "players": [],
         "started": False,
     }
@@ -133,6 +166,8 @@ def create_game():
 @app.route("/join", methods=["GET", "POST"])
 def join_game():
     if request.method == "GET":
+        if current_game is not None and not current_game["password"]:
+            return redirect(url_for("welcome"))
         return render_template("join.html")
 
     password = request.form.get("password", "").strip()
@@ -166,6 +201,7 @@ def welcome():
 
     current_game["players"].append(name)
     session["player_name"] = name
+    session["round_index"] = 0
 
     return redirect(url_for("waiting_room"))
 
@@ -210,7 +246,8 @@ def play():
         return redirect(url_for("waiting_room"))
 
     gs = ensure_game_state(current_game)
-    step, round_index = player_step(current_game, player_name)
+    round_index = session.get("round_index", 0)
+    step, round_index = player_step(current_game, player_name, round_index)
 
     if step == "finished":
         standings = sorted(gs["scores"].items(), key=lambda kv: -kv[1])
@@ -227,38 +264,46 @@ def play():
         "round_number": round_index + 1,
         "total_rounds": len(gs["questions"]),
         "other_players": other_players,
+        "is_last_round": round_index + 1 >= len(gs["questions"]),
     }
 
     if step == "reveal":
         my_predictions = round_data["predictions"][player_name]
         reveal_rows = []
-        round_points = 0
         for other in other_players:
             actual = round_data["answers"][other]
             predicted = my_predictions[other]
-            points = 10 - abs(predicted - actual)
-            round_points += points
+            points = max(0, 10 - abs(predicted - actual))
             reveal_rows.append({"name": other, "actual": actual, "predicted": predicted, "points": points})
 
+        guess_total = guess_score(round_data, player_name)
+        own = own_score_breakdown(current_game, round_data, player_name)
+        own_points = round(own["own_score"])
+
         context["reveal_rows"] = reveal_rows
-        context["round_points"] = round_points
-        context["total_score"] = gs["scores"][player_name]
+        context["guess_total"] = guess_total
+        context["own_answer"] = own["my_answer"]
+        context["own_mean"] = round(own["mean"], 1) if own["mean"] is not None else None
+        context["own_std"] = round(own["std"], 1) if own["std"] is not None else None
+        context["own_points"] = own_points
+        context["round_points"] = guess_total + own_points
         context["standings"] = sorted(gs["scores"].items(), key=lambda kv: -kv[1])
 
     return render_template("play.html", **context)
 
 
-@app.route("/play/answer", methods=["POST"])
-def play_answer():
+@app.route("/play/submit", methods=["POST"])
+def play_submit():
     player_name = session.get("player_name")
     if current_game is None or not player_name or player_name not in current_game["players"]:
         return redirect(url_for("index"))
 
     gs = ensure_game_state(current_game)
-    if gs is None or gs["finished"]:
+    round_index = session.get("round_index", 0)
+    if gs is None or round_index >= len(gs["questions"]):
         return redirect(url_for("play"))
 
-    round_data = gs["rounds"][gs["round_index"]]
+    round_data = gs["rounds"][round_index]
     if player_name not in round_data["answers"]:
         try:
             value = int(request.form.get("value", "0"))
@@ -266,33 +311,18 @@ def play_answer():
             value = 0
         round_data["answers"][player_name] = max(-10, min(10, value))
 
-    return redirect(url_for("play"))
-
-
-@app.route("/play/predict", methods=["POST"])
-def play_predict():
-    player_name = session.get("player_name")
-    if current_game is None or not player_name or player_name not in current_game["players"]:
-        return redirect(url_for("index"))
-
-    gs = ensure_game_state(current_game)
-    if gs is None or gs["finished"]:
-        return redirect(url_for("play"))
-
-    round_data = gs["rounds"][gs["round_index"]]
-    if player_name not in round_data["predictions"]:
         predictions = {}
         for other in current_game["players"]:
             if other == player_name:
                 continue
             try:
-                value = int(request.form.get(f"prediction_{other}", "0"))
+                predicted = int(request.form.get(f"prediction_{other}", "0"))
             except ValueError:
-                value = 0
-            predictions[other] = max(-10, min(10, value))
+                predicted = 0
+            predictions[other] = max(-10, min(10, predicted))
         round_data["predictions"][player_name] = predictions
 
-        if len(round_data["predictions"]) == current_game["num_players"]:
+        if len(round_data["answers"]) == current_game["num_players"]:
             award_round_scores(current_game, round_data)
 
     return redirect(url_for("play"))
@@ -304,19 +334,7 @@ def play_continue():
     if current_game is None or not player_name or player_name not in current_game["players"]:
         return redirect(url_for("index"))
 
-    gs = ensure_game_state(current_game)
-    if gs is None or gs["finished"]:
-        return redirect(url_for("play"))
-
-    round_data = gs["rounds"][gs["round_index"]]
-    if player_name not in round_data["continued"]:
-        round_data["continued"].append(player_name)
-
-    if len(round_data["continued"]) == current_game["num_players"]:
-        if gs["round_index"] + 1 >= len(gs["questions"]):
-            gs["finished"] = True
-        else:
-            gs["round_index"] += 1
+    session["round_index"] = session.get("round_index", 0) + 1
 
     return redirect(url_for("play"))
 
@@ -331,7 +349,8 @@ def play_status():
     if gs is None:
         return jsonify({"active": True, "step": "waiting", "round_index": -1})
 
-    step, round_index = player_step(current_game, player_name)
+    round_index = session.get("round_index", 0)
+    step, round_index = player_step(current_game, player_name, round_index)
     return jsonify({"active": True, "step": step, "round_index": round_index})
 
 

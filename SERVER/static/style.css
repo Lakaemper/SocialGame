@@ -1,3 +1,7 @@
+:root {
+    --light-bg: #BA8C9D;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -8,8 +12,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #1b1f2a;
-    color: #f2f2f2;
+    background: #241a1e;
+    color: #f7ece7;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     padding: 16px;
 }
@@ -17,7 +21,7 @@ body {
 .card {
     width: 100%;
     max-width: 420px;
-    background: #262c3b;
+    background: #332428;
     border-radius: 16px;
     padding: 32px 24px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -33,7 +37,7 @@ label {
     display: block;
     margin: 16px 0 6px;
     font-size: 0.95rem;
-    color: #c7cad1;
+    color: #cbb3ac;
 }
 
 input {
@@ -41,13 +45,13 @@ input {
     padding: 12px 14px;
     font-size: 1rem;
     border-radius: 10px;
-    border: 1px solid #3c4356;
-    background: #1b1f2a;
-    color: #f2f2f2;
+    border: 1px solid #4a3a3d;
+    background: #241a1e;
+    color: #f7ece7;
 }
 
 input:focus {
-    outline: 2px solid #5b8cff;
+    outline: 2px solid #e8734a;
 }
 
 .button-stack {
@@ -77,18 +81,18 @@ input:focus {
 }
 
 .btn-primary {
-    background: #5b8cff;
-    color: #fff;
+    background: #e8734a;
+    color: #2a1208;
 }
 
 .btn-secondary {
-    background: #3c4356;
-    color: #f2f2f2;
+    background: #4a3a3d;
+    color: #f7ece7;
 }
 
 .btn-disabled {
-    background: #2c3140;
-    color: #6b7180;
+    background: #3a2e30;
+    color: #8a7570;
     cursor: not-allowed;
 }
 
@@ -103,15 +107,15 @@ input:focus {
 }
 
 .hint {
-    color: #c7cad1;
+    color: #cbb3ac;
     font-size: 0.9rem;
     text-align: center;
     margin: 12px 0 0;
 }
 
 .errors {
-    background: #4a2330;
-    color: #ffb3c0;
+    background: #3a1f1f;
+    color: #ffb3ac;
     padding: 12px 16px;
     border-radius: 10px;
     margin: 16px 0 0;
@@ -120,11 +124,16 @@ input:focus {
 .details {
     list-style: none;
     padding: 0;
-    color: #c7cad1;
+    color: #cbb3ac;
 }
 
 .situation {
     margin-top: 16px;
+    background: var(--light-bg);
+    color: #241a1e;
+    font-size: 1.15rem;
+    padding: 16px;
+    border-radius: 10px;
 }
 
 .slider-block {
@@ -138,10 +147,31 @@ input:focus {
 
 .slider-labels {
     display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    color: #c7cad1;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 1.05rem;
+    color: #cbb3ac;
     margin-bottom: 6px;
+}
+
+.slider-label-low,
+.slider-label-high {
+    flex: 1;
+    min-width: 0;
+}
+
+.slider-label-low {
+    text-align: left;
+}
+
+.slider-label-high {
+    text-align: right;
+}
+
+.slider-label-sep {
+    flex: 0 0 auto;
+    text-align: center;
+    font-weight: 600;
 }
 
 input[type="range"] {
@@ -149,7 +179,11 @@ input[type="range"] {
     padding: 0;
     border: none;
     background: transparent;
-    accent-color: #5b8cff;
+    accent-color: #e8734a;
+}
+
+input[type="range"].slider-them {
+    accent-color: var(--light-bg);
 }
 
 .reveal-table {
@@ -163,11 +197,88 @@ input[type="range"] {
 .reveal-table td {
     text-align: left;
     padding: 8px 6px;
-    border-bottom: 1px solid #3c4356;
-    color: #f2f2f2;
+    border-bottom: 1px solid #4a3a3d;
+    color: #f7ece7;
 }
 
 .reveal-table th {
-    color: #c7cad1;
+    color: #cbb3ac;
     font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+.intro-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+}
+
+.intro-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.separator {
+    border: none;
+    border-top: 1px solid #4a3a3d;
+    margin: 24px 0;
+}
+
+.separator-light {
+    border-top-color: var(--light-bg);
+}
+
+.center-heading {
+    text-align: center;
+}
+
+.hl-you {
+    color: #e8734a;
+}
+
+.hl-them {
+    color: var(--light-bg);
+}
+
+.question-number {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.points-highlight {
+    display: inline-block;
+    background: var(--light-bg);
+    color: #6b1220;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 8px;
+}
+
+
+.button-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.button-center .btn {
+    flex: 0 0 auto;
+    min-width: 140px;
+}
+
+.label-large {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #f7ece7;
+}
+
+.btn-lg {
+    font-size: 1.3rem;
 }
