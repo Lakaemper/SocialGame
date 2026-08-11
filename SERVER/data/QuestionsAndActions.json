@@ -1,0 +1,2042 @@
+[
+  {
+    "id": 1,
+    "situation": "You are traveling and need to go 100 km. A train leaves in 4 hours for €10. A cab leaves immediately for €50.",
+    "action_low": "Wait for train",
+    "action_high": "Take cab"
+  },
+  {
+    "id": 2,
+    "situation": "At a restaurant, your meal is wrong. The waiter apologizes and offers to replace it, but that will take 20 minutes.",
+    "action_low": "Eat it anyway",
+    "action_high": "Send it back"
+  },
+  {
+    "id": 3,
+    "situation": "You're going on a 3-hour hike. The weather forecast says there's a 30% chance of heavy rain.",
+    "action_low": "Go anyway",
+    "action_high": "Cancel"
+  },
+  {
+    "id": 4,
+    "situation": "You have €100 left for the week. A friend invites you to an expensive dinner tonight.",
+    "action_low": "Decline",
+    "action_high": "Go"
+  },
+  {
+    "id": 5,
+    "situation": "Your group unanimously chooses a movie you don't want to see.",
+    "action_low": "Watch it",
+    "action_high": "Convince them to change"
+  },
+  {
+    "id": 6,
+    "situation": "You can receive €500 now, or €700 exactly one year from now.",
+    "action_low": "Take €500",
+    "action_high": "Wait for €700"
+  },
+  {
+    "id": 7,
+    "situation": "You find €50 on the street. There is no identification or way to find the owner.",
+    "action_low": "Leave it / hand it in",
+    "action_high": "Keep it"
+  },
+  {
+    "id": 8,
+    "situation": "You're invited to a party where you know nobody except the host.",
+    "action_low": "Go",
+    "action_high": "Stay home"
+  },
+  {
+    "id": 9,
+    "situation": "You have planned your Saturday carefully. A friend calls Friday evening and proposes an unexpected day trip.",
+    "action_low": "Keep your plans",
+    "action_high": "Go on the trip"
+  },
+  {
+    "id": 10,
+    "situation": "You are playing a game and realize you have misunderstood one of the rules. You have already benefited from the mistake. Nobody else noticed.",
+    "action_low": "Tell everyone",
+    "action_high": "Keep playing"
+  },
+  {
+    "id": 11,
+    "situation": "Someone in your group makes a confident statement about a subject you know well. You are almost certain they're wrong.",
+    "action_low": "Let it pass",
+    "action_high": "Correct them"
+  },
+  {
+    "id": 12,
+    "situation": "You can buy a €10 lottery ticket with a 1% chance of winning €1,000.",
+    "action_low": "Don't buy",
+    "action_high": "Buy"
+  },
+  {
+    "id": 13,
+    "situation": "You have an important decision to make. Two people you trust give opposite advice.",
+    "action_low": "Decide yourself",
+    "action_high": "Ask another person"
+  },
+  {
+    "id": 14,
+    "situation": "You discover that a colleague has taken credit for an idea you originally proposed.",
+    "action_low": "Say nothing",
+    "action_high": "Confront them"
+  },
+  {
+    "id": 15,
+    "situation": "You can spend your evening reading a book you already know you'll enjoy, or trying something completely unfamiliar.",
+    "action_low": "Familiar book",
+    "action_high": "Try something new"
+  },
+  {
+    "id": 16,
+    "situation": "Your team is losing badly with five minutes left. A risky strategy gives you a small chance of winning but a good chance of losing even more badly.",
+    "action_low": "Play safe",
+    "action_high": "Take the risk"
+  },
+  {
+    "id": 17,
+    "situation": "A friend asks you for €200. You could easily afford it, but you're not sure they'll ever pay you back.",
+    "action_low": "Lend it",
+    "action_high": "Refuse"
+  },
+  {
+    "id": 18,
+    "situation": "You arrive at an airport three hours before your flight. You can spend €30 to enter a comfortable lounge, or wait at the gate.",
+    "action_low": "Wait",
+    "action_high": "Pay for lounge"
+  },
+  {
+    "id": 19,
+    "situation": "You are told that 80% of people chose option A in a difficult decision. You have no strong opinion yourself.",
+    "action_low": "Choose independently",
+    "action_high": "Choose A"
+  },
+  {
+    "id": 20,
+    "situation": "You are offered a job that pays 20% more but involves considerably more responsibility and uncertainty.",
+    "action_low": "Keep current job",
+    "action_high": "Take new job"
+  },
+  {
+    "id": 21,
+    "situation": "You're offered a fixed €2,000 bonus, or a 50% chance at €5,000 and a 50% chance at nothing.",
+    "action_low": "Take the guaranteed €2,000",
+    "action_high": "Gamble for €5,000"
+  },
+  {
+    "id": 22,
+    "situation": "Your investment has dropped 20% this month. Experts are split on whether it will recover.",
+    "action_low": "Sell now",
+    "action_high": "Hold and wait"
+  },
+  {
+    "id": 23,
+    "situation": "You could buy travel insurance that covers cancellation, costing 5% of the trip price.",
+    "action_low": "Skip the insurance",
+    "action_high": "Buy the insurance"
+  },
+  {
+    "id": 24,
+    "situation": "A stranger offers to sell you a \"guaranteed win\" betting tip for €20.",
+    "action_low": "Ignore the offer",
+    "action_high": "Buy the tip"
+  },
+  {
+    "id": 25,
+    "situation": "You have savings that could either sit safely in a bank account or be invested with higher risk and higher potential return.",
+    "action_low": "Keep it safe",
+    "action_high": "Invest it"
+  },
+  {
+    "id": 26,
+    "situation": "Your credit card company offers a low-interest loan for a purchase you don't really need.",
+    "action_low": "Decline the loan",
+    "action_high": "Take the loan"
+  },
+  {
+    "id": 27,
+    "situation": "You find a freelance opportunity with unpredictable income, versus staying at your stable salaried job.",
+    "action_low": "Stay salaried",
+    "action_high": "Go freelance"
+  },
+  {
+    "id": 28,
+    "situation": "A friend proposes splitting the cost of a lottery pool ticket with a small chance of a large payout.",
+    "action_low": "Pass",
+    "action_high": "Join the pool"
+  },
+  {
+    "id": 29,
+    "situation": "You can negotiate hard for a lower price on a big purchase, risking the seller walking away, or accept the asking price.",
+    "action_low": "Accept asking price",
+    "action_high": "Negotiate hard"
+  },
+  {
+    "id": 30,
+    "situation": "You're deciding whether to spend your entire bonus on a spontaneous vacation or save it for future needs.",
+    "action_low": "Save it",
+    "action_high": "Spend it"
+  },
+  {
+    "id": 31,
+    "situation": "A new restaurant just opened and reviews are mixed. A reliable favorite is just down the street.",
+    "action_low": "Go to the favorite",
+    "action_high": "Try the new place"
+  },
+  {
+    "id": 32,
+    "situation": "You could pay extra for express shipping to get a package tomorrow, or wait a week for free shipping.",
+    "action_low": "Wait for free shipping",
+    "action_high": "Pay for express"
+  },
+  {
+    "id": 33,
+    "situation": "Your car needs a repair. A cheaper, unlicensed mechanic could fix it for half the price, but without any guarantee.",
+    "action_low": "Pay full price at a licensed shop",
+    "action_high": "Save money at the unlicensed shop"
+  },
+  {
+    "id": 34,
+    "situation": "You're asked to co-sign a loan for a family member with an inconsistent income history.",
+    "action_low": "Decline to co-sign",
+    "action_high": "Co-sign the loan"
+  },
+  {
+    "id": 35,
+    "situation": "Your landlord offers a discount if you sign a longer lease than you'd planned.",
+    "action_low": "Keep the shorter lease",
+    "action_high": "Take the discount and sign longer"
+  },
+  {
+    "id": 36,
+    "situation": "A friend wants to start a small business together, requiring you to invest your own savings.",
+    "action_low": "Stay out of it",
+    "action_high": "Invest your savings"
+  },
+  {
+    "id": 37,
+    "situation": "You can pay off your debt slowly at low interest, or aggressively cut spending to be debt-free sooner.",
+    "action_low": "Pay slowly",
+    "action_high": "Cut spending aggressively"
+  },
+  {
+    "id": 38,
+    "situation": "You're given the choice between a stable, low-risk retirement fund and a volatile, high-growth one.",
+    "action_low": "Choose stable fund",
+    "action_high": "Choose volatile fund"
+  },
+  {
+    "id": 39,
+    "situation": "A cashier gives you too much change back. It's a noticeable amount and they seem too busy to notice the error.",
+    "action_low": "Keep it",
+    "action_high": "Point out the mistake"
+  },
+  {
+    "id": 40,
+    "situation": "You're filling out a form and realize a small exaggeration would improve your chances of approval.",
+    "action_low": "Exaggerate slightly",
+    "action_high": "Answer truthfully"
+  },
+  {
+    "id": 41,
+    "situation": "Your friend asks if you like their new haircut. You honestly don't.",
+    "action_low": "Say you like it",
+    "action_high": "Give honest feedback"
+  },
+  {
+    "id": 42,
+    "situation": "You witness a coworker taking office supplies home for personal use.",
+    "action_low": "Say nothing",
+    "action_high": "Report it"
+  },
+  {
+    "id": 43,
+    "situation": "A shop clerk forgets to charge you for an item. You notice only after leaving the store.",
+    "action_low": "Let it go",
+    "action_high": "Go back and pay"
+  },
+  {
+    "id": 44,
+    "situation": "You're asked in an interview about a skill you don't actually have much experience with.",
+    "action_low": "Overstate your experience",
+    "action_high": "Admit the gap honestly"
+  },
+  {
+    "id": 45,
+    "situation": "You accidentally damage a parked car in a lot with no cameras or witnesses.",
+    "action_low": "Drive away",
+    "action_high": "Leave a note with your contact info"
+  },
+  {
+    "id": 46,
+    "situation": "Your friend is dating someone you've heard troubling rumors about, but you're not fully sure they're true.",
+    "action_low": "Stay quiet",
+    "action_high": "Tell your friend what you heard"
+  },
+  {
+    "id": 47,
+    "situation": "You could take an extra day of sick leave you don't really need, and no one would question it.",
+    "action_low": "Take the day off",
+    "action_high": "Go to work anyway"
+  },
+  {
+    "id": 48,
+    "situation": "A group project grade depends on equal contribution, but one member did much less work than the rest.",
+    "action_low": "Let it go quietly",
+    "action_high": "Speak up about the imbalance"
+  },
+  {
+    "id": 49,
+    "situation": "You find a wallet with cash and an ID inside.",
+    "action_low": "Keep the cash, return the wallet",
+    "action_high": "Return everything untouched"
+  },
+  {
+    "id": 50,
+    "situation": "You're asked to write a reference for a former colleague whose work was actually mediocre.",
+    "action_low": "Write a glowing reference anyway",
+    "action_high": "Give an honest, measured reference"
+  },
+  {
+    "id": 51,
+    "situation": "Your partner asks how much a recent purchase cost. It was more than you'd like to admit.",
+    "action_low": "Round down the price",
+    "action_high": "Tell them the exact amount"
+  },
+  {
+    "id": 52,
+    "situation": "You notice a friend's social media post contains information that isn't quite accurate.",
+    "action_low": "Say nothing",
+    "action_high": "Gently correct it"
+  },
+  {
+    "id": 53,
+    "situation": "A subscription service kept charging you after you thought you had cancelled, and you notice the extra charges.",
+    "action_low": "Let it slide, it's a small amount",
+    "action_high": "Contact them to get a refund"
+  },
+  {
+    "id": 54,
+    "situation": "You're offered a chance to skip a long queue by pretending to know someone working there.",
+    "action_low": "Take the shortcut",
+    "action_high": "Wait in line honestly"
+  },
+  {
+    "id": 55,
+    "situation": "A friend's business idea is, in your opinion, unlikely to succeed. They ask what you think.",
+    "action_low": "Offer polite encouragement",
+    "action_high": "Share your honest doubts"
+  },
+  {
+    "id": 56,
+    "situation": "You accidentally received a payment intended for someone else with the same name.",
+    "action_low": "Keep the money",
+    "action_high": "Return it to the rightful person"
+  },
+  {
+    "id": 57,
+    "situation": "You can eat one cookie now, or wait 10 minutes and get two cookies instead.",
+    "action_low": "Eat one now",
+    "action_high": "Wait for two"
+  },
+  {
+    "id": 58,
+    "situation": "A software update promises better performance but takes 30 minutes to install right now.",
+    "action_low": "Postpone the update",
+    "action_high": "Install it now"
+  },
+  {
+    "id": 59,
+    "situation": "You're waiting in line for coffee. A mobile order pickup line looks faster but costs a small convenience fee.",
+    "action_low": "Wait in the regular line",
+    "action_high": "Pay the convenience fee"
+  },
+  {
+    "id": 60,
+    "situation": "Your favorite show just released a new season. You could binge it tonight or savor one episode a week.",
+    "action_low": "Savor it slowly",
+    "action_high": "Binge it all"
+  },
+  {
+    "id": 61,
+    "situation": "A package can arrive in 2 days if you pay more, or a week for the standard rate.",
+    "action_low": "Choose standard shipping",
+    "action_high": "Pay for faster shipping"
+  },
+  {
+    "id": 62,
+    "situation": "You're learning a new skill. Progress is slow, and a shortcut exists that gets partial results faster but skips the fundamentals.",
+    "action_low": "Take your time and learn properly",
+    "action_high": "Take the shortcut"
+  },
+  {
+    "id": 63,
+    "situation": "A recipe takes 3 hours to prepare properly, but a quicker version cuts corners and takes 30 minutes.",
+    "action_low": "Cook the quick version",
+    "action_high": "Take the full 3 hours"
+  },
+  {
+    "id": 64,
+    "situation": "You could respond to an email immediately with a rushed reply, or wait until tomorrow to think it through.",
+    "action_low": "Reply immediately",
+    "action_high": "Wait and think it over"
+  },
+  {
+    "id": 65,
+    "situation": "Your phone battery is at 20%. You could stop to charge it now, delaying your plans by 15 minutes.",
+    "action_low": "Keep going, risk it dying",
+    "action_high": "Stop to charge it"
+  },
+  {
+    "id": 66,
+    "situation": "A friend is running late, currently 20 minutes behind schedule for a dinner you're both attending.",
+    "action_low": "Wait patiently",
+    "action_high": "Head over without them"
+  },
+  {
+    "id": 67,
+    "situation": "You're offered early access to a product for a fee, or you can wait for the free general release next month.",
+    "action_low": "Wait for free release",
+    "action_high": "Pay for early access"
+  },
+  {
+    "id": 68,
+    "situation": "Your plant needs repotting eventually, but it's fine for now if you leave it a while longer.",
+    "action_low": "Leave it for later",
+    "action_high": "Repot it now"
+  },
+  {
+    "id": 69,
+    "situation": "You can finish a boring task quickly with lower quality, or take longer to do it thoroughly.",
+    "action_low": "Rush it",
+    "action_high": "Take the time to do it well"
+  },
+  {
+    "id": 70,
+    "situation": "You've been offered a slow, scenic route home or a faster, direct highway route.",
+    "action_low": "Take the scenic route",
+    "action_high": "Take the highway"
+  },
+  {
+    "id": 71,
+    "situation": "A queue for a popular ride at an amusement park is an hour long, but a nearby, less exciting ride has no wait.",
+    "action_low": "Skip the wait, ride the other one",
+    "action_high": "Wait the hour"
+  },
+  {
+    "id": 72,
+    "situation": "You're deciding whether to reply to a difficult message right when you're upset, or sleep on it first.",
+    "action_low": "Sleep on it first",
+    "action_high": "Reply right away"
+  },
+  {
+    "id": 73,
+    "situation": "A friend suggests postponing your meeting by a week versus keeping today's plan despite feeling unprepared.",
+    "action_low": "Keep today's plan",
+    "action_high": "Postpone by a week"
+  },
+  {
+    "id": 74,
+    "situation": "Your library book is due tomorrow but you're only halfway through and enjoying it.",
+    "action_low": "Return it unfinished",
+    "action_high": "Pay the late fee and keep reading"
+  },
+  {
+    "id": 75,
+    "situation": "Everyone at the table orders the same popular dish. You were considering something different.",
+    "action_low": "Order what you wanted",
+    "action_high": "Order the same as everyone"
+  },
+  {
+    "id": 76,
+    "situation": "Your friend group decides on a restaurant you don't love, but you don't want to cause friction.",
+    "action_low": "Speak up about your preference",
+    "action_high": "Go along with the group"
+  },
+  {
+    "id": 77,
+    "situation": "At a work meeting, most people agree with a plan you have doubts about.",
+    "action_low": "Voice your doubts",
+    "action_high": "Go along with the majority"
+  },
+  {
+    "id": 78,
+    "situation": "You're at a party and the group starts a game you find silly, but everyone else seems into it.",
+    "action_low": "Join in anyway",
+    "action_high": "Sit this one out"
+  },
+  {
+    "id": 79,
+    "situation": "Your family has a tradition you don't personally enjoy but everyone else looks forward to.",
+    "action_low": "Participate anyway",
+    "action_high": "Politely opt out"
+  },
+  {
+    "id": 80,
+    "situation": "A trend is going around your friend group (a style, an app, a hobby) that doesn't interest you.",
+    "action_low": "Try it to fit in",
+    "action_high": "Skip it, stay yourself"
+  },
+  {
+    "id": 81,
+    "situation": "In a debate among friends, you privately agree with the less popular side.",
+    "action_low": "Support the popular side publicly",
+    "action_high": "Voice the unpopular opinion"
+  },
+  {
+    "id": 82,
+    "situation": "Your team at work has an unofficial dress code that's stricter than the actual policy.",
+    "action_low": "Follow the unofficial norm",
+    "action_high": "Dress by the actual policy"
+  },
+  {
+    "id": 83,
+    "situation": "A group chat is planning something you're not really interested in, but everyone's enthusiastic.",
+    "action_low": "Go along enthusiastically",
+    "action_high": "Politely decline"
+  },
+  {
+    "id": 84,
+    "situation": "At a networking event, most people are exchanging business cards eagerly. It doesn't feel natural to you.",
+    "action_low": "Do it anyway",
+    "action_high": "Engage your own way"
+  },
+  {
+    "id": 85,
+    "situation": "Your classmates all seem to be choosing the same elective course.",
+    "action_low": "Choose a different one that interests you",
+    "action_high": "Choose the same one"
+  },
+  {
+    "id": 86,
+    "situation": "A friend wants group consensus before booking a shared vacation house, and you're the lone holdout with concerns.",
+    "action_low": "Raise your concerns",
+    "action_high": "Go with the group's choice"
+  },
+  {
+    "id": 87,
+    "situation": "You disagree with a popular opinion being shared in a group chat.",
+    "action_low": "Keep scrolling, say nothing",
+    "action_high": "Post a different view"
+  },
+  {
+    "id": 88,
+    "situation": "At a family gathering, relatives expect you to follow an old custom you find outdated.",
+    "action_low": "Go through with it",
+    "action_high": "Explain why you'd rather not"
+  },
+  {
+    "id": 89,
+    "situation": "Your book club picked a book you have no interest in reading.",
+    "action_low": "Read it along with everyone",
+    "action_high": "Skip it and just attend the discussion"
+  },
+  {
+    "id": 90,
+    "situation": "Coworkers are all staying late to finish a project, though your part is already done.",
+    "action_low": "Stay anyway to show support",
+    "action_high": "Leave once your work is done"
+  },
+  {
+    "id": 91,
+    "situation": "A close friend expects you to agree with their political opinion at a dinner party.",
+    "action_low": "Nod along",
+    "action_high": "Share your actual view"
+  },
+  {
+    "id": 92,
+    "situation": "Everyone in your friend group is getting the same tattoo as a bonding activity.",
+    "action_low": "Get it too",
+    "action_high": "Sit this one out"
+  },
+  {
+    "id": 93,
+    "situation": "Your partner wants to merge finances into one shared account. You're used to managing your own money.",
+    "action_low": "Keep finances separate",
+    "action_high": "Merge accounts"
+  },
+  {
+    "id": 94,
+    "situation": "A friend cancels on you last minute for the third time this month.",
+    "action_low": "Let it go, keep inviting them",
+    "action_high": "Address the pattern directly"
+  },
+  {
+    "id": 95,
+    "situation": "You're asked to keep a secret for a friend that makes you a little uncomfortable.",
+    "action_low": "Keep the secret",
+    "action_high": "Tell them you can't keep it"
+  },
+  {
+    "id": 96,
+    "situation": "Someone you just met asks to borrow a significant amount of money.",
+    "action_low": "Politely refuse",
+    "action_high": "Lend it, trusting them"
+  },
+  {
+    "id": 97,
+    "situation": "Your partner wants to move to a new city for their career, requiring you to leave your job and friends.",
+    "action_low": "Stay where you are",
+    "action_high": "Move with them"
+  },
+  {
+    "id": 98,
+    "situation": "A friend consistently shows up late, and today you're deciding whether to tell them the exact time or a slightly earlier one.",
+    "action_low": "Tell them the real time",
+    "action_high": "Tell them an earlier time"
+  },
+  {
+    "id": 99,
+    "situation": "You suspect a friend is upset with you but they insist everything is fine.",
+    "action_low": "Take them at their word",
+    "action_high": "Push to talk about it"
+  },
+  {
+    "id": 100,
+    "situation": "A new roommate wants to split all household costs equally, even though you use shared items less.",
+    "action_low": "Agree to split evenly",
+    "action_high": "Negotiate a fairer split"
+  },
+  {
+    "id": 101,
+    "situation": "Your best friend asks for your honest opinion about their relationship, which you have concerns about.",
+    "action_low": "Stay supportive, keep concerns to yourself",
+    "action_high": "Share your honest concerns"
+  },
+  {
+    "id": 102,
+    "situation": "A friend wants to introduce you to their new partner, whom you've heard mixed things about.",
+    "action_low": "Reserve judgment and meet them openly",
+    "action_high": "Go in already skeptical"
+  },
+  {
+    "id": 103,
+    "situation": "You're asked to be the deciding vote in a disagreement between two close friends.",
+    "action_low": "Stay neutral",
+    "action_high": "Take a side"
+  },
+  {
+    "id": 104,
+    "situation": "Your sibling asks to stay at your place indefinitely while sorting out their situation.",
+    "action_low": "Set a clear time limit",
+    "action_high": "Let them stay as long as needed"
+  },
+  {
+    "id": 105,
+    "situation": "A long-distance friend rarely reaches out first, but always responds warmly when you do.",
+    "action_low": "Keep reaching out anyway",
+    "action_high": "Wait for them to initiate for once"
+  },
+  {
+    "id": 106,
+    "situation": "You're asked to write an honest performance review for a friend who also happens to be your direct report.",
+    "action_low": "Soften the feedback",
+    "action_high": "Write it exactly as you see it"
+  },
+  {
+    "id": 107,
+    "situation": "A friend wants brutally honest feedback on a major life decision they've clearly already made up their mind about.",
+    "action_low": "Support their decision",
+    "action_high": "Voice your true reservations"
+  },
+  {
+    "id": 108,
+    "situation": "Your partner forgot an important date that mattered to you.",
+    "action_low": "Let it go without mentioning it",
+    "action_high": "Bring it up and talk about it"
+  },
+  {
+    "id": 109,
+    "situation": "An old friend reappears after years of silence, asking for a favor.",
+    "action_low": "Help them out",
+    "action_high": "Politely keep your distance"
+  },
+  {
+    "id": 110,
+    "situation": "You're asked to choose between spending an evening with your partner or with old friends visiting from out of town, both on the same night.",
+    "action_low": "Spend it with your partner",
+    "action_high": "Spend it with your visiting friends"
+  },
+  {
+    "id": 111,
+    "situation": "You've had a long day and could either go to the gym as planned or skip it and rest.",
+    "action_low": "Rest",
+    "action_high": "Go to the gym anyway"
+  },
+  {
+    "id": 112,
+    "situation": "A dessert is being passed around at a gathering, but you're trying to eat healthier this week.",
+    "action_low": "Skip it",
+    "action_high": "Have some"
+  },
+  {
+    "id": 113,
+    "situation": "You wake up slightly under the weather but have plans you were looking forward to.",
+    "action_low": "Cancel and rest",
+    "action_high": "Push through and go"
+  },
+  {
+    "id": 114,
+    "situation": "Your doctor recommends a lifestyle change that would require giving up something you enjoy regularly.",
+    "action_low": "Keep your current habits",
+    "action_high": "Make the change"
+  },
+  {
+    "id": 115,
+    "situation": "You could take the stairs for a bit of extra exercise, or the elevator to save time and energy.",
+    "action_low": "Take the elevator",
+    "action_high": "Take the stairs"
+  },
+  {
+    "id": 116,
+    "situation": "A new fitness trend promises fast results but requires a big time commitment you're not sure you can sustain.",
+    "action_low": "Stick with your current routine",
+    "action_high": "Try the new trend"
+  },
+  {
+    "id": 117,
+    "situation": "You're offered a free trial of an activity you've heard has real risk of injury, like rock climbing.",
+    "action_low": "Skip it",
+    "action_high": "Try it"
+  },
+  {
+    "id": 118,
+    "situation": "It's late and you're tired, but you haven't finished today's planned workout.",
+    "action_low": "Skip it, sleep instead",
+    "action_high": "Finish it before bed"
+  },
+  {
+    "id": 119,
+    "situation": "A friend invites you to a midnight snack run when you'd normally be asleep by now.",
+    "action_low": "Stay in, stick to your routine",
+    "action_high": "Go along, break routine for once"
+  },
+  {
+    "id": 120,
+    "situation": "You could see a doctor about a minor, ongoing symptom, or wait to see if it goes away on its own.",
+    "action_low": "Wait it out",
+    "action_high": "Get it checked"
+  },
+  {
+    "id": 121,
+    "situation": "Your usual healthy lunch spot is closed, and the fast option nearby is much less healthy.",
+    "action_low": "Go without lunch or find something healthier",
+    "action_high": "Eat the fast option"
+  },
+  {
+    "id": 122,
+    "situation": "A friend challenges you to try a very spicy dish you know might upset your stomach.",
+    "action_low": "Decline",
+    "action_high": "Try it"
+  },
+  {
+    "id": 123,
+    "situation": "You've been sitting for hours and could get up to stretch, or keep working through a task you're focused on.",
+    "action_low": "Keep working",
+    "action_high": "Take a break to move"
+  },
+  {
+    "id": 124,
+    "situation": "You're offered a strong coffee late in the day, knowing it might affect your sleep.",
+    "action_low": "Decline it",
+    "action_high": "Drink it anyway"
+  },
+  {
+    "id": 125,
+    "situation": "A friend wants to go for an early 6am run together, cutting your sleep short.",
+    "action_low": "Decline, prioritize sleep",
+    "action_high": "Join them"
+  },
+  {
+    "id": 126,
+    "situation": "You're at a buffet and already comfortably full, but there's a dish you haven't tried yet.",
+    "action_low": "Stop eating",
+    "action_high": "Try it anyway"
+  },
+  {
+    "id": 127,
+    "situation": "Your wearable device says you should stand up and move, right in the middle of something engaging.",
+    "action_low": "Ignore it, finish what you're doing",
+    "action_high": "Get up right away"
+  },
+  {
+    "id": 128,
+    "situation": "You could meal-prep healthy food for the week on a free evening, or relax instead and decide meals day by day.",
+    "action_low": "Relax this evening",
+    "action_high": "Meal-prep now"
+  },
+  {
+    "id": 129,
+    "situation": "You're offered a leadership role that comes with more visibility but also more stress and scrutiny.",
+    "action_low": "Stay in your current role",
+    "action_high": "Take the leadership role"
+  },
+  {
+    "id": 130,
+    "situation": "A big project could be delivered faster with lower polish, or later with higher quality.",
+    "action_low": "Prioritize quality over speed",
+    "action_high": "Prioritize speed over quality"
+  },
+  {
+    "id": 131,
+    "situation": "Your manager asks for volunteers to take on an extra, unpaid project for \"visibility.\"",
+    "action_low": "Decline",
+    "action_high": "Volunteer"
+  },
+  {
+    "id": 132,
+    "situation": "You could specialize deeply in one skill, or diversify into several different areas.",
+    "action_low": "Specialize deeply",
+    "action_high": "Diversify broadly"
+  },
+  {
+    "id": 133,
+    "situation": "A colleague you don't get along with is proposed as your partner on an important project.",
+    "action_low": "Raise a concern about the pairing",
+    "action_high": "Accept the pairing and make it work"
+  },
+  {
+    "id": 134,
+    "situation": "You're offered a promotion that requires relocating to a city you have no connection to.",
+    "action_low": "Decline and stay put",
+    "action_high": "Accept and relocate"
+  },
+  {
+    "id": 135,
+    "situation": "Your company offers a sabbatical option with reduced pay for a few months.",
+    "action_low": "Skip it, keep working normally",
+    "action_high": "Take the sabbatical"
+  },
+  {
+    "id": 136,
+    "situation": "A tight deadline is approaching and you could ask for an extension or push through as is.",
+    "action_low": "Ask for an extension",
+    "action_high": "Push through without asking"
+  },
+  {
+    "id": 137,
+    "situation": "You've been asked to mentor a junior colleague, which will take time away from your own tasks.",
+    "action_low": "Politely decline for now",
+    "action_high": "Make time to mentor them"
+  },
+  {
+    "id": 138,
+    "situation": "Your idea at a meeting gets initial pushback, but you still believe in it.",
+    "action_low": "Let it drop",
+    "action_high": "Advocate for it further"
+  },
+  {
+    "id": 139,
+    "situation": "You could pursue an advanced degree that takes years and costs money, or continue gaining experience on the job.",
+    "action_low": "Keep gaining experience on the job",
+    "action_high": "Go back to school"
+  },
+  {
+    "id": 140,
+    "situation": "A recruiter reaches out about a role at a competitor, even though you're not actively looking.",
+    "action_low": "Ignore the message",
+    "action_high": "Hear them out"
+  },
+  {
+    "id": 141,
+    "situation": "Your team's project is failing, and you could quietly distance yourself or step up to try to fix it.",
+    "action_low": "Distance yourself",
+    "action_high": "Step up to fix it"
+  },
+  {
+    "id": 142,
+    "situation": "You're asked to present at a large conference, which is a great opportunity but makes you nervous.",
+    "action_low": "Decline the invitation",
+    "action_high": "Accept the challenge"
+  },
+  {
+    "id": 143,
+    "situation": "Your workload is heavy this month. A colleague asks for help even though they haven't reciprocated in the past.",
+    "action_low": "Say you're too busy",
+    "action_high": "Help them anyway"
+  },
+  {
+    "id": 144,
+    "situation": "You could take a comfortable, well-known path in your career or a less certain but potentially more rewarding one.",
+    "action_low": "Take the well-known path",
+    "action_high": "Take the less certain path"
+  },
+  {
+    "id": 145,
+    "situation": "Your boss asks your honest opinion on a decision they've clearly already made.",
+    "action_low": "Support the decision",
+    "action_high": "Share your honest view anyway"
+  },
+  {
+    "id": 146,
+    "situation": "A startup with an uncertain future offers you equity instead of a full salary.",
+    "action_low": "Ask for full salary elsewhere",
+    "action_high": "Accept the equity offer"
+  },
+  {
+    "id": 147,
+    "situation": "An app asks for access to your contacts to \"improve your experience,\" though it's not strictly necessary.",
+    "action_low": "Deny the permission",
+    "action_high": "Allow it"
+  },
+  {
+    "id": 148,
+    "situation": "A website offers a personalized experience in exchange for tracking your browsing habits.",
+    "action_low": "Opt out of tracking",
+    "action_high": "Allow tracking for personalization"
+  },
+  {
+    "id": 149,
+    "situation": "You could use a well-known service that's convenient but data-hungry, or a more private alternative that's less polished.",
+    "action_low": "Use the private alternative",
+    "action_high": "Use the convenient service"
+  },
+  {
+    "id": 150,
+    "situation": "A new social media platform is gaining popularity, and everyone's asking you to join.",
+    "action_low": "Stay off it",
+    "action_high": "Join in"
+  },
+  {
+    "id": 151,
+    "situation": "Your smart speaker could be always listening for a wake word to make your life more convenient.",
+    "action_low": "Keep it unplugged when not needed",
+    "action_high": "Leave it always on"
+  },
+  {
+    "id": 152,
+    "situation": "You're offered a discount for sharing your location data with a store's app.",
+    "action_low": "Decline, pay full price",
+    "action_high": "Share your location for the discount"
+  },
+  {
+    "id": 153,
+    "situation": "Facial recognition could unlock your phone instantly, or you could use a passcode that's slower but keeps your face data local.",
+    "action_low": "Use a passcode",
+    "action_high": "Use facial recognition"
+  },
+  {
+    "id": 154,
+    "situation": "A friend suggests posting a detailed vacation itinerary publicly, showing you'll be away from home.",
+    "action_low": "Keep the details private",
+    "action_high": "Post it publicly"
+  },
+  {
+    "id": 155,
+    "situation": "You could accept all cookies on a website quickly, or take time to review and reject unnecessary ones.",
+    "action_low": "Review and reject unnecessary ones",
+    "action_high": "Accept all quickly"
+  },
+  {
+    "id": 156,
+    "situation": "Your employer offers a wellness app that tracks your health data in exchange for a discount on insurance.",
+    "action_low": "Decline, keep data private",
+    "action_high": "Use it for the discount"
+  },
+  {
+    "id": 157,
+    "situation": "A free app has ads everywhere, while the paid version removes them and costs a small monthly fee.",
+    "action_low": "Stick with the free, ad-supported version",
+    "action_high": "Pay to remove ads"
+  },
+  {
+    "id": 158,
+    "situation": "Your photos could automatically back up to the cloud, or stay only on your device for more control.",
+    "action_low": "Keep photos only on device",
+    "action_high": "Enable cloud backup"
+  },
+  {
+    "id": 159,
+    "situation": "A quiz online promises a fun personality result if you connect your social media account.",
+    "action_low": "Skip it",
+    "action_high": "Connect and try it"
+  },
+  {
+    "id": 160,
+    "situation": "You're offered biometric login for a banking app, replacing a password you'd have to remember.",
+    "action_low": "Stick with the password",
+    "action_high": "Use biometric login"
+  },
+  {
+    "id": 161,
+    "situation": "Your smart home devices could be connected to a single app that centralizes everything, or kept separate for isolation.",
+    "action_low": "Keep devices separate",
+    "action_high": "Connect everything to one app"
+  },
+  {
+    "id": 162,
+    "situation": "A friend shares an unverified but interesting article. You could share it further or check its accuracy first.",
+    "action_low": "Verify before sharing",
+    "action_high": "Share it right away"
+  },
+  {
+    "id": 163,
+    "situation": "You get a notification that a new phone model is out with modest improvements over yours.",
+    "action_low": "Keep your current phone",
+    "action_high": "Upgrade right away"
+  },
+  {
+    "id": 164,
+    "situation": "An online store suggests saving your card details for faster checkout next time.",
+    "action_low": "Don't save the card",
+    "action_high": "Save it for convenience"
+  },
+  {
+    "id": 165,
+    "situation": "You need a new piece of clothing. A cheap fast-fashion option is available, or a pricier, more sustainably made one.",
+    "action_low": "Buy the sustainable option",
+    "action_high": "Buy the cheaper option"
+  },
+  {
+    "id": 166,
+    "situation": "Your local store offers plastic bags for free, or you brought a reusable one but forgot it today.",
+    "action_low": "Go back for the reusable bag",
+    "action_high": "Take the free plastic one"
+  },
+  {
+    "id": 167,
+    "situation": "You could drive alone to work, or take a longer but more environmentally friendly public transit route.",
+    "action_low": "Take public transit",
+    "action_high": "Drive alone"
+  },
+  {
+    "id": 168,
+    "situation": "Leftover food from a party could be composted with some effort, or simply thrown away.",
+    "action_low": "Take the effort to compost",
+    "action_high": "Throw it away"
+  },
+  {
+    "id": 169,
+    "situation": "A product is available in bulk with less packaging, but requires more storage space at home.",
+    "action_low": "Buy the smaller, packaged version",
+    "action_high": "Buy the bulk option"
+  },
+  {
+    "id": 170,
+    "situation": "You could repair an old but broken appliance, or simply replace it with a new one.",
+    "action_low": "Repair it",
+    "action_high": "Replace it"
+  },
+  {
+    "id": 171,
+    "situation": "A flight is available that's cheaper but has a longer layover and higher emissions than a direct but pricier flight.",
+    "action_low": "Pay more for the direct flight",
+    "action_high": "Take the cheaper, longer route"
+  },
+  {
+    "id": 172,
+    "situation": "Your workplace offers the option to go paperless, requiring you to change some habits.",
+    "action_low": "Keep using paper as usual",
+    "action_high": "Switch to paperless"
+  },
+  {
+    "id": 173,
+    "situation": "You're deciding between a fast, disposable coffee cup or bringing your own reusable one, which takes remembering.",
+    "action_low": "Use disposable cups",
+    "action_high": "Bring your reusable cup"
+  },
+  {
+    "id": 174,
+    "situation": "A local farmers market has fresher, pricier produce compared to the cheaper supermarket option.",
+    "action_low": "Buy from the supermarket",
+    "action_high": "Buy from the farmers market"
+  },
+  {
+    "id": 175,
+    "situation": "Your energy provider offers a green energy plan at a slightly higher monthly cost.",
+    "action_low": "Stay on the standard plan",
+    "action_high": "Switch to the green plan"
+  },
+  {
+    "id": 176,
+    "situation": "You could donate old furniture to be reused, or simply put it out for bulk trash pickup.",
+    "action_low": "Put it out for trash",
+    "action_high": "Arrange for donation"
+  },
+  {
+    "id": 177,
+    "situation": "A cheaper hotel doesn't have any sustainability practices, while a pricier one is eco-certified.",
+    "action_low": "Book the cheaper hotel",
+    "action_high": "Book the eco-certified hotel"
+  },
+  {
+    "id": 178,
+    "situation": "You're deciding whether to fix a small water leak yourself right away or wait until it's more convenient.",
+    "action_low": "Wait until convenient",
+    "action_high": "Fix it right away"
+  },
+  {
+    "id": 179,
+    "situation": "A neighbor asks if you want to join a community garden that requires regular time commitment.",
+    "action_low": "Decline, not enough time",
+    "action_high": "Join and commit the time"
+  },
+  {
+    "id": 180,
+    "situation": "You could buy a new electronic gadget, or look for a secondhand one that's cheaper but less certain in condition.",
+    "action_low": "Buy secondhand",
+    "action_high": "Buy new"
+  },
+  {
+    "id": 181,
+    "situation": "Your city offers a bike-share program as an alternative to a short cab ride in the rain.",
+    "action_low": "Take the cab",
+    "action_high": "Use the bike-share despite the rain"
+  },
+  {
+    "id": 182,
+    "situation": "A store offers a small discount if you skip the receipt, saving paper.",
+    "action_low": "Take the receipt anyway",
+    "action_high": "Skip the receipt for the discount"
+  },
+  {
+    "id": 183,
+    "situation": "You're at a buffet-style event and could try a small amount of everything, or stick to what you know you'll enjoy.",
+    "action_low": "Stick to favorites",
+    "action_high": "Try a bit of everything"
+  },
+  {
+    "id": 184,
+    "situation": "Your phone rings with an unknown number during a busy moment.",
+    "action_low": "Let it go to voicemail",
+    "action_high": "Answer it anyway"
+  },
+  {
+    "id": 185,
+    "situation": "A friend suggests karaoke, and you're not confident in your singing but might enjoy it.",
+    "action_low": "Watch and cheer others on",
+    "action_high": "Get up and sing"
+  },
+  {
+    "id": 186,
+    "situation": "You could take a familiar route home or try a shortcut you've never used before.",
+    "action_low": "Take the familiar route",
+    "action_high": "Try the shortcut"
+  },
+  {
+    "id": 187,
+    "situation": "Your team lost a friendly game, and there's a rematch offer right now.",
+    "action_low": "Call it a day",
+    "action_high": "Go for the rematch"
+  },
+  {
+    "id": 188,
+    "situation": "You're offered a free upgrade to a nicer hotel room, but it means changing rooms mid-stay.",
+    "action_low": "Stay in your current room",
+    "action_high": "Take the upgrade"
+  },
+  {
+    "id": 189,
+    "situation": "A street performer is playing and passersby are dropping in tips.",
+    "action_low": "Walk past",
+    "action_high": "Stop and tip"
+  },
+  {
+    "id": 190,
+    "situation": "You're deciding between the safe, familiar vacation destination you've been before or somewhere completely new.",
+    "action_low": "Return to the familiar place",
+    "action_high": "Go somewhere new"
+  },
+  {
+    "id": 191,
+    "situation": "Your friend suggests trying an escape room that's rated as quite difficult and might be more frustrating than fun.",
+    "action_low": "Suggest an easier one",
+    "action_high": "Go for the difficult one"
+  },
+  {
+    "id": 192,
+    "situation": "A store clerk recommends a pricier version of what you were about to buy, claiming it's much better.",
+    "action_low": "Stick with your original choice",
+    "action_high": "Upgrade based on their recommendation"
+  },
+  {
+    "id": 193,
+    "situation": "You're asked last-minute to give a short speech at an event you're attending.",
+    "action_low": "Politely decline",
+    "action_high": "Step up and give it a try"
+  },
+  {
+    "id": 194,
+    "situation": "Your friend group is deciding between a relaxing beach trip or an active adventure trip for vacation.",
+    "action_low": "Vote for the relaxing trip",
+    "action_high": "Vote for the adventure trip"
+  },
+  {
+    "id": 195,
+    "situation": "A store is having a big one-day sale on something you've been considering buying eventually.",
+    "action_low": "Wait, no rush",
+    "action_high": "Buy it now while it's on sale"
+  },
+  {
+    "id": 196,
+    "situation": "You're handed a mystery flavor at an ice cream shop and asked to guess what it is before finding out.",
+    "action_low": "Ask them to just tell you",
+    "action_high": "Guess and take the fun risk"
+  },
+  {
+    "id": 197,
+    "situation": "A local sports team you don't usually follow has made it to the finals, and friends invite you to watch.",
+    "action_low": "Skip it, not your thing",
+    "action_high": "Join in the excitement"
+  },
+  {
+    "id": 198,
+    "situation": "You could take a direct flight with a tight layover, or a longer one with more buffer time.",
+    "action_low": "Take the longer, safer option",
+    "action_high": "Take the tight, direct option"
+  },
+  {
+    "id": 199,
+    "situation": "Your friend suggests trying a new, unusual food combination you're skeptical about.",
+    "action_low": "Stick with what you know",
+    "action_high": "Give it a try"
+  },
+  {
+    "id": 200,
+    "situation": "At the end of a long trip, you could rush to catch an earlier train home or relax and take the one you originally planned.",
+    "action_low": "Take the planned, relaxed train",
+    "action_high": "Rush for the earlier one"
+  },
+  {
+    "id": 201,
+    "situation": "A museum visit can start now with a €12 express ticket, or in 90 minutes for free.",
+    "action_low": "Wait for free entry",
+    "action_high": "Pay and enter now"
+  },
+  {
+    "id": 202,
+    "situation": "A repair can be done today for €80 or in three days for €35.",
+    "action_low": "Wait for the cheaper repair",
+    "action_high": "Pay for the faster repair"
+  },
+  {
+    "id": 203,
+    "situation": "A bus leaves in 25 minutes; a taxi takes 8 minutes and costs €18.",
+    "action_low": "Take the bus",
+    "action_high": "Take the taxi"
+  },
+  {
+    "id": 204,
+    "situation": "A hotel offers a €25 upgrade for a room available two hours earlier.",
+    "action_low": "Keep the cheaper room",
+    "action_high": "Pay for the earlier room"
+  },
+  {
+    "id": 205,
+    "situation": "A queue has 30 people. You can wait or pay €5 for priority access.",
+    "action_low": "Wait",
+    "action_high": "Pay for priority"
+  },
+  {
+    "id": 206,
+    "situation": "A book costs €25 at the shop now or €15 online arriving in four days.",
+    "action_low": "Order cheaply",
+    "action_high": "Buy it now"
+  },
+  {
+    "id": 207,
+    "situation": "A train arrives in 12 minutes; a bike rental costs €6 and takes 7 minutes.",
+    "action_low": "Wait for the train",
+    "action_high": "Rent the bike"
+  },
+  {
+    "id": 208,
+    "situation": "A meal delivery costs €4 more for a 20-minute delivery instead of 50 minutes.",
+    "action_low": "Choose the cheaper delivery",
+    "action_high": "Pay for faster delivery"
+  },
+  {
+    "id": 209,
+    "situation": "A software feature can be unlocked for €10 immediately or for free after a 30-minute tutorial.",
+    "action_low": "Do the tutorial",
+    "action_high": "Pay to unlock it"
+  },
+  {
+    "id": 210,
+    "situation": "You can walk 35 minutes or pay €9 for a ride taking 8 minutes.",
+    "action_low": "Walk",
+    "action_high": "Pay for the ride"
+  },
+  {
+    "id": 211,
+    "situation": "A shortcut saves 40 minutes but has a 20% chance of adding an hour.",
+    "action_low": "Take the safe route",
+    "action_high": "Take the shortcut"
+  },
+  {
+    "id": 212,
+    "situation": "You can invest €100 in a project with a 50% chance of returning €220.",
+    "action_low": "Keep the €100",
+    "action_high": "Invest it"
+  },
+  {
+    "id": 213,
+    "situation": "A restaurant has an experimental menu with a 50% discount but unfamiliar dishes.",
+    "action_low": "Order the familiar dish",
+    "action_high": "Try the experimental menu"
+  },
+  {
+    "id": 214,
+    "situation": "A hiking trail is marked difficult but is known to have spectacular views.",
+    "action_low": "Take the easier trail",
+    "action_high": "Take the difficult trail"
+  },
+  {
+    "id": 215,
+    "situation": "You can enter a competition with a 5% chance of winning €1,000 and no entry fee.",
+    "action_low": "Do not enter",
+    "action_high": "Enter"
+  },
+  {
+    "id": 216,
+    "situation": "A flight with a short connection saves €120 but risks a missed connection.",
+    "action_low": "Take the safer flight",
+    "action_high": "Take the short connection"
+  },
+  {
+    "id": 217,
+    "situation": "A new product has no reviews but costs half as much as the established one.",
+    "action_low": "Buy the established product",
+    "action_high": "Try the new one"
+  },
+  {
+    "id": 218,
+    "situation": "A friend proposes a last-minute trip with uncertain accommodation.",
+    "action_low": "Stay with the original plan",
+    "action_high": "Go"
+  },
+  {
+    "id": 219,
+    "situation": "A game lets you bank your winnings or gamble them for a larger prize.",
+    "action_low": "Bank the winnings",
+    "action_high": "Gamble for more"
+  },
+  {
+    "id": 220,
+    "situation": "You can choose a guaranteed small bonus or a 25% chance of a much larger one.",
+    "action_low": "Take the guaranteed bonus",
+    "action_high": "Take the gamble"
+  },
+  {
+    "id": 221,
+    "situation": "Everyone at dinner orders the same unusual dish, but you have not tried it.",
+    "action_low": "Order something else",
+    "action_high": "Order what everyone else orders"
+  },
+  {
+    "id": 222,
+    "situation": "A meeting strongly favors one proposal, but you prefer another.",
+    "action_low": "Support your preferred proposal",
+    "action_high": "Go with the group"
+  },
+  {
+    "id": 223,
+    "situation": "Most people in a queue move to a different line, though you do not know why.",
+    "action_low": "Stay in your line",
+    "action_high": "Follow them"
+  },
+  {
+    "id": 224,
+    "situation": "A group laughs at a joke you do not find funny.",
+    "action_low": "Remain neutral",
+    "action_high": "Laugh along"
+  },
+  {
+    "id": 225,
+    "situation": "Your friends all recommend a movie you suspect you will dislike.",
+    "action_low": "Choose another movie",
+    "action_high": "Watch it with them"
+  },
+  {
+    "id": 226,
+    "situation": "A colleague says everyone uses a particular shortcut at work.",
+    "action_low": "Use your own method",
+    "action_high": "Use the common shortcut"
+  },
+  {
+    "id": 227,
+    "situation": "A room is decorated in a style you dislike, but everyone praises it.",
+    "action_low": "Say you dislike it",
+    "action_high": "Join the praise"
+  },
+  {
+    "id": 228,
+    "situation": "Nine people choose the same answer on a quiz and you have no strong opinion.",
+    "action_low": "Choose independently",
+    "action_high": "Choose the majority answer"
+  },
+  {
+    "id": 229,
+    "situation": "Everyone is dressed formally at an event where the invitation was vague.",
+    "action_low": "Dress as planned",
+    "action_high": "Adapt to the group"
+  },
+  {
+    "id": 230,
+    "situation": "A group wants to leave a party early even though you are enjoying yourself.",
+    "action_low": "Stay longer",
+    "action_high": "Leave with the group"
+  },
+  {
+    "id": 231,
+    "situation": "Your seat on a train is occupied by someone who made a mistake.",
+    "action_low": "Find another seat",
+    "action_high": "Ask them to move"
+  },
+  {
+    "id": 232,
+    "situation": "A waiter forgets your drink twice.",
+    "action_low": "Say nothing",
+    "action_high": "Complain politely"
+  },
+  {
+    "id": 233,
+    "situation": "Someone cuts in front of you in a queue.",
+    "action_low": "Let it go",
+    "action_high": "Ask them to go to the back"
+  },
+  {
+    "id": 234,
+    "situation": "A colleague repeatedly interrupts you in a meeting.",
+    "action_low": "Continue without confronting them",
+    "action_high": "Tell them to let you finish"
+  },
+  {
+    "id": 235,
+    "situation": "A shop charges you €10 too much.",
+    "action_low": "Accept it",
+    "action_high": "Ask for the correction"
+  },
+  {
+    "id": 236,
+    "situation": "A friend repeatedly arrives late to meet you.",
+    "action_low": "Adapt to them",
+    "action_high": "Tell them it bothers you"
+  },
+  {
+    "id": 237,
+    "situation": "A neighbor's music is too loud late at night.",
+    "action_low": "Tolerate it",
+    "action_high": "Ask them to turn it down"
+  },
+  {
+    "id": 238,
+    "situation": "A host serves food you cannot eat.",
+    "action_low": "Manage quietly",
+    "action_high": "Ask for an alternative"
+  },
+  {
+    "id": 239,
+    "situation": "Someone takes your parking space after you were waiting for it.",
+    "action_low": "Find another space",
+    "action_high": "Challenge them"
+  },
+  {
+    "id": 240,
+    "situation": "A team member presents your idea without crediting you.",
+    "action_low": "Let it pass",
+    "action_high": "Mention that it was your idea"
+  },
+  {
+    "id": 241,
+    "situation": "You have a free evening: a familiar film or an unfamiliar local event.",
+    "action_low": "Watch the familiar film",
+    "action_high": "Try the new event"
+  },
+  {
+    "id": 242,
+    "situation": "A restaurant offers your usual meal or a chef's surprise dish.",
+    "action_low": "Order your usual meal",
+    "action_high": "Try the surprise dish"
+  },
+  {
+    "id": 243,
+    "situation": "A vacation can revisit a favorite place or explore a new country.",
+    "action_low": "Return to the favorite place",
+    "action_high": "Explore somewhere new"
+  },
+  {
+    "id": 244,
+    "situation": "You can learn a skill you already partly know or a completely new skill.",
+    "action_low": "Improve the familiar skill",
+    "action_high": "Start the new skill"
+  },
+  {
+    "id": 245,
+    "situation": "A friend recommends an author you have never heard of.",
+    "action_low": "Read a familiar author",
+    "action_high": "Try the new author"
+  },
+  {
+    "id": 246,
+    "situation": "You can take a familiar route or a scenic route you have never used.",
+    "action_low": "Take the familiar route",
+    "action_high": "Take the new route"
+  },
+  {
+    "id": 247,
+    "situation": "A weekend offers your favorite activity or an unusual workshop.",
+    "action_low": "Choose your favorite activity",
+    "action_high": "Try the workshop"
+  },
+  {
+    "id": 248,
+    "situation": "A game has a familiar strategy and an unexplored strategy.",
+    "action_low": "Use the familiar strategy",
+    "action_high": "Experiment"
+  },
+  {
+    "id": 249,
+    "situation": "You can order a known dessert or an unusual seasonal one.",
+    "action_low": "Order the known dessert",
+    "action_high": "Try the seasonal one"
+  },
+  {
+    "id": 250,
+    "situation": "A museum offers a familiar exhibition or a new one on an unfamiliar topic.",
+    "action_low": "Visit the familiar exhibition",
+    "action_high": "Visit the unfamiliar one"
+  },
+  {
+    "id": 251,
+    "situation": "Your weekend is planned, but a friend proposes an unexpected day trip.",
+    "action_low": "Keep the plan",
+    "action_high": "Take the day trip"
+  },
+  {
+    "id": 252,
+    "situation": "You have a month before a presentation.",
+    "action_low": "Prepare early",
+    "action_high": "Work closer to the deadline"
+  },
+  {
+    "id": 253,
+    "situation": "A trip can be booked in detail or left mostly open.",
+    "action_low": "Plan the itinerary",
+    "action_high": "Leave it open"
+  },
+  {
+    "id": 254,
+    "situation": "You can pack everything the night before or in the morning.",
+    "action_low": "Pack early",
+    "action_high": "Pack later"
+  },
+  {
+    "id": 255,
+    "situation": "A project has a clear deadline but no intermediate milestones.",
+    "action_low": "Create milestones",
+    "action_high": "Work toward the deadline directly"
+  },
+  {
+    "id": 256,
+    "situation": "You have three errands in one area.",
+    "action_low": "Plan the optimal route",
+    "action_high": "Do them in whatever order feels natural"
+  },
+  {
+    "id": 257,
+    "situation": "A restaurant requires reservations six weeks ahead.",
+    "action_low": "Book early",
+    "action_high": "Decide later"
+  },
+  {
+    "id": 258,
+    "situation": "You are going camping with uncertain weather.",
+    "action_low": "Pack for several possibilities",
+    "action_high": "Pack minimally"
+  },
+  {
+    "id": 259,
+    "situation": "You receive a complicated task with no immediate deadline.",
+    "action_low": "Start now",
+    "action_high": "Wait until it becomes urgent"
+  },
+  {
+    "id": 260,
+    "situation": "You have a free afternoon and no plans.",
+    "action_low": "Schedule something",
+    "action_high": "Keep it completely open"
+  },
+  {
+    "id": 261,
+    "situation": "You and a stranger receive €100 together and must decide how to split it.",
+    "action_low": "Offer half",
+    "action_high": "Offer yourself more"
+  },
+  {
+    "id": 262,
+    "situation": "A friend did most of the work on a shared project.",
+    "action_low": "Split the credit equally",
+    "action_high": "Give them more credit"
+  },
+  {
+    "id": 263,
+    "situation": "You receive two free tickets but your friend contributed more money to the original purchase.",
+    "action_low": "Keep both",
+    "action_high": "Give one to the friend"
+  },
+  {
+    "id": 264,
+    "situation": "A group bill contains an error that benefits you.",
+    "action_low": "Say nothing",
+    "action_high": "Point out the error"
+  },
+  {
+    "id": 265,
+    "situation": "You win a prize partly because of a teammate's contribution.",
+    "action_low": "Keep the prize",
+    "action_high": "Share it"
+  },
+  {
+    "id": 266,
+    "situation": "A colleague is accidentally given less compensation than others for the same work.",
+    "action_low": "Leave it alone",
+    "action_high": "Raise the issue"
+  },
+  {
+    "id": 267,
+    "situation": "A game reward can be divided equally or according to contribution.",
+    "action_low": "Divide equally",
+    "action_high": "Divide by contribution"
+  },
+  {
+    "id": 268,
+    "situation": "You are given an extra serving when others have none.",
+    "action_low": "Keep it",
+    "action_high": "Offer to share"
+  },
+  {
+    "id": 269,
+    "situation": "A friend loses a bet because of a technicality you think is unfair.",
+    "action_low": "Accept the result",
+    "action_high": "Return the stake"
+  },
+  {
+    "id": 270,
+    "situation": "A queue has a reserved place for someone who arrives after you.",
+    "action_low": "Give them the place",
+    "action_high": "Insist on first-come-first-served"
+  },
+  {
+    "id": 271,
+    "situation": "A friend breaks a minor rule at work and asks you not to mention it.",
+    "action_low": "Tell someone",
+    "action_high": "Keep it private"
+  },
+  {
+    "id": 272,
+    "situation": "A colleague you like makes a mistake that could hurt the team.",
+    "action_low": "Report it",
+    "action_high": "Talk to them privately first"
+  },
+  {
+    "id": 273,
+    "situation": "A friend is criticized unfairly by someone else.",
+    "action_low": "Stay neutral",
+    "action_high": "Defend your friend"
+  },
+  {
+    "id": 274,
+    "situation": "Your team is wrong about a decision, but admitting it would embarrass everyone.",
+    "action_low": "Admit the mistake",
+    "action_high": "Protect the team"
+  },
+  {
+    "id": 275,
+    "situation": "A friend asks you to keep a harmless secret.",
+    "action_low": "Keep it",
+    "action_high": "Tell someone you trust"
+  },
+  {
+    "id": 276,
+    "situation": "A former colleague asks for help after leaving your organization badly.",
+    "action_low": "Decline",
+    "action_high": "Help them"
+  },
+  {
+    "id": 277,
+    "situation": "Someone you know receives unfair criticism from your manager.",
+    "action_low": "Stay out of it",
+    "action_high": "Speak up"
+  },
+  {
+    "id": 278,
+    "situation": "Your friend wants to buy something you think is a bad deal.",
+    "action_low": "Let them decide",
+    "action_high": "Try to stop them"
+  },
+  {
+    "id": 279,
+    "situation": "A teammate is blamed for a failure you partly caused.",
+    "action_low": "Let them take responsibility",
+    "action_high": "Correct the record"
+  },
+  {
+    "id": 280,
+    "situation": "A friend asks you to choose between them and a group activity.",
+    "action_low": "Choose the group",
+    "action_high": "Choose the friend"
+  },
+  {
+    "id": 281,
+    "situation": "You can have a private room or a more prestigious room visible to others for €30 extra.",
+    "action_low": "Take the private room",
+    "action_high": "Pay for the prestigious room"
+  },
+  {
+    "id": 282,
+    "situation": "You can attend an exclusive event or an ordinary event with better content.",
+    "action_low": "Choose the better content",
+    "action_high": "Choose the exclusive event"
+  },
+  {
+    "id": 283,
+    "situation": "Your work is praised publicly but you receive no material benefit.",
+    "action_low": "Downplay it",
+    "action_high": "Enjoy the recognition"
+  },
+  {
+    "id": 284,
+    "situation": "You can use an expensive branded item or an equally good unbranded one.",
+    "action_low": "Use the unbranded item",
+    "action_high": "Choose the brand"
+  },
+  {
+    "id": 285,
+    "situation": "A restaurant offers a VIP table with no practical advantage.",
+    "action_low": "Take the normal table",
+    "action_high": "Take the VIP table"
+  },
+  {
+    "id": 286,
+    "situation": "You can have a job title upgrade without a salary increase.",
+    "action_low": "Decline",
+    "action_high": "Accept the title"
+  },
+  {
+    "id": 287,
+    "situation": "A group photo can place you prominently or everyone equally.",
+    "action_low": "Stand wherever",
+    "action_high": "Choose the prominent position"
+  },
+  {
+    "id": 288,
+    "situation": "You can enter an event through a special entrance that identifies you as a VIP.",
+    "action_low": "Use the normal entrance",
+    "action_high": "Use the VIP entrance"
+  },
+  {
+    "id": 289,
+    "situation": "A colleague receives praise for work you know you did better.",
+    "action_low": "Ignore it",
+    "action_high": "Seek recognition"
+  },
+  {
+    "id": 290,
+    "situation": "You can own a rare object that impresses visitors but has little practical use.",
+    "action_low": "Skip it",
+    "action_high": "Buy it"
+  },
+  {
+    "id": 291,
+    "situation": "€300 now or €450 in two years.",
+    "action_low": "Take €300 now",
+    "action_high": "Wait for €450"
+  },
+  {
+    "id": 292,
+    "situation": "A free dessert today or a voucher for three desserts next month.",
+    "action_low": "Take today's dessert",
+    "action_high": "Take the voucher"
+  },
+  {
+    "id": 293,
+    "situation": "Finish a project now with a decent result or spend another week making it excellent.",
+    "action_low": "Finish now",
+    "action_high": "Improve it"
+  },
+  {
+    "id": 294,
+    "situation": "Use your vacation days now or save them for a larger trip next year.",
+    "action_low": "Use them now",
+    "action_high": "Save them"
+  },
+  {
+    "id": 295,
+    "situation": "Buy a modest computer now or save for a better one in six months.",
+    "action_low": "Buy now",
+    "action_high": "Wait"
+  },
+  {
+    "id": 296,
+    "situation": "Receive a small guaranteed bonus or a larger bonus next year based on performance.",
+    "action_low": "Take the guaranteed bonus",
+    "action_high": "Wait for the larger bonus"
+  },
+  {
+    "id": 297,
+    "situation": "You can learn a useful skill quickly or a more valuable one slowly.",
+    "action_low": "Learn quickly",
+    "action_high": "Invest in the longer skill"
+  },
+  {
+    "id": 298,
+    "situation": "A repair can be patched today or replaced properly next month.",
+    "action_low": "Patch it",
+    "action_high": "Wait for the proper repair"
+  },
+  {
+    "id": 299,
+    "situation": "A book is available now in paperback or next month in a better edition.",
+    "action_low": "Buy now",
+    "action_high": "Wait"
+  },
+  {
+    "id": 300,
+    "situation": "A small party can happen tonight or a larger one can be organized next month.",
+    "action_low": "Party tonight",
+    "action_high": "Wait for the larger party"
+  },
+  {
+    "id": 301,
+    "situation": "You are at home. A museum ticket costs €12 now or is free after 90 minutes.",
+    "action_low": "Wait",
+    "action_high": "Pay and enter now"
+  },
+  {
+    "id": 302,
+    "situation": "You are traveling. A shortcut saves 40 minutes but has a 20% chance of a major delay.",
+    "action_low": "Take the safe route",
+    "action_high": "Take the shortcut"
+  },
+  {
+    "id": 303,
+    "situation": "You are at work. Your friends unanimously choose a movie you dislike.",
+    "action_low": "Suggest another",
+    "action_high": "Go with them"
+  },
+  {
+    "id": 304,
+    "situation": "You are with friends. Someone occupies your reserved seat by mistake.",
+    "action_low": "Find another seat",
+    "action_high": "Ask them to move"
+  },
+  {
+    "id": 305,
+    "situation": "You are on a weekend. You can revisit a favorite place or explore somewhere new.",
+    "action_low": "Return",
+    "action_high": "Explore"
+  },
+  {
+    "id": 306,
+    "situation": "You are at home. You have a month before an important presentation.",
+    "action_low": "Prepare early",
+    "action_high": "Wait until later"
+  },
+  {
+    "id": 307,
+    "situation": "You are traveling. You receive €20 more than you were supposed to receive.",
+    "action_low": "Keep it",
+    "action_high": "Correct it"
+  },
+  {
+    "id": 308,
+    "situation": "You are at work. A friend asks you to conceal a minor mistake.",
+    "action_low": "Tell someone",
+    "action_high": "Keep it private"
+  },
+  {
+    "id": 309,
+    "situation": "You are with friends. A VIP option costs €30 but has no practical advantage.",
+    "action_low": "Choose normal",
+    "action_high": "Choose VIP"
+  },
+  {
+    "id": 310,
+    "situation": "You are on a weekend. €300 now or €450 in two years.",
+    "action_low": "Take now",
+    "action_high": "Wait"
+  },
+  {
+    "id": 311,
+    "situation": "You are at home. A repair costs €35 next week or €80 today.",
+    "action_low": "Wait",
+    "action_high": "Pay for today"
+  },
+  {
+    "id": 312,
+    "situation": "You are traveling. You can invest €100 with a 50% chance of receiving €220.",
+    "action_low": "Keep it",
+    "action_high": "Invest it"
+  },
+  {
+    "id": 313,
+    "situation": "You are at work. Most people at a meeting favor an option you slightly dislike.",
+    "action_low": "Vote independently",
+    "action_high": "Follow the group"
+  },
+  {
+    "id": 314,
+    "situation": "You are with friends. A shop overcharges you by €10.",
+    "action_low": "Accept it",
+    "action_high": "Request correction"
+  },
+  {
+    "id": 315,
+    "situation": "You are on a weekend. You can order your usual dish or a chef's surprise.",
+    "action_low": "Usual dish",
+    "action_high": "Surprise"
+  },
+  {
+    "id": 316,
+    "situation": "You are at home. A trip can be planned in detail or left open.",
+    "action_low": "Plan it",
+    "action_high": "Leave it open"
+  },
+  {
+    "id": 317,
+    "situation": "You are traveling. A teammate did most of the work.",
+    "action_low": "Take equal credit",
+    "action_high": "Give them more credit"
+  },
+  {
+    "id": 318,
+    "situation": "You are at work. A friend is criticized unfairly.",
+    "action_low": "Stay silent",
+    "action_high": "Defend them"
+  },
+  {
+    "id": 319,
+    "situation": "You are with friends. A brand costs twice as much for the same quality.",
+    "action_low": "Choose unbranded",
+    "action_high": "Choose the brand"
+  },
+  {
+    "id": 320,
+    "situation": "You are on a weekend. A modest product now or a better one in six months.",
+    "action_low": "Buy now",
+    "action_high": "Wait"
+  },
+  {
+    "id": 321,
+    "situation": "You are at home. A taxi costs €18 and takes 8 minutes; the bus is free and takes 30.",
+    "action_low": "Take the bus",
+    "action_high": "Take the taxi"
+  },
+  {
+    "id": 322,
+    "situation": "You are traveling. A new restaurant has no reviews but is half price.",
+    "action_low": "Choose the known restaurant",
+    "action_high": "Try it"
+  },
+  {
+    "id": 323,
+    "situation": "You are at work. Everyone at dinner orders the unfamiliar special.",
+    "action_low": "Order something else",
+    "action_high": "Order the special"
+  },
+  {
+    "id": 324,
+    "situation": "You are with friends. A colleague interrupts you repeatedly.",
+    "action_low": "Ignore it",
+    "action_high": "Stop them politely"
+  },
+  {
+    "id": 325,
+    "situation": "You are on a weekend. You can read a favorite author or an unfamiliar author.",
+    "action_low": "Favorite",
+    "action_high": "Unfamiliar"
+  },
+  {
+    "id": 326,
+    "situation": "You are at home. You have a complicated task with no immediate deadline.",
+    "action_low": "Start now",
+    "action_high": "Wait"
+  },
+  {
+    "id": 327,
+    "situation": "You are traveling. A bill error benefits you.",
+    "action_low": "Say nothing",
+    "action_high": "Point it out"
+  },
+  {
+    "id": 328,
+    "situation": "You are at work. A teammate is blamed for your mistake.",
+    "action_low": "Let it stand",
+    "action_high": "Correct the record"
+  },
+  {
+    "id": 329,
+    "situation": "You are with friends. You can have a prestigious title without more money.",
+    "action_low": "Decline",
+    "action_high": "Accept it"
+  },
+  {
+    "id": 330,
+    "situation": "You are on a weekend. A small reward today or a larger one next year.",
+    "action_low": "Take today",
+    "action_high": "Wait"
+  },
+  {
+    "id": 331,
+    "situation": "You are at home. A meal arrives in 20 minutes for €4 extra or in 50 minutes for free.",
+    "action_low": "Wait",
+    "action_high": "Pay for speed"
+  },
+  {
+    "id": 332,
+    "situation": "You are traveling. A difficult hiking route offers exceptional views.",
+    "action_low": "Take the easy route",
+    "action_high": "Take the difficult route"
+  },
+  {
+    "id": 333,
+    "situation": "You are at work. A group changes plans suddenly and expects everyone to follow.",
+    "action_low": "Keep your plan",
+    "action_high": "Follow them"
+  },
+  {
+    "id": 334,
+    "situation": "You are with friends. A neighbor is making noise late at night.",
+    "action_low": "Tolerate it",
+    "action_high": "Ask them to stop"
+  },
+  {
+    "id": 335,
+    "situation": "You are on a weekend. You can take the known route or a scenic unknown route.",
+    "action_low": "Known route",
+    "action_high": "Unknown route"
+  },
+  {
+    "id": 336,
+    "situation": "You are at home. You are camping with uncertain weather.",
+    "action_low": "Pack contingencies",
+    "action_high": "Pack minimally"
+  },
+  {
+    "id": 337,
+    "situation": "You are traveling. A stranger receives less than you in an equal-share situation.",
+    "action_low": "Accept it",
+    "action_high": "Offer a fairer split"
+  },
+  {
+    "id": 338,
+    "situation": "You are at work. A friend needs help after a disagreement with your group.",
+    "action_low": "Decline",
+    "action_high": "Help them"
+  },
+  {
+    "id": 339,
+    "situation": "You are with friends. You can be prominently featured in a group photo.",
+    "action_low": "Stand anywhere",
+    "action_high": "Take the prominent position"
+  },
+  {
+    "id": 340,
+    "situation": "You are on a weekend. Finish now with a good result or improve it for another week.",
+    "action_low": "Finish",
+    "action_high": "Improve"
+  }
+]

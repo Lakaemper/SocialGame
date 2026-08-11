@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ game.name }} — Results{% endblock %}
+{% block content %}
+    <h1>{{ game.name }}</h1>
+    <p class="hint">Final results</p>
+
+    <ul class="details">
+        {% for name, score in standings %}
+            <li>{{ loop.index }}. {{ name }} &mdash; {{ score }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="button-stack">
+        <a class="btn btn-secondary" href="{{ url_for('index') }}">Back to start</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Join Game{% endblock %}
+{% block content %}
+    <h1>Join Game</h1>
+
+    {% if error %}
+        <ul class="errors">
+            <li>{{ error }}</li>
+        </ul>
+    {% endif %}
+
+    <form method="post" action="{{ url_for('join_game') }}">
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password" autofocus>
+
+        <div class="button-row">
+            <a class="btn btn-secondary" href="{{ url_for('index') }}">Cancel</a>
+            <button class="btn btn-primary" type="submit">Join</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Manage Game{% endblock %}
+{% block content %}
+    <h1>Manage Game</h1>
+
+    <div class="button-row">
+        {% if can_create %}
+            <a class="btn btn-primary" href="{{ url_for('create_game') }}">Create</a>
+        {% else %}
+            <span class="btn btn-disabled">Create</span>
+        {% endif %}
+
+        {% if can_remove %}
+            <form method="post" action="{{ url_for('remove_game') }}" class="btn-form">
+                <button class="btn btn-primary" type="submit">Remove</button>
+            </form>
+        {% else %}
+            <span class="btn btn-disabled">Remove</span>
+        {% endif %}
+    </div>
+
+    {% if not can_create %}
+        <p class="hint">A game is already active. Remove it before creating a new one.</p>
+    {% endif %}
+    {% if not can_remove %}
+        <p class="hint">There is no active game to remove.</p>
+    {% endif %}
+
+    <div class="button-stack">
+        <a class="btn btn-secondary" href="{{ url_for('index') }}">Back</a>
+    </div>
+{% endblock %}

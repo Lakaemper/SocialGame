@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Create Game{% endblock %}
+{% block content %}
+    <h1>Create Game</h1>
+
+    {% if errors %}
+        <ul class="errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="post" action="{{ url_for('create_game') }}">
+        <label for="name">Name of game</label>
+        <input type="text" id="name" name="name" value="{{ name or '' }}">
+
+        <label for="password">Password to join</label>
+        <input type="text" id="password" name="password" value="{{ password or '' }}">
+
+        <label for="num_players">Number of players</label>
+        <input type="number" id="num_players" name="num_players" min="1" value="{{ num_players or '' }}">
+
+        <label for="num_questions">Number of Questions</label>
+        <input type="number" id="num_questions" name="num_questions" min="1" value="{{ num_questions or '' }}">
+
+        <div class="button-row">
+            <a class="btn btn-secondary" href="{{ url_for('index') }}">Cancel</a>
+            <button class="btn btn-primary" type="submit">Create</button>
+        </div>
+    </form>
+{% endblock %}

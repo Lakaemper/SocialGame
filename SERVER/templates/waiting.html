@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{{ game.name }}{% endblock %}
+{% block content %}
+    <h1>{{ game.name }}</h1>
+    <p class="hint">Waiting for {{ game.num_players }} players</p>
+
+    <p>Joined: <span id="joined-list">{{ game.players|join(', ') }}</span></p>
+
+    <script>
+        const statusUrl = {{ url_for('waiting_status')|tojson }};
+        const playUrl = {{ url_for('play')|tojson }};
+
+        async function poll() {
+            try {
+                const res = await fetch(statusUrl);
+                const data = await res.json();
+
+                if (!data.active) {
+                    return;
+                }
+
+                document.getElementById("joined-list").textContent = data.players.join(", ");
+
+                if (data.ready) {
+                    window.location.href = playUrl;
+                    return;
+                }
+            } catch (err) {
+                // ignore transient network errors and keep polling
+            }
+
+            setTimeout(poll, 2000);
+        }
+
+        poll();
+    </script>
+{% endblock %}

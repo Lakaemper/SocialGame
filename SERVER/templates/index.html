@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Social Game{% endblock %}
+{% block content %}
+    <h1>Social Game</h1>
+    <div class="button-stack">
+        <a class="btn btn-primary" href="{{ url_for('manage_game') }}">Manage Game</a>
+        <a class="btn btn-secondary" href="{{ url_for('join_game') }}">Join Game</a>
+    </div>
+{% endblock %}

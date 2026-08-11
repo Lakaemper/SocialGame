@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}{{ game.name }}{% endblock %}
+{% block content %}
+    <h1>{{ game.name }}</h1>
+    <p class="hint">Question {{ round_number }} of {{ total_rounds }}</p>
+
+    {% if step == 'answer' %}
+        <p class="situation">{{ question.situation }}</p>
+        <form method="post" action="{{ url_for('play_answer') }}">
+            <div class="slider-block">
+                <div class="slider-labels">
+                    <span>{{ question.action_low }}</span>
+                    <span>{{ question.action_high }}</span>
+                </div>
+                <input type="range" name="value" min="-10" max="10" value="0" step="1">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+
+    {% elif step == 'predict' %}
+        <p class="situation">{{ question.situation }}</p>
+        <p class="hint">Predict what each other player chose.</p>
+        <form method="post" action="{{ url_for('play_predict') }}">
+            {% for other in other_players %}
+                <div class="slider-block">
+                    <p class="predict-name">{{ other }}</p>
+                    <div class="slider-labels">
+                        <span>{{ question.action_low }}</span>
+                        <span>{{ question.action_high }}</span>
+                    </div>
+                    <input type="range" name="prediction_{{ other }}" min="-10" max="10" value="0" step="1">
+                </div>
+            {% endfor %}
+            <button class="btn btn-primary" type="submit">Submit predictions</button>
+        </form>
+
+    {% elif step == 'wait_reveal' %}
+        <p>Waiting for other players to finish their predictions&hellip;</p>
+
+    {% elif step == 'reveal' %}
+        <p class="situation">{{ question.situation }}</p>
+        <table class="reveal-table">
+            <thead>
+                <tr><th>Player</th><th>Actual</th><th>Your guess</th><th>Points</th></tr>
+            </thead>
+            <tbody>
+                {% for row in reveal_rows %}
+                    <tr>
+                        <td>{{ row.name }}</td>
+                        <td>{{ row.actual }}</td>
+                        <td>{{ row.predicted }}</td>
+                        <td>{{ row.points }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p class="hint">Round points: {{ round_points }} &mdash; Total: {{ total_score }}</p>
+
+        <h2>Standings</h2>
+        <ul class="details">
+            {% for name, score in standings %}
+                <li>{{ name }}: {{ score }}</li>
+            {% endfor %}
+        </ul>
+
+        <form method="post" action="{{ url_for('play_continue') }}">
+            <button class="btn btn-primary" type="submit">Continue</button>
+        </form>
+
+    {% elif step == 'wait_next' %}
+        <p>Waiting for other players to continue&hellip;</p>
+    {% endif %}
+
+    {% if step in ('wait_reveal', 'wait_next') %}
+        <script>
+            const statusUrl = {{ url_for('play_status')|tojson }};
+            const initialStep = {{ step|tojson }};
+            const initialRound = {{ (round_number - 1)|tojson }};
+
+            async function poll() {
+                try {
+                    const res = await fetch(statusUrl);
+                    const data = await res.json();
+                    if (data.active && (data.step !== initialStep || data.round_index !== initialRound)) {
+                        window.location.reload();
+                        return;
+                    }
+                } catch (err) {
+                    // ignore transient network errors and keep polling
+                }
+                setTimeout(poll, 2000);
+            }
+
+            poll();
+        </script>
+    {% endif %}
+{% endblock %}
