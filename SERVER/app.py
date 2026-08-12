@@ -18,6 +18,18 @@ LANGUAGES = {
     "de": {"label": "Deutsch", "file": "QuestionsAndAnswers_ger.json"},
 }
 
+COLOR_SCHEMES = {
+    "red": {"label": "Red"},
+    "blue": {"label": "Blue"},
+    "green": {"label": "Green"},
+    "pop": {"label": "Pop (colorful)"},
+}
+
+
+@app.context_processor
+def inject_theme():
+    return {"theme": current_game["color_scheme"] if current_game else "red"}
+
 QUESTION_POOLS = {}
 for lang_code, lang_info in LANGUAGES.items():
     with open(os.path.join(DATA_DIR, lang_info["file"]), encoding="utf-8") as f:
@@ -88,6 +100,16 @@ def own_score_breakdown(game, round_data, player_name):
     }
 
 
+def value_to_pct(value):
+    return max(0, min(100, (value + 10) / 20 * 100))
+
+
+def ratio_to_pct(value, max_value):
+    if max_value <= 0:
+        return 0
+    return max(0, min(100, value / max_value * 100))
+
+
 def award_round_scores(game, round_data):
     scores = game["game_state"]["scores"]
     for player_name in game["players"]:
@@ -125,12 +147,21 @@ def create_game():
         return redirect(url_for("manage_game"))
 
     if request.method == "GET":
-        return render_template("create.html", languages=LANGUAGES, language="en")
+        return render_template(
+            "create.html",
+            languages=LANGUAGES,
+            language="de",
+            num_players=3,
+            num_questions=10,
+            color_schemes=COLOR_SCHEMES,
+            color_scheme="red",
+        )
 
     password = request.form.get("password", "").strip()
     num_players = request.form.get("num_players", "").strip()
     num_questions = request.form.get("num_questions", "").strip()
     language = request.form.get("language", "").strip()
+    color_scheme = request.form.get("color_scheme", "").strip()
 
     errors = []
     if not num_players.isdigit() or int(num_players) < 1:
@@ -139,6 +170,8 @@ def create_game():
         errors.append("Number of questions must be a positive number.")
     if language not in LANGUAGES:
         errors.append("Please choose a valid language.")
+    if color_scheme not in COLOR_SCHEMES:
+        errors.append("Please choose a valid color scheme.")
 
     if errors:
         return render_template(
@@ -149,6 +182,8 @@ def create_game():
             num_questions=num_questions,
             language=language,
             languages=LANGUAGES,
+            color_scheme=color_scheme,
+            color_schemes=COLOR_SCHEMES,
         )
 
     current_game = {
@@ -156,6 +191,7 @@ def create_game():
         "num_players": int(num_players),
         "num_questions": int(num_questions),
         "language": language,
+        "color_scheme": color_scheme,
         "players": [],
         "started": False,
     }
@@ -274,7 +310,16 @@ def play():
             actual = round_data["answers"][other]
             predicted = my_predictions[other]
             points = max(0, 10 - abs(predicted - actual))
-            reveal_rows.append({"name": other, "actual": actual, "predicted": predicted, "points": points})
+            reveal_rows.append({
+                "name": other,
+                "actual": actual,
+                "predicted": predicted,
+                "points": points,
+                "actual_pct": value_to_pct(actual),
+                "predicted_pct": value_to_pct(predicted),
+                "line_left_pct": value_to_pct(min(actual, predicted)),
+                "line_width_pct": value_to_pct(max(actual, predicted)) - value_to_pct(min(actual, predicted)),
+            })
 
         guess_total = guess_score(round_data, player_name)
         own = own_score_breakdown(current_game, round_data, player_name)
@@ -283,11 +328,34 @@ def play():
         context["reveal_rows"] = reveal_rows
         context["guess_total"] = guess_total
         context["own_answer"] = own["my_answer"]
+        context["own_answer_pct"] = value_to_pct(own["my_answer"])
         context["own_mean"] = round(own["mean"], 1) if own["mean"] is not None else None
         context["own_std"] = round(own["std"], 1) if own["std"] is not None else None
+        if own["mean"] is not None:
+            band_low = own["mean"] - own["std"]
+            band_high = own["mean"] + own["std"]
+            context["own_band_left_pct"] = value_to_pct(band_low)
+            context["own_band_width_pct"] = value_to_pct(band_high) - value_to_pct(band_low)
         context["own_points"] = own_points
         context["round_points"] = guess_total + own_points
         context["standings"] = sorted(gs["scores"].items(), key=lambda kv: -kv[1])
+
+        num_players = current_game["num_players"]
+        max_guess_per_round = 10 * (num_players - 1)
+        scatter_points = []
+        for p in current_game["players"]:
+            if p == player_name:
+                p_own_points, p_guess_points = own_points, guess_total
+            else:
+                p_own_points = round(own_score_breakdown(current_game, round_data, p)["own_score"])
+                p_guess_points = guess_score(round_data, p)
+            scatter_points.append({
+                "name": p,
+                "is_you": p == player_name,
+                "x_pct": ratio_to_pct(p_own_points, 10),
+                "y_pct": ratio_to_pct(p_guess_points, max_guess_per_round),
+            })
+        context["scatter_points"] = scatter_points
 
     return render_template("play.html", **context)
 

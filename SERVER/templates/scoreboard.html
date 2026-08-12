@@ -1,16 +1,26 @@
 {% extends "base.html" %}
-{% block title %}Read the Room! — Results{% endblock %}
+{% block title %}Final Results{% endblock %}
 {% block content %}
-    <h1>Read the Room!</h1>
-    <p class="hint">Final results</p>
+    <h1>Final Results</h1>
 
-    <ul class="details">
-        {% for name, score in standings %}
-            <li>{{ loop.index }}. {{ name }} &mdash; {{ score }}</li>
-        {% endfor %}
-    </ul>
+    <p class="situation center-heading">Winner: {{ standings[0][0] }}</p>
+
+    <table class="results-table">
+        <thead>
+            <tr><th>Position</th><th>Name</th><th>Score</th></tr>
+        </thead>
+        <tbody>
+            {% for name, score in standings %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ name }}</td>
+                    <td>{{ score }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
     <div class="button-stack">
-        <a class="btn btn-secondary" href="{{ url_for('index') }}">Back to start</a>
+        <a class="btn btn-primary" href="{{ url_for('index') }}">Finish</a>
     </div>
 {% endblock %}

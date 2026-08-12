@@ -23,7 +23,7 @@
                         <span class="slider-label-sep">|</span>
                         <span class="slider-label-high">{{ question.action_high }}</span>
                     </div>
-                    <input type="range" name="value" min="-10" max="10" value="0" step="1">
+                    <input type="range" name="value" min="-10" max="10" value="0" step="5">
                 </div>
 
                 <hr class="separator separator-light">
@@ -32,7 +32,7 @@
                 {% for other in other_players %}
                     <div class="slider-block">
                         <p class="predict-name">{{ other }}</p>
-                        <input type="range" class="slider-them" name="prediction_{{ other }}" min="-10" max="10" value="0" step="1">
+                        <input type="range" class="slider-them" name="prediction_{{ other }}" min="-10" max="10" value="0" step="5">
                     </div>
                 {% endfor %}
 
@@ -56,51 +56,82 @@
     {% elif step == 'reveal' %}
         <p class="situation question-number">Score Card Question {{ round_number }}</p>
 
-        <h2 class="center-heading"><span class="hl-you">YOUR</span> points for being predictable:</h2>
-        <p class="hint">Your answer: {{ own_answer }}</p>
-        {% if own_mean is not none %}
-            <p class="hint">Friends guessed on average {{ own_mean }} (&plusmn;{{ own_std }})</p>
-        {% endif %}
-        <p class="hint"><span class="points-highlight">Points: {{ own_points }}</span></p>
+        <div id="scorecard-summary">
+            <p class="score-legend">Other&rsquo;s view &uarr;</p>
+            <div class="scatter-plot">
+                <div class="scatter-axis scatter-axis-v"></div>
+                <div class="scatter-axis scatter-axis-h"></div>
+                {% for pt in scatter_points %}
+                    <div class="scatter-point" style="left: {{ 10 + pt.x_pct * 0.8 }}%; top: {{ 10 + (100 - pt.y_pct) * 0.8 }}%;">
+                        <span class="scatter-label">{{ 'YOU' if pt.is_you else pt.name }}</span>
+                        <span class="scatter-dot {{ 'scatter-dot-you' if pt.is_you else 'scatter-dot-them' }}"></span>
+                    </div>
+                {% endfor %}
+            </div>
+            <p class="score-legend">Self-view &rarr;</p>
+        </div>
+
+        <div id="scorecard-details" class="hidden">
+            <h2 class="center-heading"><span class="hl-you">YOUR</span> points for being predictable:</h2>
+            <div class="slider-labels">
+                <span class="slider-label-low">{{ question.action_low }}</span>
+                <span class="slider-label-sep">|</span>
+                <span class="slider-label-high">{{ question.action_high }}</span>
+            </div>
+            <div class="score-track">
+                {% if own_mean is not none %}
+                    <div class="score-band" style="left: {{ own_band_left_pct }}%; width: {{ own_band_width_pct }}%;"></div>
+                {% endif %}
+                <div class="score-dot score-dot-you" style="left: {{ own_answer_pct }}%;"></div>
+            </div>
+            <p class="hint"><span class="points-highlight">Points: {{ own_points }}</span></p>
+
+            <hr class="separator separator-light">
+
+            <h2 class="center-heading"><span class="hl-you">YOUR</span> points for reading the room:</h2>
+            {% for row in reveal_rows %}
+                <div class="score-row">
+                    <p class="predict-name">{{ row.name }}</p>
+                    <div class="score-track">
+                        <div class="score-line" style="left: {{ row.line_left_pct }}%; width: {{ row.line_width_pct }}%;"></div>
+                        <div class="score-dot score-dot-them" style="left: {{ row.actual_pct }}%;"></div>
+                        <div class="score-dot score-dot-you" style="left: {{ row.predicted_pct }}%;"></div>
+                    </div>
+                </div>
+            {% endfor %}
+            <p class="hint"><span class="points-highlight">Points: {{ guess_total }}</span></p>
+        </div>
+
+        <p class="hint"><span class="points-highlight">Round total: {{ round_points }}</span></p>
 
         <hr class="separator separator-light">
 
-        <h2 class="center-heading"><span class="hl-you">YOUR</span> points for reading the room:</h2>
-        <table class="reveal-table">
-            <thead>
-                <tr><th>Player</th><th>Actual</th><th>Your guess</th><th>Points</th></tr>
-            </thead>
+        <table class="results-table">
             <tbody>
-                {% for row in reveal_rows %}
+                {% for name, score in standings %}
                     <tr>
-                        <td>{{ row.name }}</td>
-                        <td>{{ row.actual }}</td>
-                        <td>{{ row.predicted }}</td>
-                        <td>{{ row.points }}</td>
+                        <td>{{ name }}</td>
+                        <td>{{ score }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <p class="hint"><span class="points-highlight">Points: {{ guess_total }}</span></p>
 
-        <hr class="separator">
-
-        <p class="hint"><span class="points-highlight">Round total: {{ round_points }}</span></p>
-
-        <h2>Standings</h2>
-        <ul class="details">
-            {% for name, score in standings %}
-                <li>{{ name }}: {{ score }}</li>
-            {% endfor %}
-        </ul>
-
-        <form method="post" action="{{ url_for('play_continue') }}">
-            <div class="button-center">
+        <div class="button-row">
+            <button type="button" class="btn btn-secondary" id="details-toggle">Details</button>
+            <form method="post" action="{{ url_for('play_continue') }}" class="btn-form">
                 <button class="btn btn-primary" type="submit">
                     {% if is_last_round %}Show Final Score{% else %}Next{% endif %}
                 </button>
-            </div>
-        </form>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById("details-toggle").addEventListener("click", function () {
+                document.getElementById("scorecard-summary").classList.toggle("hidden");
+                document.getElementById("scorecard-details").classList.toggle("hidden");
+            });
+        </script>
     {% endif %}
 
     {% if step == 'wait' %}

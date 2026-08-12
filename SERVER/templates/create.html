@@ -28,6 +28,13 @@
             {% endfor %}
         </select>
 
+        <label for="color_scheme">Color scheme</label>
+        <select id="color_scheme" name="color_scheme">
+            {% for code, info in color_schemes.items() %}
+                <option value="{{ code }}" {% if code == color_scheme %}selected{% endif %}>{{ info.label }}</option>
+            {% endfor %}
+        </select>
+
         <div class="button-row">
             <a class="btn btn-secondary" href="{{ url_for('index') }}">Cancel</a>
             <button class="btn btn-primary" type="submit">Create</button>
