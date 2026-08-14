@@ -1,0 +1,79 @@
+{% macro widget(timer_start) %}
+    <div class="timer-pie{{ '' if timer_start else ' hidden' }}" id="round-timer">
+        <span class="timer-pie-label" id="round-timer-label"></span>
+    </div>
+{% endmacro %}
+
+{% macro player_status_table(statuses) %}
+    <table class="results-table" id="player-status-table">
+        <tbody>
+            {% for p in statuses %}
+                <tr>
+                    <td>{{ p.name }}</td>
+                    <td class="status-cell">
+                        {% if p.done %}
+                            <span class="status-done">&check;</span>
+                        {% else %}
+                            <span class="status-busy"></span>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}
+
+{% macro script(timer_start, timer_duration, status_url, submit_selector=none) %}
+    <script>
+        (function () {
+            function startRoundTimer(startTs, duration, onExpire) {
+                const el = document.getElementById("round-timer");
+                const label = document.getElementById("round-timer-label");
+                if (!el) return;
+                el.classList.remove("hidden");
+                let expired = false;
+
+                function tick() {
+                    const elapsed = (Date.now() / 1000) - startTs;
+                    const remaining = Math.max(0, duration - elapsed);
+                    const consumedDeg = Math.min(360, (elapsed / duration) * 360);
+                    el.style.background = "conic-gradient(var(--border) 0deg " + consumedDeg + "deg, var(--accent) " + consumedDeg + "deg 360deg)";
+                    label.textContent = Math.ceil(remaining);
+                    if (remaining > 0) {
+                        requestAnimationFrame(tick);
+                    } else if (!expired) {
+                        expired = true;
+                        if (onExpire) onExpire();
+                    }
+                }
+
+                tick();
+            }
+
+            const onTimerExpire = {% if submit_selector %}function () {
+                const form = document.querySelector({{ submit_selector|tojson }});
+                if (form) form.submit();
+            }{% else %}null{% endif %};
+
+            const initialTimerStart = {{ (timer_start or 0)|tojson }};
+            const timerDuration = {{ timer_duration|tojson }};
+
+            if (initialTimerStart) {
+                startRoundTimer(initialTimerStart, timerDuration, onTimerExpire);
+            } else {
+                const timerStatusUrl = {{ status_url|tojson }};
+                (function pollForTimer() {
+                    fetch(timerStatusUrl).then(function (res) { return res.json(); }).then(function (data) {
+                        if (data.active && data.timer_start) {
+                            startRoundTimer(data.timer_start, data.timer_duration, onTimerExpire);
+                            return;
+                        }
+                        setTimeout(pollForTimer, 2000);
+                    }).catch(function () {
+                        setTimeout(pollForTimer, 2000);
+                    });
+                })();
+            }
+        })();
+    </script>
+{% endmacro %}

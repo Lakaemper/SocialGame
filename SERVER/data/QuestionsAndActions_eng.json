@@ -3,3240 +3,3780 @@
     "id": 1,
     "situation": "You are traveling and need to go 100 km. A train leaves in 4 hours for €10. A cab leaves immediately for €50.",
     "action_low": "Wait for train",
-    "action_high": "Take cab"
+    "action_high": "Take cab",
+    "type": "long"
   },
   {
     "id": 2,
     "situation": "At a restaurant, your meal is wrong. The waiter apologizes and offers to replace it, but that will take 20 minutes.",
     "action_low": "Eat it anyway",
-    "action_high": "Send it back"
+    "action_high": "Send it back",
+    "type": "long"
   },
   {
     "id": 3,
     "situation": "You're going on a 3-hour hike. The weather forecast says there's a 30% chance of heavy rain.",
     "action_low": "Go anyway",
-    "action_high": "Cancel"
+    "action_high": "Cancel",
+    "type": "long"
   },
   {
     "id": 4,
     "situation": "You have €100 left for the week. A friend invites you to an expensive dinner tonight.",
     "action_low": "Decline",
-    "action_high": "Go"
+    "action_high": "Go",
+    "type": "long"
   },
   {
     "id": 5,
     "situation": "Your group unanimously chooses a movie you don't want to see.",
     "action_low": "Watch it",
-    "action_high": "Convince them to change"
+    "action_high": "Convince them to change",
+    "type": "long"
   },
   {
     "id": 6,
     "situation": "You can receive €500 now, or €700 exactly one year from now.",
     "action_low": "Take €500",
-    "action_high": "Wait for €700"
+    "action_high": "Wait for €700",
+    "type": "long"
   },
   {
     "id": 7,
     "situation": "You find €50 on the street. There is no identification or way to find the owner.",
     "action_low": "Leave it / hand it in",
-    "action_high": "Keep it"
+    "action_high": "Keep it",
+    "type": "long"
   },
   {
     "id": 8,
     "situation": "You're invited to a party where you know nobody except the host.",
     "action_low": "Go",
-    "action_high": "Stay home"
+    "action_high": "Stay home",
+    "type": "long"
   },
   {
     "id": 9,
     "situation": "You have planned your Saturday carefully. A friend calls Friday evening and proposes an unexpected day trip.",
     "action_low": "Keep your plans",
-    "action_high": "Go on the trip"
+    "action_high": "Go on the trip",
+    "type": "long"
   },
   {
     "id": 10,
     "situation": "You are playing a game and realize you have misunderstood one of the rules. You have already benefited from the mistake. Nobody else noticed.",
     "action_low": "Tell everyone",
-    "action_high": "Keep playing"
+    "action_high": "Keep playing",
+    "type": "long"
   },
   {
     "id": 11,
     "situation": "Someone in your group makes a confident statement about a subject you know well. You are almost certain they're wrong.",
     "action_low": "Let it pass",
-    "action_high": "Correct them"
+    "action_high": "Correct them",
+    "type": "long"
   },
   {
     "id": 12,
     "situation": "You can buy a €10 lottery ticket with a 1% chance of winning €1,000.",
     "action_low": "Don't buy",
-    "action_high": "Buy"
+    "action_high": "Buy",
+    "type": "long"
   },
   {
     "id": 13,
     "situation": "You have an important decision to make. Two people you trust give opposite advice.",
     "action_low": "Decide yourself",
-    "action_high": "Ask another person"
+    "action_high": "Ask another person",
+    "type": "long"
   },
   {
     "id": 14,
     "situation": "You discover that a colleague has taken credit for an idea you originally proposed.",
     "action_low": "Say nothing",
-    "action_high": "Confront them"
+    "action_high": "Confront them",
+    "type": "long"
   },
   {
     "id": 15,
     "situation": "You can spend your evening reading a book you already know you'll enjoy, or trying something completely unfamiliar.",
     "action_low": "Familiar book",
-    "action_high": "Try something new"
+    "action_high": "Try something new",
+    "type": "long"
   },
   {
     "id": 16,
     "situation": "Your team is losing badly with five minutes left. A risky strategy gives you a small chance of winning but a good chance of losing even more badly.",
     "action_low": "Play safe",
-    "action_high": "Take the risk"
+    "action_high": "Take the risk",
+    "type": "long"
   },
   {
     "id": 17,
     "situation": "A friend asks you for €200. You could easily afford it, but you're not sure they'll ever pay you back.",
     "action_low": "Lend it",
-    "action_high": "Refuse"
+    "action_high": "Refuse",
+    "type": "long"
   },
   {
     "id": 18,
     "situation": "You arrive at an airport three hours before your flight. You can spend €30 to enter a comfortable lounge, or wait at the gate.",
     "action_low": "Wait",
-    "action_high": "Pay for lounge"
+    "action_high": "Pay for lounge",
+    "type": "long"
   },
   {
     "id": 19,
     "situation": "You are told that 80% of people chose option A in a difficult decision. You have no strong opinion yourself.",
     "action_low": "Choose independently",
-    "action_high": "Choose A"
+    "action_high": "Choose A",
+    "type": "long"
   },
   {
     "id": 20,
     "situation": "You are offered a job that pays 20% more but involves considerably more responsibility and uncertainty.",
     "action_low": "Keep current job",
-    "action_high": "Take new job"
+    "action_high": "Take new job",
+    "type": "long"
   },
   {
     "id": 21,
     "situation": "You're offered a fixed €2,000 bonus, or a 50% chance at €5,000 and a 50% chance at nothing.",
     "action_low": "Take the guaranteed €2,000",
-    "action_high": "Gamble for €5,000"
+    "action_high": "Gamble for €5,000",
+    "type": "long"
   },
   {
     "id": 22,
     "situation": "Your investment has dropped 20% this month. Experts are split on whether it will recover.",
     "action_low": "Sell now",
-    "action_high": "Hold and wait"
+    "action_high": "Hold and wait",
+    "type": "long"
   },
   {
     "id": 23,
     "situation": "You could buy travel insurance that covers cancellation, costing 5% of the trip price.",
     "action_low": "Skip the insurance",
-    "action_high": "Buy the insurance"
+    "action_high": "Buy the insurance",
+    "type": "long"
   },
   {
     "id": 24,
     "situation": "A stranger offers to sell you a \"guaranteed win\" betting tip for €20.",
     "action_low": "Ignore the offer",
-    "action_high": "Buy the tip"
+    "action_high": "Buy the tip",
+    "type": "long"
   },
   {
     "id": 25,
     "situation": "You have savings that could either sit safely in a bank account or be invested with higher risk and higher potential return.",
     "action_low": "Keep it safe",
-    "action_high": "Invest it"
+    "action_high": "Invest it",
+    "type": "long"
   },
   {
     "id": 26,
     "situation": "Your credit card company offers a low-interest loan for a purchase you don't really need.",
     "action_low": "Decline the loan",
-    "action_high": "Take the loan"
+    "action_high": "Take the loan",
+    "type": "long"
   },
   {
     "id": 27,
     "situation": "You find a freelance opportunity with unpredictable income, versus staying at your stable salaried job.",
     "action_low": "Stay salaried",
-    "action_high": "Go freelance"
+    "action_high": "Go freelance",
+    "type": "long"
   },
   {
     "id": 28,
     "situation": "A friend proposes splitting the cost of a lottery pool ticket with a small chance of a large payout.",
     "action_low": "Pass",
-    "action_high": "Join the pool"
+    "action_high": "Join the pool",
+    "type": "long"
   },
   {
     "id": 29,
     "situation": "You can negotiate hard for a lower price on a big purchase, risking the seller walking away, or accept the asking price.",
     "action_low": "Accept asking price",
-    "action_high": "Negotiate hard"
+    "action_high": "Negotiate hard",
+    "type": "long"
   },
   {
     "id": 30,
     "situation": "You're deciding whether to spend your entire bonus on a spontaneous vacation or save it for future needs.",
     "action_low": "Save it",
-    "action_high": "Spend it"
+    "action_high": "Spend it",
+    "type": "long"
   },
   {
     "id": 31,
     "situation": "A new restaurant just opened and reviews are mixed. A reliable favorite is just down the street.",
     "action_low": "Go to the favorite",
-    "action_high": "Try the new place"
+    "action_high": "Try the new place",
+    "type": "long"
   },
   {
     "id": 32,
     "situation": "You could pay extra for express shipping to get a package tomorrow, or wait a week for free shipping.",
     "action_low": "Wait for free shipping",
-    "action_high": "Pay for express"
+    "action_high": "Pay for express",
+    "type": "long"
   },
   {
     "id": 33,
     "situation": "Your car needs a repair. A cheaper, unlicensed mechanic could fix it for half the price, but without any guarantee.",
     "action_low": "Pay full price at a licensed shop",
-    "action_high": "Save money at the unlicensed shop"
+    "action_high": "Save money at the unlicensed shop",
+    "type": "long"
   },
   {
     "id": 34,
     "situation": "You're asked to co-sign a loan for a family member with an inconsistent income history.",
     "action_low": "Decline to co-sign",
-    "action_high": "Co-sign the loan"
+    "action_high": "Co-sign the loan",
+    "type": "long"
   },
   {
     "id": 35,
     "situation": "Your landlord offers a discount if you sign a longer lease than you'd planned.",
     "action_low": "Keep the shorter lease",
-    "action_high": "Take the discount and sign longer"
+    "action_high": "Take the discount and sign longer",
+    "type": "long"
   },
   {
     "id": 36,
     "situation": "A friend wants to start a small business together, requiring you to invest your own savings.",
     "action_low": "Stay out of it",
-    "action_high": "Invest your savings"
+    "action_high": "Invest your savings",
+    "type": "long"
   },
   {
     "id": 37,
     "situation": "You can pay off your debt slowly at low interest, or aggressively cut spending to be debt-free sooner.",
     "action_low": "Pay slowly",
-    "action_high": "Cut spending aggressively"
+    "action_high": "Cut spending aggressively",
+    "type": "long"
   },
   {
     "id": 38,
     "situation": "You're given the choice between a stable, low-risk retirement fund and a volatile, high-growth one.",
     "action_low": "Choose stable fund",
-    "action_high": "Choose volatile fund"
+    "action_high": "Choose volatile fund",
+    "type": "long"
   },
   {
     "id": 39,
     "situation": "A cashier gives you too much change back. It's a noticeable amount and they seem too busy to notice the error.",
     "action_low": "Keep it",
-    "action_high": "Point out the mistake"
+    "action_high": "Point out the mistake",
+    "type": "long"
   },
   {
     "id": 40,
     "situation": "You're filling out a form and realize a small exaggeration would improve your chances of approval.",
     "action_low": "Exaggerate slightly",
-    "action_high": "Answer truthfully"
+    "action_high": "Answer truthfully",
+    "type": "long"
   },
   {
     "id": 41,
     "situation": "Your friend asks if you like their new haircut. You honestly don't.",
     "action_low": "Say you like it",
-    "action_high": "Give honest feedback"
+    "action_high": "Give honest feedback",
+    "type": "long"
   },
   {
     "id": 42,
     "situation": "You witness a coworker taking office supplies home for personal use.",
     "action_low": "Say nothing",
-    "action_high": "Report it"
+    "action_high": "Report it",
+    "type": "long"
   },
   {
     "id": 43,
     "situation": "A shop clerk forgets to charge you for an item. You notice only after leaving the store.",
     "action_low": "Let it go",
-    "action_high": "Go back and pay"
+    "action_high": "Go back and pay",
+    "type": "long"
   },
   {
     "id": 44,
     "situation": "You're asked in an interview about a skill you don't actually have much experience with.",
     "action_low": "Overstate your experience",
-    "action_high": "Admit the gap honestly"
+    "action_high": "Admit the gap honestly",
+    "type": "long"
   },
   {
     "id": 45,
     "situation": "You accidentally damage a parked car in a lot with no cameras or witnesses.",
     "action_low": "Drive away",
-    "action_high": "Leave a note with your contact info"
+    "action_high": "Leave a note with your contact info",
+    "type": "long"
   },
   {
     "id": 46,
     "situation": "Your friend is dating someone you've heard troubling rumors about, but you're not fully sure they're true.",
     "action_low": "Stay quiet",
-    "action_high": "Tell your friend what you heard"
+    "action_high": "Tell your friend what you heard",
+    "type": "long"
   },
   {
     "id": 47,
     "situation": "You could take an extra day of sick leave you don't really need, and no one would question it.",
     "action_low": "Take the day off",
-    "action_high": "Go to work anyway"
+    "action_high": "Go to work anyway",
+    "type": "long"
   },
   {
     "id": 48,
     "situation": "A group project grade depends on equal contribution, but one member did much less work than the rest.",
     "action_low": "Let it go quietly",
-    "action_high": "Speak up about the imbalance"
+    "action_high": "Speak up about the imbalance",
+    "type": "long"
   },
   {
     "id": 49,
     "situation": "You find a wallet with cash and an ID inside.",
     "action_low": "Keep the cash, return the wallet",
-    "action_high": "Return everything untouched"
+    "action_high": "Return everything untouched",
+    "type": "long"
   },
   {
     "id": 50,
     "situation": "You're asked to write a reference for a former colleague whose work was actually mediocre.",
     "action_low": "Write a glowing reference anyway",
-    "action_high": "Give an honest, measured reference"
+    "action_high": "Give an honest, measured reference",
+    "type": "long"
   },
   {
     "id": 51,
     "situation": "Your partner asks how much a recent purchase cost. It was more than you'd like to admit.",
     "action_low": "Round down the price",
-    "action_high": "Tell them the exact amount"
+    "action_high": "Tell them the exact amount",
+    "type": "long"
   },
   {
     "id": 52,
     "situation": "You notice a friend's social media post contains information that isn't quite accurate.",
     "action_low": "Say nothing",
-    "action_high": "Gently correct it"
+    "action_high": "Gently correct it",
+    "type": "long"
   },
   {
     "id": 53,
     "situation": "A subscription service kept charging you after you thought you had cancelled, and you notice the extra charges.",
     "action_low": "Let it slide, it's a small amount",
-    "action_high": "Contact them to get a refund"
+    "action_high": "Contact them to get a refund",
+    "type": "long"
   },
   {
     "id": 54,
     "situation": "You're offered a chance to skip a long queue by pretending to know someone working there.",
     "action_low": "Take the shortcut",
-    "action_high": "Wait in line honestly"
+    "action_high": "Wait in line honestly",
+    "type": "long"
   },
   {
     "id": 55,
     "situation": "A friend's business idea is, in your opinion, unlikely to succeed. They ask what you think.",
     "action_low": "Offer polite encouragement",
-    "action_high": "Share your honest doubts"
+    "action_high": "Share your honest doubts",
+    "type": "long"
   },
   {
     "id": 56,
     "situation": "You accidentally received a payment intended for someone else with the same name.",
     "action_low": "Keep the money",
-    "action_high": "Return it to the rightful person"
+    "action_high": "Return it to the rightful person",
+    "type": "long"
   },
   {
     "id": 57,
     "situation": "You can eat one cookie now, or wait 10 minutes and get two cookies instead.",
     "action_low": "Eat one now",
-    "action_high": "Wait for two"
+    "action_high": "Wait for two",
+    "type": "long"
   },
   {
     "id": 58,
     "situation": "A software update promises better performance but takes 30 minutes to install right now.",
     "action_low": "Postpone the update",
-    "action_high": "Install it now"
+    "action_high": "Install it now",
+    "type": "long"
   },
   {
     "id": 59,
     "situation": "You're waiting in line for coffee. A mobile order pickup line looks faster but costs a small convenience fee.",
     "action_low": "Wait in the regular line",
-    "action_high": "Pay the convenience fee"
+    "action_high": "Pay the convenience fee",
+    "type": "long"
   },
   {
     "id": 60,
     "situation": "Your favorite show just released a new season. You could binge it tonight or savor one episode a week.",
     "action_low": "Savor it slowly",
-    "action_high": "Binge it all"
+    "action_high": "Binge it all",
+    "type": "long"
   },
   {
     "id": 61,
     "situation": "A package can arrive in 2 days if you pay more, or a week for the standard rate.",
     "action_low": "Choose standard shipping",
-    "action_high": "Pay for faster shipping"
+    "action_high": "Pay for faster shipping",
+    "type": "long"
   },
   {
     "id": 62,
     "situation": "You're learning a new skill. Progress is slow, and a shortcut exists that gets partial results faster but skips the fundamentals.",
     "action_low": "Take your time and learn properly",
-    "action_high": "Take the shortcut"
+    "action_high": "Take the shortcut",
+    "type": "long"
   },
   {
     "id": 63,
     "situation": "A recipe takes 3 hours to prepare properly, but a quicker version cuts corners and takes 30 minutes.",
     "action_low": "Cook the quick version",
-    "action_high": "Take the full 3 hours"
+    "action_high": "Take the full 3 hours",
+    "type": "long"
   },
   {
     "id": 64,
     "situation": "You could respond to an email immediately with a rushed reply, or wait until tomorrow to think it through.",
     "action_low": "Reply immediately",
-    "action_high": "Wait and think it over"
+    "action_high": "Wait and think it over",
+    "type": "long"
   },
   {
     "id": 65,
     "situation": "Your phone battery is at 20%. You could stop to charge it now, delaying your plans by 15 minutes.",
     "action_low": "Keep going, risk it dying",
-    "action_high": "Stop to charge it"
+    "action_high": "Stop to charge it",
+    "type": "long"
   },
   {
     "id": 66,
     "situation": "A friend is running late, currently 20 minutes behind schedule for a dinner you're both attending.",
     "action_low": "Wait patiently",
-    "action_high": "Head over without them"
+    "action_high": "Head over without them",
+    "type": "long"
   },
   {
     "id": 67,
     "situation": "You're offered early access to a product for a fee, or you can wait for the free general release next month.",
     "action_low": "Wait for free release",
-    "action_high": "Pay for early access"
+    "action_high": "Pay for early access",
+    "type": "long"
   },
   {
     "id": 68,
     "situation": "Your plant needs repotting eventually, but it's fine for now if you leave it a while longer.",
     "action_low": "Leave it for later",
-    "action_high": "Repot it now"
+    "action_high": "Repot it now",
+    "type": "long"
   },
   {
     "id": 69,
     "situation": "You can finish a boring task quickly with lower quality, or take longer to do it thoroughly.",
     "action_low": "Rush it",
-    "action_high": "Take the time to do it well"
+    "action_high": "Take the time to do it well",
+    "type": "long"
   },
   {
     "id": 70,
     "situation": "You've been offered a slow, scenic route home or a faster, direct highway route.",
     "action_low": "Take the scenic route",
-    "action_high": "Take the highway"
+    "action_high": "Take the highway",
+    "type": "long"
   },
   {
     "id": 71,
     "situation": "A queue for a popular ride at an amusement park is an hour long, but a nearby, less exciting ride has no wait.",
     "action_low": "Skip the wait, ride the other one",
-    "action_high": "Wait the hour"
+    "action_high": "Wait the hour",
+    "type": "long"
   },
   {
     "id": 72,
     "situation": "You're deciding whether to reply to a difficult message right when you're upset, or sleep on it first.",
     "action_low": "Sleep on it first",
-    "action_high": "Reply right away"
+    "action_high": "Reply right away",
+    "type": "long"
   },
   {
     "id": 73,
     "situation": "A friend suggests postponing your meeting by a week versus keeping today's plan despite feeling unprepared.",
     "action_low": "Keep today's plan",
-    "action_high": "Postpone by a week"
+    "action_high": "Postpone by a week",
+    "type": "long"
   },
   {
     "id": 74,
     "situation": "Your library book is due tomorrow but you're only halfway through and enjoying it.",
     "action_low": "Return it unfinished",
-    "action_high": "Pay the late fee and keep reading"
+    "action_high": "Pay the late fee and keep reading",
+    "type": "long"
   },
   {
     "id": 75,
     "situation": "Everyone at the table orders the same popular dish. You were considering something different.",
     "action_low": "Order what you wanted",
-    "action_high": "Order the same as everyone"
+    "action_high": "Order the same as everyone",
+    "type": "long"
   },
   {
     "id": 76,
     "situation": "Your friend group decides on a restaurant you don't love, but you don't want to cause friction.",
     "action_low": "Speak up about your preference",
-    "action_high": "Go along with the group"
+    "action_high": "Go along with the group",
+    "type": "long"
   },
   {
     "id": 77,
     "situation": "At a work meeting, most people agree with a plan you have doubts about.",
     "action_low": "Voice your doubts",
-    "action_high": "Go along with the majority"
+    "action_high": "Go along with the majority",
+    "type": "long"
   },
   {
     "id": 78,
     "situation": "You're at a party and the group starts a game you find silly, but everyone else seems into it.",
     "action_low": "Join in anyway",
-    "action_high": "Sit this one out"
+    "action_high": "Sit this one out",
+    "type": "long"
   },
   {
     "id": 79,
     "situation": "Your family has a tradition you don't personally enjoy but everyone else looks forward to.",
     "action_low": "Participate anyway",
-    "action_high": "Politely opt out"
+    "action_high": "Politely opt out",
+    "type": "long"
   },
   {
     "id": 80,
     "situation": "A trend is going around your friend group (a style, an app, a hobby) that doesn't interest you.",
     "action_low": "Try it to fit in",
-    "action_high": "Skip it, stay yourself"
+    "action_high": "Skip it, stay yourself",
+    "type": "long"
   },
   {
     "id": 81,
     "situation": "In a debate among friends, you privately agree with the less popular side.",
     "action_low": "Support the popular side publicly",
-    "action_high": "Voice the unpopular opinion"
+    "action_high": "Voice the unpopular opinion",
+    "type": "long"
   },
   {
     "id": 82,
     "situation": "Your team at work has an unofficial dress code that's stricter than the actual policy.",
     "action_low": "Follow the unofficial norm",
-    "action_high": "Dress by the actual policy"
+    "action_high": "Dress by the actual policy",
+    "type": "long"
   },
   {
     "id": 83,
     "situation": "A group chat is planning something you're not really interested in, but everyone's enthusiastic.",
     "action_low": "Go along enthusiastically",
-    "action_high": "Politely decline"
+    "action_high": "Politely decline",
+    "type": "long"
   },
   {
     "id": 84,
     "situation": "At a networking event, most people are exchanging business cards eagerly. It doesn't feel natural to you.",
     "action_low": "Do it anyway",
-    "action_high": "Engage your own way"
+    "action_high": "Engage your own way",
+    "type": "long"
   },
   {
     "id": 85,
     "situation": "Your classmates all seem to be choosing the same elective course.",
     "action_low": "Choose a different one that interests you",
-    "action_high": "Choose the same one"
+    "action_high": "Choose the same one",
+    "type": "long"
   },
   {
     "id": 86,
     "situation": "A friend wants group consensus before booking a shared vacation house, and you're the lone holdout with concerns.",
     "action_low": "Raise your concerns",
-    "action_high": "Go with the group's choice"
+    "action_high": "Go with the group's choice",
+    "type": "long"
   },
   {
     "id": 87,
     "situation": "You disagree with a popular opinion being shared in a group chat.",
     "action_low": "Keep scrolling, say nothing",
-    "action_high": "Post a different view"
+    "action_high": "Post a different view",
+    "type": "long"
   },
   {
     "id": 88,
     "situation": "At a family gathering, relatives expect you to follow an old custom you find outdated.",
     "action_low": "Go through with it",
-    "action_high": "Explain why you'd rather not"
+    "action_high": "Explain why you'd rather not",
+    "type": "long"
   },
   {
     "id": 89,
     "situation": "Your book club picked a book you have no interest in reading.",
     "action_low": "Read it along with everyone",
-    "action_high": "Skip it and just attend the discussion"
+    "action_high": "Skip it and just attend the discussion",
+    "type": "long"
   },
   {
     "id": 90,
     "situation": "Coworkers are all staying late to finish a project, though your part is already done.",
     "action_low": "Stay anyway to show support",
-    "action_high": "Leave once your work is done"
+    "action_high": "Leave once your work is done",
+    "type": "long"
   },
   {
     "id": 91,
     "situation": "A close friend expects you to agree with their political opinion at a dinner party.",
     "action_low": "Nod along",
-    "action_high": "Share your actual view"
+    "action_high": "Share your actual view",
+    "type": "long"
   },
   {
     "id": 92,
     "situation": "Everyone in your friend group is getting the same tattoo as a bonding activity.",
     "action_low": "Get it too",
-    "action_high": "Sit this one out"
+    "action_high": "Sit this one out",
+    "type": "long"
   },
   {
     "id": 93,
     "situation": "Your partner wants to merge finances into one shared account. You're used to managing your own money.",
     "action_low": "Keep finances separate",
-    "action_high": "Merge accounts"
+    "action_high": "Merge accounts",
+    "type": "long"
   },
   {
     "id": 94,
     "situation": "A friend cancels on you last minute for the third time this month.",
     "action_low": "Let it go, keep inviting them",
-    "action_high": "Address the pattern directly"
+    "action_high": "Address the pattern directly",
+    "type": "long"
   },
   {
     "id": 95,
     "situation": "You're asked to keep a secret for a friend that makes you a little uncomfortable.",
     "action_low": "Keep the secret",
-    "action_high": "Tell them you can't keep it"
+    "action_high": "Tell them you can't keep it",
+    "type": "long"
   },
   {
     "id": 96,
     "situation": "Someone you just met asks to borrow a significant amount of money.",
     "action_low": "Politely refuse",
-    "action_high": "Lend it, trusting them"
+    "action_high": "Lend it, trusting them",
+    "type": "long"
   },
   {
     "id": 97,
     "situation": "Your partner wants to move to a new city for their career, requiring you to leave your job and friends.",
     "action_low": "Stay where you are",
-    "action_high": "Move with them"
+    "action_high": "Move with them",
+    "type": "long"
   },
   {
     "id": 98,
     "situation": "A friend consistently shows up late, and today you're deciding whether to tell them the exact time or a slightly earlier one.",
     "action_low": "Tell them the real time",
-    "action_high": "Tell them an earlier time"
+    "action_high": "Tell them an earlier time",
+    "type": "long"
   },
   {
     "id": 99,
     "situation": "You suspect a friend is upset with you but they insist everything is fine.",
     "action_low": "Take them at their word",
-    "action_high": "Push to talk about it"
+    "action_high": "Push to talk about it",
+    "type": "long"
   },
   {
     "id": 100,
     "situation": "A new roommate wants to split all household costs equally, even though you use shared items less.",
     "action_low": "Agree to split evenly",
-    "action_high": "Negotiate a fairer split"
+    "action_high": "Negotiate a fairer split",
+    "type": "long"
   },
   {
     "id": 101,
     "situation": "Your best friend asks for your honest opinion about their relationship, which you have concerns about.",
     "action_low": "Stay supportive, keep concerns to yourself",
-    "action_high": "Share your honest concerns"
+    "action_high": "Share your honest concerns",
+    "type": "long"
   },
   {
     "id": 102,
     "situation": "A friend wants to introduce you to their new partner, whom you've heard mixed things about.",
     "action_low": "Reserve judgment and meet them openly",
-    "action_high": "Go in already skeptical"
+    "action_high": "Go in already skeptical",
+    "type": "long"
   },
   {
     "id": 103,
     "situation": "You're asked to be the deciding vote in a disagreement between two close friends.",
     "action_low": "Stay neutral",
-    "action_high": "Take a side"
+    "action_high": "Take a side",
+    "type": "long"
   },
   {
     "id": 104,
     "situation": "Your sibling asks to stay at your place indefinitely while sorting out their situation.",
     "action_low": "Set a clear time limit",
-    "action_high": "Let them stay as long as needed"
+    "action_high": "Let them stay as long as needed",
+    "type": "long"
   },
   {
     "id": 105,
     "situation": "A long-distance friend rarely reaches out first, but always responds warmly when you do.",
     "action_low": "Keep reaching out anyway",
-    "action_high": "Wait for them to initiate for once"
+    "action_high": "Wait for them to initiate for once",
+    "type": "long"
   },
   {
     "id": 106,
     "situation": "You're asked to write an honest performance review for a friend who also happens to be your direct report.",
     "action_low": "Soften the feedback",
-    "action_high": "Write it exactly as you see it"
+    "action_high": "Write it exactly as you see it",
+    "type": "long"
   },
   {
     "id": 107,
     "situation": "A friend wants brutally honest feedback on a major life decision they've clearly already made up their mind about.",
     "action_low": "Support their decision",
-    "action_high": "Voice your true reservations"
+    "action_high": "Voice your true reservations",
+    "type": "long"
   },
   {
     "id": 108,
     "situation": "Your partner forgot an important date that mattered to you.",
     "action_low": "Let it go without mentioning it",
-    "action_high": "Bring it up and talk about it"
+    "action_high": "Bring it up and talk about it",
+    "type": "long"
   },
   {
     "id": 109,
     "situation": "An old friend reappears after years of silence, asking for a favor.",
     "action_low": "Help them out",
-    "action_high": "Politely keep your distance"
+    "action_high": "Politely keep your distance",
+    "type": "long"
   },
   {
     "id": 110,
     "situation": "You're asked to choose between spending an evening with your partner or with old friends visiting from out of town, both on the same night.",
     "action_low": "Spend it with your partner",
-    "action_high": "Spend it with your visiting friends"
+    "action_high": "Spend it with your visiting friends",
+    "type": "long"
   },
   {
     "id": 111,
     "situation": "You've had a long day and could either go to the gym as planned or skip it and rest.",
     "action_low": "Rest",
-    "action_high": "Go to the gym anyway"
+    "action_high": "Go to the gym anyway",
+    "type": "long"
   },
   {
     "id": 112,
     "situation": "A dessert is being passed around at a gathering, but you're trying to eat healthier this week.",
     "action_low": "Skip it",
-    "action_high": "Have some"
+    "action_high": "Have some",
+    "type": "long"
   },
   {
     "id": 113,
     "situation": "You wake up slightly under the weather but have plans you were looking forward to.",
     "action_low": "Cancel and rest",
-    "action_high": "Push through and go"
+    "action_high": "Push through and go",
+    "type": "long"
   },
   {
     "id": 114,
     "situation": "Your doctor recommends a lifestyle change that would require giving up something you enjoy regularly.",
     "action_low": "Keep your current habits",
-    "action_high": "Make the change"
+    "action_high": "Make the change",
+    "type": "long"
   },
   {
     "id": 115,
     "situation": "You could take the stairs for a bit of extra exercise, or the elevator to save time and energy.",
     "action_low": "Take the elevator",
-    "action_high": "Take the stairs"
+    "action_high": "Take the stairs",
+    "type": "long"
   },
   {
     "id": 116,
     "situation": "A new fitness trend promises fast results but requires a big time commitment you're not sure you can sustain.",
     "action_low": "Stick with your current routine",
-    "action_high": "Try the new trend"
+    "action_high": "Try the new trend",
+    "type": "long"
   },
   {
     "id": 117,
     "situation": "You're offered a free trial of an activity you've heard has real risk of injury, like rock climbing.",
     "action_low": "Skip it",
-    "action_high": "Try it"
+    "action_high": "Try it",
+    "type": "long"
   },
   {
     "id": 118,
     "situation": "It's late and you're tired, but you haven't finished today's planned workout.",
     "action_low": "Skip it, sleep instead",
-    "action_high": "Finish it before bed"
+    "action_high": "Finish it before bed",
+    "type": "long"
   },
   {
     "id": 119,
     "situation": "A friend invites you to a midnight snack run when you'd normally be asleep by now.",
     "action_low": "Stay in, stick to your routine",
-    "action_high": "Go along, break routine for once"
+    "action_high": "Go along, break routine for once",
+    "type": "long"
   },
   {
     "id": 120,
     "situation": "You could see a doctor about a minor, ongoing symptom, or wait to see if it goes away on its own.",
     "action_low": "Wait it out",
-    "action_high": "Get it checked"
+    "action_high": "Get it checked",
+    "type": "long"
   },
   {
     "id": 121,
     "situation": "Your usual healthy lunch spot is closed, and the fast option nearby is much less healthy.",
     "action_low": "Go without lunch or find something healthier",
-    "action_high": "Eat the fast option"
+    "action_high": "Eat the fast option",
+    "type": "long"
   },
   {
     "id": 122,
     "situation": "A friend challenges you to try a very spicy dish you know might upset your stomach.",
     "action_low": "Decline",
-    "action_high": "Try it"
+    "action_high": "Try it",
+    "type": "long"
   },
   {
     "id": 123,
     "situation": "You've been sitting for hours and could get up to stretch, or keep working through a task you're focused on.",
     "action_low": "Keep working",
-    "action_high": "Take a break to move"
+    "action_high": "Take a break to move",
+    "type": "long"
   },
   {
     "id": 124,
     "situation": "You're offered a strong coffee late in the day, knowing it might affect your sleep.",
     "action_low": "Decline it",
-    "action_high": "Drink it anyway"
+    "action_high": "Drink it anyway",
+    "type": "long"
   },
   {
     "id": 125,
     "situation": "A friend wants to go for an early 6am run together, cutting your sleep short.",
     "action_low": "Decline, prioritize sleep",
-    "action_high": "Join them"
+    "action_high": "Join them",
+    "type": "long"
   },
   {
     "id": 126,
     "situation": "You're at a buffet and already comfortably full, but there's a dish you haven't tried yet.",
     "action_low": "Stop eating",
-    "action_high": "Try it anyway"
+    "action_high": "Try it anyway",
+    "type": "long"
   },
   {
     "id": 127,
     "situation": "Your wearable device says you should stand up and move, right in the middle of something engaging.",
     "action_low": "Ignore it, finish what you're doing",
-    "action_high": "Get up right away"
+    "action_high": "Get up right away",
+    "type": "long"
   },
   {
     "id": 128,
     "situation": "You could meal-prep healthy food for the week on a free evening, or relax instead and decide meals day by day.",
     "action_low": "Relax this evening",
-    "action_high": "Meal-prep now"
+    "action_high": "Meal-prep now",
+    "type": "long"
   },
   {
     "id": 129,
     "situation": "You're offered a leadership role that comes with more visibility but also more stress and scrutiny.",
     "action_low": "Stay in your current role",
-    "action_high": "Take the leadership role"
+    "action_high": "Take the leadership role",
+    "type": "long"
   },
   {
     "id": 130,
     "situation": "A big project could be delivered faster with lower polish, or later with higher quality.",
     "action_low": "Prioritize quality over speed",
-    "action_high": "Prioritize speed over quality"
+    "action_high": "Prioritize speed over quality",
+    "type": "long"
   },
   {
     "id": 131,
     "situation": "Your manager asks for volunteers to take on an extra, unpaid project for \"visibility.\"",
     "action_low": "Decline",
-    "action_high": "Volunteer"
+    "action_high": "Volunteer",
+    "type": "long"
   },
   {
     "id": 132,
     "situation": "You could specialize deeply in one skill, or diversify into several different areas.",
     "action_low": "Specialize deeply",
-    "action_high": "Diversify broadly"
+    "action_high": "Diversify broadly",
+    "type": "long"
   },
   {
     "id": 133,
     "situation": "A colleague you don't get along with is proposed as your partner on an important project.",
     "action_low": "Raise a concern about the pairing",
-    "action_high": "Accept the pairing and make it work"
+    "action_high": "Accept the pairing and make it work",
+    "type": "long"
   },
   {
     "id": 134,
     "situation": "You're offered a promotion that requires relocating to a city you have no connection to.",
     "action_low": "Decline and stay put",
-    "action_high": "Accept and relocate"
+    "action_high": "Accept and relocate",
+    "type": "long"
   },
   {
     "id": 135,
     "situation": "Your company offers a sabbatical option with reduced pay for a few months.",
     "action_low": "Skip it, keep working normally",
-    "action_high": "Take the sabbatical"
+    "action_high": "Take the sabbatical",
+    "type": "long"
   },
   {
     "id": 136,
     "situation": "A tight deadline is approaching and you could ask for an extension or push through as is.",
     "action_low": "Ask for an extension",
-    "action_high": "Push through without asking"
+    "action_high": "Push through without asking",
+    "type": "long"
   },
   {
     "id": 137,
     "situation": "You've been asked to mentor a junior colleague, which will take time away from your own tasks.",
     "action_low": "Politely decline for now",
-    "action_high": "Make time to mentor them"
+    "action_high": "Make time to mentor them",
+    "type": "long"
   },
   {
     "id": 138,
     "situation": "Your idea at a meeting gets initial pushback, but you still believe in it.",
     "action_low": "Let it drop",
-    "action_high": "Advocate for it further"
+    "action_high": "Advocate for it further",
+    "type": "long"
   },
   {
     "id": 139,
     "situation": "You could pursue an advanced degree that takes years and costs money, or continue gaining experience on the job.",
     "action_low": "Keep gaining experience on the job",
-    "action_high": "Go back to school"
+    "action_high": "Go back to school",
+    "type": "long"
   },
   {
     "id": 140,
     "situation": "A recruiter reaches out about a role at a competitor, even though you're not actively looking.",
     "action_low": "Ignore the message",
-    "action_high": "Hear them out"
+    "action_high": "Hear them out",
+    "type": "long"
   },
   {
     "id": 141,
     "situation": "Your team's project is failing, and you could quietly distance yourself or step up to try to fix it.",
     "action_low": "Distance yourself",
-    "action_high": "Step up to fix it"
+    "action_high": "Step up to fix it",
+    "type": "long"
   },
   {
     "id": 142,
     "situation": "You're asked to present at a large conference, which is a great opportunity but makes you nervous.",
     "action_low": "Decline the invitation",
-    "action_high": "Accept the challenge"
+    "action_high": "Accept the challenge",
+    "type": "long"
   },
   {
     "id": 143,
     "situation": "Your workload is heavy this month. A colleague asks for help even though they haven't reciprocated in the past.",
     "action_low": "Say you're too busy",
-    "action_high": "Help them anyway"
+    "action_high": "Help them anyway",
+    "type": "long"
   },
   {
     "id": 144,
     "situation": "You could take a comfortable, well-known path in your career or a less certain but potentially more rewarding one.",
     "action_low": "Take the well-known path",
-    "action_high": "Take the less certain path"
+    "action_high": "Take the less certain path",
+    "type": "long"
   },
   {
     "id": 145,
     "situation": "Your boss asks your honest opinion on a decision they've clearly already made.",
     "action_low": "Support the decision",
-    "action_high": "Share your honest view anyway"
+    "action_high": "Share your honest view anyway",
+    "type": "long"
   },
   {
     "id": 146,
     "situation": "A startup with an uncertain future offers you equity instead of a full salary.",
     "action_low": "Ask for full salary elsewhere",
-    "action_high": "Accept the equity offer"
+    "action_high": "Accept the equity offer",
+    "type": "long"
   },
   {
     "id": 147,
     "situation": "An app asks for access to your contacts to \"improve your experience,\" though it's not strictly necessary.",
     "action_low": "Deny the permission",
-    "action_high": "Allow it"
+    "action_high": "Allow it",
+    "type": "long"
   },
   {
     "id": 148,
     "situation": "A website offers a personalized experience in exchange for tracking your browsing habits.",
     "action_low": "Opt out of tracking",
-    "action_high": "Allow tracking for personalization"
+    "action_high": "Allow tracking for personalization",
+    "type": "long"
   },
   {
     "id": 149,
     "situation": "You could use a well-known service that's convenient but data-hungry, or a more private alternative that's less polished.",
     "action_low": "Use the private alternative",
-    "action_high": "Use the convenient service"
+    "action_high": "Use the convenient service",
+    "type": "long"
   },
   {
     "id": 150,
     "situation": "A new social media platform is gaining popularity, and everyone's asking you to join.",
     "action_low": "Stay off it",
-    "action_high": "Join in"
+    "action_high": "Join in",
+    "type": "long"
   },
   {
     "id": 151,
     "situation": "Your smart speaker could be always listening for a wake word to make your life more convenient.",
     "action_low": "Keep it unplugged when not needed",
-    "action_high": "Leave it always on"
+    "action_high": "Leave it always on",
+    "type": "long"
   },
   {
     "id": 152,
     "situation": "You're offered a discount for sharing your location data with a store's app.",
     "action_low": "Decline, pay full price",
-    "action_high": "Share your location for the discount"
+    "action_high": "Share your location for the discount",
+    "type": "long"
   },
   {
     "id": 153,
     "situation": "Facial recognition could unlock your phone instantly, or you could use a passcode that's slower but keeps your face data local.",
     "action_low": "Use a passcode",
-    "action_high": "Use facial recognition"
+    "action_high": "Use facial recognition",
+    "type": "long"
   },
   {
     "id": 154,
     "situation": "A friend suggests posting a detailed vacation itinerary publicly, showing you'll be away from home.",
     "action_low": "Keep the details private",
-    "action_high": "Post it publicly"
+    "action_high": "Post it publicly",
+    "type": "long"
   },
   {
     "id": 155,
     "situation": "You could accept all cookies on a website quickly, or take time to review and reject unnecessary ones.",
     "action_low": "Review and reject unnecessary ones",
-    "action_high": "Accept all quickly"
+    "action_high": "Accept all quickly",
+    "type": "long"
   },
   {
     "id": 156,
     "situation": "Your employer offers a wellness app that tracks your health data in exchange for a discount on insurance.",
     "action_low": "Decline, keep data private",
-    "action_high": "Use it for the discount"
+    "action_high": "Use it for the discount",
+    "type": "long"
   },
   {
     "id": 157,
     "situation": "A free app has ads everywhere, while the paid version removes them and costs a small monthly fee.",
     "action_low": "Stick with the free, ad-supported version",
-    "action_high": "Pay to remove ads"
+    "action_high": "Pay to remove ads",
+    "type": "long"
   },
   {
     "id": 158,
     "situation": "Your photos could automatically back up to the cloud, or stay only on your device for more control.",
     "action_low": "Keep photos only on device",
-    "action_high": "Enable cloud backup"
+    "action_high": "Enable cloud backup",
+    "type": "long"
   },
   {
     "id": 159,
     "situation": "A quiz online promises a fun personality result if you connect your social media account.",
     "action_low": "Skip it",
-    "action_high": "Connect and try it"
+    "action_high": "Connect and try it",
+    "type": "long"
   },
   {
     "id": 160,
     "situation": "You're offered biometric login for a banking app, replacing a password you'd have to remember.",
     "action_low": "Stick with the password",
-    "action_high": "Use biometric login"
+    "action_high": "Use biometric login",
+    "type": "long"
   },
   {
     "id": 161,
     "situation": "Your smart home devices could be connected to a single app that centralizes everything, or kept separate for isolation.",
     "action_low": "Keep devices separate",
-    "action_high": "Connect everything to one app"
+    "action_high": "Connect everything to one app",
+    "type": "long"
   },
   {
     "id": 162,
     "situation": "A friend shares an unverified but interesting article. You could share it further or check its accuracy first.",
     "action_low": "Verify before sharing",
-    "action_high": "Share it right away"
+    "action_high": "Share it right away",
+    "type": "long"
   },
   {
     "id": 163,
     "situation": "You get a notification that a new phone model is out with modest improvements over yours.",
     "action_low": "Keep your current phone",
-    "action_high": "Upgrade right away"
+    "action_high": "Upgrade right away",
+    "type": "long"
   },
   {
     "id": 164,
     "situation": "An online store suggests saving your card details for faster checkout next time.",
     "action_low": "Don't save the card",
-    "action_high": "Save it for convenience"
+    "action_high": "Save it for convenience",
+    "type": "long"
   },
   {
     "id": 165,
     "situation": "You need a new piece of clothing. A cheap fast-fashion option is available, or a pricier, more sustainably made one.",
     "action_low": "Buy the sustainable option",
-    "action_high": "Buy the cheaper option"
+    "action_high": "Buy the cheaper option",
+    "type": "long"
   },
   {
     "id": 166,
     "situation": "Your local store offers plastic bags for free, or you brought a reusable one but forgot it today.",
     "action_low": "Go back for the reusable bag",
-    "action_high": "Take the free plastic one"
+    "action_high": "Take the free plastic one",
+    "type": "long"
   },
   {
     "id": 167,
     "situation": "You could drive alone to work, or take a longer but more environmentally friendly public transit route.",
     "action_low": "Take public transit",
-    "action_high": "Drive alone"
+    "action_high": "Drive alone",
+    "type": "long"
   },
   {
     "id": 168,
     "situation": "Leftover food from a party could be composted with some effort, or simply thrown away.",
     "action_low": "Take the effort to compost",
-    "action_high": "Throw it away"
+    "action_high": "Throw it away",
+    "type": "long"
   },
   {
     "id": 169,
     "situation": "A product is available in bulk with less packaging, but requires more storage space at home.",
     "action_low": "Buy the smaller, packaged version",
-    "action_high": "Buy the bulk option"
+    "action_high": "Buy the bulk option",
+    "type": "long"
   },
   {
     "id": 170,
     "situation": "You could repair an old but broken appliance, or simply replace it with a new one.",
     "action_low": "Repair it",
-    "action_high": "Replace it"
+    "action_high": "Replace it",
+    "type": "long"
   },
   {
     "id": 171,
     "situation": "A flight is available that's cheaper but has a longer layover and higher emissions than a direct but pricier flight.",
     "action_low": "Pay more for the direct flight",
-    "action_high": "Take the cheaper, longer route"
+    "action_high": "Take the cheaper, longer route",
+    "type": "long"
   },
   {
     "id": 172,
     "situation": "Your workplace offers the option to go paperless, requiring you to change some habits.",
     "action_low": "Keep using paper as usual",
-    "action_high": "Switch to paperless"
+    "action_high": "Switch to paperless",
+    "type": "long"
   },
   {
     "id": 173,
     "situation": "You're deciding between a fast, disposable coffee cup or bringing your own reusable one, which takes remembering.",
     "action_low": "Use disposable cups",
-    "action_high": "Bring your reusable cup"
+    "action_high": "Bring your reusable cup",
+    "type": "long"
   },
   {
     "id": 174,
     "situation": "A local farmers market has fresher, pricier produce compared to the cheaper supermarket option.",
     "action_low": "Buy from the supermarket",
-    "action_high": "Buy from the farmers market"
+    "action_high": "Buy from the farmers market",
+    "type": "long"
   },
   {
     "id": 175,
     "situation": "Your energy provider offers a green energy plan at a slightly higher monthly cost.",
     "action_low": "Stay on the standard plan",
-    "action_high": "Switch to the green plan"
+    "action_high": "Switch to the green plan",
+    "type": "long"
   },
   {
     "id": 176,
     "situation": "You could donate old furniture to be reused, or simply put it out for bulk trash pickup.",
     "action_low": "Put it out for trash",
-    "action_high": "Arrange for donation"
+    "action_high": "Arrange for donation",
+    "type": "long"
   },
   {
     "id": 177,
     "situation": "A cheaper hotel doesn't have any sustainability practices, while a pricier one is eco-certified.",
     "action_low": "Book the cheaper hotel",
-    "action_high": "Book the eco-certified hotel"
+    "action_high": "Book the eco-certified hotel",
+    "type": "long"
   },
   {
     "id": 178,
     "situation": "You're deciding whether to fix a small water leak yourself right away or wait until it's more convenient.",
     "action_low": "Wait until convenient",
-    "action_high": "Fix it right away"
+    "action_high": "Fix it right away",
+    "type": "long"
   },
   {
     "id": 179,
     "situation": "A neighbor asks if you want to join a community garden that requires regular time commitment.",
     "action_low": "Decline, not enough time",
-    "action_high": "Join and commit the time"
+    "action_high": "Join and commit the time",
+    "type": "long"
   },
   {
     "id": 180,
     "situation": "You could buy a new electronic gadget, or look for a secondhand one that's cheaper but less certain in condition.",
     "action_low": "Buy secondhand",
-    "action_high": "Buy new"
+    "action_high": "Buy new",
+    "type": "long"
   },
   {
     "id": 181,
     "situation": "Your city offers a bike-share program as an alternative to a short cab ride in the rain.",
     "action_low": "Take the cab",
-    "action_high": "Use the bike-share despite the rain"
+    "action_high": "Use the bike-share despite the rain",
+    "type": "long"
   },
   {
     "id": 182,
     "situation": "A store offers a small discount if you skip the receipt, saving paper.",
     "action_low": "Take the receipt anyway",
-    "action_high": "Skip the receipt for the discount"
+    "action_high": "Skip the receipt for the discount",
+    "type": "long"
   },
   {
     "id": 183,
     "situation": "You're at a buffet-style event and could try a small amount of everything, or stick to what you know you'll enjoy.",
     "action_low": "Stick to favorites",
-    "action_high": "Try a bit of everything"
+    "action_high": "Try a bit of everything",
+    "type": "long"
   },
   {
     "id": 184,
     "situation": "Your phone rings with an unknown number during a busy moment.",
     "action_low": "Let it go to voicemail",
-    "action_high": "Answer it anyway"
+    "action_high": "Answer it anyway",
+    "type": "long"
   },
   {
     "id": 185,
     "situation": "A friend suggests karaoke, and you're not confident in your singing but might enjoy it.",
     "action_low": "Watch and cheer others on",
-    "action_high": "Get up and sing"
+    "action_high": "Get up and sing",
+    "type": "long"
   },
   {
     "id": 186,
     "situation": "You could take a familiar route home or try a shortcut you've never used before.",
     "action_low": "Take the familiar route",
-    "action_high": "Try the shortcut"
+    "action_high": "Try the shortcut",
+    "type": "long"
   },
   {
     "id": 187,
     "situation": "Your team lost a friendly game, and there's a rematch offer right now.",
     "action_low": "Call it a day",
-    "action_high": "Go for the rematch"
+    "action_high": "Go for the rematch",
+    "type": "long"
   },
   {
     "id": 188,
     "situation": "You're offered a free upgrade to a nicer hotel room, but it means changing rooms mid-stay.",
     "action_low": "Stay in your current room",
-    "action_high": "Take the upgrade"
+    "action_high": "Take the upgrade",
+    "type": "long"
   },
   {
     "id": 189,
     "situation": "A street performer is playing and passersby are dropping in tips.",
     "action_low": "Walk past",
-    "action_high": "Stop and tip"
+    "action_high": "Stop and tip",
+    "type": "long"
   },
   {
     "id": 190,
     "situation": "You're deciding between the safe, familiar vacation destination you've been before or somewhere completely new.",
     "action_low": "Return to the familiar place",
-    "action_high": "Go somewhere new"
+    "action_high": "Go somewhere new",
+    "type": "long"
   },
   {
     "id": 191,
     "situation": "Your friend suggests trying an escape room that's rated as quite difficult and might be more frustrating than fun.",
     "action_low": "Suggest an easier one",
-    "action_high": "Go for the difficult one"
+    "action_high": "Go for the difficult one",
+    "type": "long"
   },
   {
     "id": 192,
     "situation": "A store clerk recommends a pricier version of what you were about to buy, claiming it's much better.",
     "action_low": "Stick with your original choice",
-    "action_high": "Upgrade based on their recommendation"
+    "action_high": "Upgrade based on their recommendation",
+    "type": "long"
   },
   {
     "id": 193,
     "situation": "You're asked last-minute to give a short speech at an event you're attending.",
     "action_low": "Politely decline",
-    "action_high": "Step up and give it a try"
+    "action_high": "Step up and give it a try",
+    "type": "long"
   },
   {
     "id": 194,
     "situation": "Your friend group is deciding between a relaxing beach trip or an active adventure trip for vacation.",
     "action_low": "Vote for the relaxing trip",
-    "action_high": "Vote for the adventure trip"
+    "action_high": "Vote for the adventure trip",
+    "type": "long"
   },
   {
     "id": 195,
     "situation": "A store is having a big one-day sale on something you've been considering buying eventually.",
     "action_low": "Wait, no rush",
-    "action_high": "Buy it now while it's on sale"
+    "action_high": "Buy it now while it's on sale",
+    "type": "long"
   },
   {
     "id": 196,
     "situation": "You're handed a mystery flavor at an ice cream shop and asked to guess what it is before finding out.",
     "action_low": "Ask them to just tell you",
-    "action_high": "Guess and take the fun risk"
+    "action_high": "Guess and take the fun risk",
+    "type": "long"
   },
   {
     "id": 197,
     "situation": "A local sports team you don't usually follow has made it to the finals, and friends invite you to watch.",
     "action_low": "Skip it, not your thing",
-    "action_high": "Join in the excitement"
+    "action_high": "Join in the excitement",
+    "type": "long"
   },
   {
     "id": 198,
     "situation": "You could take a direct flight with a tight layover, or a longer one with more buffer time.",
     "action_low": "Take the longer, safer option",
-    "action_high": "Take the tight, direct option"
+    "action_high": "Take the tight, direct option",
+    "type": "long"
   },
   {
     "id": 199,
     "situation": "Your friend suggests trying a new, unusual food combination you're skeptical about.",
     "action_low": "Stick with what you know",
-    "action_high": "Give it a try"
+    "action_high": "Give it a try",
+    "type": "long"
   },
   {
     "id": 200,
     "situation": "At the end of a long trip, you could rush to catch an earlier train home or relax and take the one you originally planned.",
     "action_low": "Take the planned, relaxed train",
-    "action_high": "Rush for the earlier one"
+    "action_high": "Rush for the earlier one",
+    "type": "long"
   },
   {
     "id": 201,
     "situation": "A museum visit can start now with a €12 express ticket, or in 90 minutes for free.",
     "action_low": "Wait for free entry",
-    "action_high": "Pay and enter now"
+    "action_high": "Pay and enter now",
+    "type": "long"
   },
   {
     "id": 202,
     "situation": "A repair can be done today for €80 or in three days for €35.",
     "action_low": "Wait for the cheaper repair",
-    "action_high": "Pay for the faster repair"
+    "action_high": "Pay for the faster repair",
+    "type": "long"
   },
   {
     "id": 203,
     "situation": "A bus leaves in 25 minutes; a taxi takes 8 minutes and costs €18.",
     "action_low": "Take the bus",
-    "action_high": "Take the taxi"
+    "action_high": "Take the taxi",
+    "type": "long"
   },
   {
     "id": 204,
     "situation": "A hotel offers a €25 upgrade for a room available two hours earlier.",
     "action_low": "Keep the cheaper room",
-    "action_high": "Pay for the earlier room"
+    "action_high": "Pay for the earlier room",
+    "type": "long"
   },
   {
     "id": 205,
     "situation": "A queue has 30 people. You can wait or pay €5 for priority access.",
     "action_low": "Wait",
-    "action_high": "Pay for priority"
+    "action_high": "Pay for priority",
+    "type": "long"
   },
   {
     "id": 206,
     "situation": "A book costs €25 at the shop now or €15 online arriving in four days.",
     "action_low": "Order cheaply",
-    "action_high": "Buy it now"
+    "action_high": "Buy it now",
+    "type": "long"
   },
   {
     "id": 207,
     "situation": "A train arrives in 12 minutes; a bike rental costs €6 and takes 7 minutes.",
     "action_low": "Wait for the train",
-    "action_high": "Rent the bike"
+    "action_high": "Rent the bike",
+    "type": "long"
   },
   {
     "id": 208,
     "situation": "A meal delivery costs €4 more for a 20-minute delivery instead of 50 minutes.",
     "action_low": "Choose the cheaper delivery",
-    "action_high": "Pay for faster delivery"
+    "action_high": "Pay for faster delivery",
+    "type": "long"
   },
   {
     "id": 209,
     "situation": "A software feature can be unlocked for €10 immediately or for free after a 30-minute tutorial.",
     "action_low": "Do the tutorial",
-    "action_high": "Pay to unlock it"
+    "action_high": "Pay to unlock it",
+    "type": "long"
   },
   {
     "id": 210,
     "situation": "You can walk 35 minutes or pay €9 for a ride taking 8 minutes.",
     "action_low": "Walk",
-    "action_high": "Pay for the ride"
+    "action_high": "Pay for the ride",
+    "type": "long"
   },
   {
     "id": 211,
     "situation": "A shortcut saves 40 minutes but has a 20% chance of adding an hour.",
     "action_low": "Take the safe route",
-    "action_high": "Take the shortcut"
+    "action_high": "Take the shortcut",
+    "type": "long"
   },
   {
     "id": 212,
     "situation": "You can invest €100 in a project with a 50% chance of returning €220.",
     "action_low": "Keep the €100",
-    "action_high": "Invest it"
+    "action_high": "Invest it",
+    "type": "long"
   },
   {
     "id": 213,
     "situation": "A restaurant has an experimental menu with a 50% discount but unfamiliar dishes.",
     "action_low": "Order the familiar dish",
-    "action_high": "Try the experimental menu"
+    "action_high": "Try the experimental menu",
+    "type": "long"
   },
   {
     "id": 214,
     "situation": "A hiking trail is marked difficult but is known to have spectacular views.",
     "action_low": "Take the easier trail",
-    "action_high": "Take the difficult trail"
+    "action_high": "Take the difficult trail",
+    "type": "long"
   },
   {
     "id": 215,
     "situation": "You can enter a competition with a 5% chance of winning €1,000 and no entry fee.",
     "action_low": "Do not enter",
-    "action_high": "Enter"
+    "action_high": "Enter",
+    "type": "long"
   },
   {
     "id": 216,
     "situation": "A flight with a short connection saves €120 but risks a missed connection.",
     "action_low": "Take the safer flight",
-    "action_high": "Take the short connection"
+    "action_high": "Take the short connection",
+    "type": "long"
   },
   {
     "id": 217,
     "situation": "A new product has no reviews but costs half as much as the established one.",
     "action_low": "Buy the established product",
-    "action_high": "Try the new one"
+    "action_high": "Try the new one",
+    "type": "long"
   },
   {
     "id": 218,
     "situation": "A friend proposes a last-minute trip with uncertain accommodation.",
     "action_low": "Stay with the original plan",
-    "action_high": "Go"
+    "action_high": "Go",
+    "type": "long"
   },
   {
     "id": 219,
     "situation": "A game lets you bank your winnings or gamble them for a larger prize.",
     "action_low": "Bank the winnings",
-    "action_high": "Gamble for more"
+    "action_high": "Gamble for more",
+    "type": "long"
   },
   {
     "id": 220,
     "situation": "You can choose a guaranteed small bonus or a 25% chance of a much larger one.",
     "action_low": "Take the guaranteed bonus",
-    "action_high": "Take the gamble"
+    "action_high": "Take the gamble",
+    "type": "long"
   },
   {
     "id": 221,
     "situation": "Everyone at dinner orders the same unusual dish, but you have not tried it.",
     "action_low": "Order something else",
-    "action_high": "Order what everyone else orders"
+    "action_high": "Order what everyone else orders",
+    "type": "long"
   },
   {
     "id": 222,
     "situation": "A meeting strongly favors one proposal, but you prefer another.",
     "action_low": "Support your preferred proposal",
-    "action_high": "Go with the group"
+    "action_high": "Go with the group",
+    "type": "long"
   },
   {
     "id": 223,
     "situation": "Most people in a queue move to a different line, though you do not know why.",
     "action_low": "Stay in your line",
-    "action_high": "Follow them"
+    "action_high": "Follow them",
+    "type": "long"
   },
   {
     "id": 224,
     "situation": "A group laughs at a joke you do not find funny.",
     "action_low": "Remain neutral",
-    "action_high": "Laugh along"
+    "action_high": "Laugh along",
+    "type": "long"
   },
   {
     "id": 225,
     "situation": "Your friends all recommend a movie you suspect you will dislike.",
     "action_low": "Choose another movie",
-    "action_high": "Watch it with them"
+    "action_high": "Watch it with them",
+    "type": "long"
   },
   {
     "id": 226,
     "situation": "A colleague says everyone uses a particular shortcut at work.",
     "action_low": "Use your own method",
-    "action_high": "Use the common shortcut"
+    "action_high": "Use the common shortcut",
+    "type": "long"
   },
   {
     "id": 227,
     "situation": "A room is decorated in a style you dislike, but everyone praises it.",
     "action_low": "Say you dislike it",
-    "action_high": "Join the praise"
+    "action_high": "Join the praise",
+    "type": "long"
   },
   {
     "id": 228,
     "situation": "Nine people choose the same answer on a quiz and you have no strong opinion.",
     "action_low": "Choose independently",
-    "action_high": "Choose the majority answer"
+    "action_high": "Choose the majority answer",
+    "type": "long"
   },
   {
     "id": 229,
     "situation": "Everyone is dressed formally at an event where the invitation was vague.",
     "action_low": "Dress as planned",
-    "action_high": "Adapt to the group"
+    "action_high": "Adapt to the group",
+    "type": "long"
   },
   {
     "id": 230,
     "situation": "A group wants to leave a party early even though you are enjoying yourself.",
     "action_low": "Stay longer",
-    "action_high": "Leave with the group"
+    "action_high": "Leave with the group",
+    "type": "long"
   },
   {
     "id": 231,
     "situation": "Your seat on a train is occupied by someone who made a mistake.",
     "action_low": "Find another seat",
-    "action_high": "Ask them to move"
+    "action_high": "Ask them to move",
+    "type": "long"
   },
   {
     "id": 232,
     "situation": "A waiter forgets your drink twice.",
     "action_low": "Say nothing",
-    "action_high": "Complain politely"
+    "action_high": "Complain politely",
+    "type": "long"
   },
   {
     "id": 233,
     "situation": "Someone cuts in front of you in a queue.",
     "action_low": "Let it go",
-    "action_high": "Ask them to go to the back"
+    "action_high": "Ask them to go to the back",
+    "type": "long"
   },
   {
     "id": 234,
     "situation": "A colleague repeatedly interrupts you in a meeting.",
     "action_low": "Continue without confronting them",
-    "action_high": "Tell them to let you finish"
+    "action_high": "Tell them to let you finish",
+    "type": "long"
   },
   {
     "id": 235,
     "situation": "A shop charges you €10 too much.",
     "action_low": "Accept it",
-    "action_high": "Ask for the correction"
+    "action_high": "Ask for the correction",
+    "type": "long"
   },
   {
     "id": 236,
     "situation": "A friend repeatedly arrives late to meet you.",
     "action_low": "Adapt to them",
-    "action_high": "Tell them it bothers you"
+    "action_high": "Tell them it bothers you",
+    "type": "long"
   },
   {
     "id": 237,
     "situation": "A neighbor's music is too loud late at night.",
     "action_low": "Tolerate it",
-    "action_high": "Ask them to turn it down"
+    "action_high": "Ask them to turn it down",
+    "type": "long"
   },
   {
     "id": 238,
     "situation": "A host serves food you cannot eat.",
     "action_low": "Manage quietly",
-    "action_high": "Ask for an alternative"
+    "action_high": "Ask for an alternative",
+    "type": "long"
   },
   {
     "id": 239,
     "situation": "Someone takes your parking space after you were waiting for it.",
     "action_low": "Find another space",
-    "action_high": "Challenge them"
+    "action_high": "Challenge them",
+    "type": "long"
   },
   {
     "id": 240,
     "situation": "A team member presents your idea without crediting you.",
     "action_low": "Let it pass",
-    "action_high": "Mention that it was your idea"
+    "action_high": "Mention that it was your idea",
+    "type": "long"
   },
   {
     "id": 241,
     "situation": "You have a free evening: a familiar film or an unfamiliar local event.",
     "action_low": "Watch the familiar film",
-    "action_high": "Try the new event"
+    "action_high": "Try the new event",
+    "type": "long"
   },
   {
     "id": 242,
     "situation": "A restaurant offers your usual meal or a chef's surprise dish.",
     "action_low": "Order your usual meal",
-    "action_high": "Try the surprise dish"
+    "action_high": "Try the surprise dish",
+    "type": "long"
   },
   {
     "id": 243,
     "situation": "A vacation can revisit a favorite place or explore a new country.",
     "action_low": "Return to the favorite place",
-    "action_high": "Explore somewhere new"
+    "action_high": "Explore somewhere new",
+    "type": "long"
   },
   {
     "id": 244,
     "situation": "You can learn a skill you already partly know or a completely new skill.",
     "action_low": "Improve the familiar skill",
-    "action_high": "Start the new skill"
+    "action_high": "Start the new skill",
+    "type": "long"
   },
   {
     "id": 245,
     "situation": "A friend recommends an author you have never heard of.",
     "action_low": "Read a familiar author",
-    "action_high": "Try the new author"
+    "action_high": "Try the new author",
+    "type": "long"
   },
   {
     "id": 246,
     "situation": "You can take a familiar route or a scenic route you have never used.",
     "action_low": "Take the familiar route",
-    "action_high": "Take the new route"
+    "action_high": "Take the new route",
+    "type": "long"
   },
   {
     "id": 247,
     "situation": "A weekend offers your favorite activity or an unusual workshop.",
     "action_low": "Choose your favorite activity",
-    "action_high": "Try the workshop"
+    "action_high": "Try the workshop",
+    "type": "long"
   },
   {
     "id": 248,
     "situation": "A game has a familiar strategy and an unexplored strategy.",
     "action_low": "Use the familiar strategy",
-    "action_high": "Experiment"
+    "action_high": "Experiment",
+    "type": "long"
   },
   {
     "id": 249,
     "situation": "You can order a known dessert or an unusual seasonal one.",
     "action_low": "Order the known dessert",
-    "action_high": "Try the seasonal one"
+    "action_high": "Try the seasonal one",
+    "type": "long"
   },
   {
     "id": 250,
     "situation": "A museum offers a familiar exhibition or a new one on an unfamiliar topic.",
     "action_low": "Visit the familiar exhibition",
-    "action_high": "Visit the unfamiliar one"
+    "action_high": "Visit the unfamiliar one",
+    "type": "long"
   },
   {
     "id": 251,
     "situation": "Your weekend is planned, but a friend proposes an unexpected day trip.",
     "action_low": "Keep the plan",
-    "action_high": "Take the day trip"
+    "action_high": "Take the day trip",
+    "type": "long"
   },
   {
     "id": 252,
     "situation": "You have a month before a presentation.",
     "action_low": "Prepare early",
-    "action_high": "Work closer to the deadline"
+    "action_high": "Work closer to the deadline",
+    "type": "long"
   },
   {
     "id": 253,
     "situation": "A trip can be booked in detail or left mostly open.",
     "action_low": "Plan the itinerary",
-    "action_high": "Leave it open"
+    "action_high": "Leave it open",
+    "type": "long"
   },
   {
     "id": 254,
     "situation": "You can pack everything the night before or in the morning.",
     "action_low": "Pack early",
-    "action_high": "Pack later"
+    "action_high": "Pack later",
+    "type": "long"
   },
   {
     "id": 255,
     "situation": "A project has a clear deadline but no intermediate milestones.",
     "action_low": "Create milestones",
-    "action_high": "Work toward the deadline directly"
+    "action_high": "Work toward the deadline directly",
+    "type": "long"
   },
   {
     "id": 256,
     "situation": "You have three errands in one area.",
     "action_low": "Plan the optimal route",
-    "action_high": "Do them in whatever order feels natural"
+    "action_high": "Do them in whatever order feels natural",
+    "type": "long"
   },
   {
     "id": 257,
     "situation": "A restaurant requires reservations six weeks ahead.",
     "action_low": "Book early",
-    "action_high": "Decide later"
+    "action_high": "Decide later",
+    "type": "long"
   },
   {
     "id": 258,
     "situation": "You are going camping with uncertain weather.",
     "action_low": "Pack for several possibilities",
-    "action_high": "Pack minimally"
+    "action_high": "Pack minimally",
+    "type": "long"
   },
   {
     "id": 259,
     "situation": "You receive a complicated task with no immediate deadline.",
     "action_low": "Start now",
-    "action_high": "Wait until it becomes urgent"
+    "action_high": "Wait until it becomes urgent",
+    "type": "long"
   },
   {
     "id": 260,
     "situation": "You have a free afternoon and no plans.",
     "action_low": "Schedule something",
-    "action_high": "Keep it completely open"
+    "action_high": "Keep it completely open",
+    "type": "long"
   },
   {
     "id": 261,
     "situation": "You and a stranger receive €100 together and must decide how to split it.",
     "action_low": "Offer half",
-    "action_high": "Offer yourself more"
+    "action_high": "Offer yourself more",
+    "type": "long"
   },
   {
     "id": 262,
     "situation": "A friend did most of the work on a shared project.",
     "action_low": "Split the credit equally",
-    "action_high": "Give them more credit"
+    "action_high": "Give them more credit",
+    "type": "long"
   },
   {
     "id": 263,
     "situation": "You receive two free tickets but your friend contributed more money to the original purchase.",
     "action_low": "Keep both",
-    "action_high": "Give one to the friend"
+    "action_high": "Give one to the friend",
+    "type": "long"
   },
   {
     "id": 264,
     "situation": "A group bill contains an error that benefits you.",
     "action_low": "Say nothing",
-    "action_high": "Point out the error"
+    "action_high": "Point out the error",
+    "type": "long"
   },
   {
     "id": 265,
     "situation": "You win a prize partly because of a teammate's contribution.",
     "action_low": "Keep the prize",
-    "action_high": "Share it"
+    "action_high": "Share it",
+    "type": "long"
   },
   {
     "id": 266,
     "situation": "A colleague is accidentally given less compensation than others for the same work.",
     "action_low": "Leave it alone",
-    "action_high": "Raise the issue"
+    "action_high": "Raise the issue",
+    "type": "long"
   },
   {
     "id": 267,
     "situation": "A game reward can be divided equally or according to contribution.",
     "action_low": "Divide equally",
-    "action_high": "Divide by contribution"
+    "action_high": "Divide by contribution",
+    "type": "long"
   },
   {
     "id": 268,
     "situation": "You are given an extra serving when others have none.",
     "action_low": "Keep it",
-    "action_high": "Offer to share"
+    "action_high": "Offer to share",
+    "type": "long"
   },
   {
     "id": 269,
     "situation": "A friend loses a bet because of a technicality you think is unfair.",
     "action_low": "Accept the result",
-    "action_high": "Return the stake"
+    "action_high": "Return the stake",
+    "type": "long"
   },
   {
     "id": 270,
     "situation": "A queue has a reserved place for someone who arrives after you.",
     "action_low": "Give them the place",
-    "action_high": "Insist on first-come-first-served"
+    "action_high": "Insist on first-come-first-served",
+    "type": "long"
   },
   {
     "id": 271,
     "situation": "A friend breaks a minor rule at work and asks you not to mention it.",
     "action_low": "Tell someone",
-    "action_high": "Keep it private"
+    "action_high": "Keep it private",
+    "type": "long"
   },
   {
     "id": 272,
     "situation": "A colleague you like makes a mistake that could hurt the team.",
     "action_low": "Report it",
-    "action_high": "Talk to them privately first"
+    "action_high": "Talk to them privately first",
+    "type": "long"
   },
   {
     "id": 273,
     "situation": "A friend is criticized unfairly by someone else.",
     "action_low": "Stay neutral",
-    "action_high": "Defend your friend"
+    "action_high": "Defend your friend",
+    "type": "long"
   },
   {
     "id": 274,
     "situation": "Your team is wrong about a decision, but admitting it would embarrass everyone.",
     "action_low": "Admit the mistake",
-    "action_high": "Protect the team"
+    "action_high": "Protect the team",
+    "type": "long"
   },
   {
     "id": 275,
     "situation": "A friend asks you to keep a harmless secret.",
     "action_low": "Keep it",
-    "action_high": "Tell someone you trust"
+    "action_high": "Tell someone you trust",
+    "type": "long"
   },
   {
     "id": 276,
     "situation": "A former colleague asks for help after leaving your organization badly.",
     "action_low": "Decline",
-    "action_high": "Help them"
+    "action_high": "Help them",
+    "type": "long"
   },
   {
     "id": 277,
     "situation": "Someone you know receives unfair criticism from your manager.",
     "action_low": "Stay out of it",
-    "action_high": "Speak up"
+    "action_high": "Speak up",
+    "type": "long"
   },
   {
     "id": 278,
     "situation": "Your friend wants to buy something you think is a bad deal.",
     "action_low": "Let them decide",
-    "action_high": "Try to stop them"
+    "action_high": "Try to stop them",
+    "type": "long"
   },
   {
     "id": 279,
     "situation": "A teammate is blamed for a failure you partly caused.",
     "action_low": "Let them take responsibility",
-    "action_high": "Correct the record"
+    "action_high": "Correct the record",
+    "type": "long"
   },
   {
     "id": 280,
     "situation": "A friend asks you to choose between them and a group activity.",
     "action_low": "Choose the group",
-    "action_high": "Choose the friend"
+    "action_high": "Choose the friend",
+    "type": "long"
   },
   {
     "id": 281,
     "situation": "You can have a private room or a more prestigious room visible to others for €30 extra.",
     "action_low": "Take the private room",
-    "action_high": "Pay for the prestigious room"
+    "action_high": "Pay for the prestigious room",
+    "type": "long"
   },
   {
     "id": 282,
     "situation": "You can attend an exclusive event or an ordinary event with better content.",
     "action_low": "Choose the better content",
-    "action_high": "Choose the exclusive event"
+    "action_high": "Choose the exclusive event",
+    "type": "long"
   },
   {
     "id": 283,
     "situation": "Your work is praised publicly but you receive no material benefit.",
     "action_low": "Downplay it",
-    "action_high": "Enjoy the recognition"
+    "action_high": "Enjoy the recognition",
+    "type": "long"
   },
   {
     "id": 284,
     "situation": "You can use an expensive branded item or an equally good unbranded one.",
     "action_low": "Use the unbranded item",
-    "action_high": "Choose the brand"
+    "action_high": "Choose the brand",
+    "type": "long"
   },
   {
     "id": 285,
     "situation": "A restaurant offers a VIP table with no practical advantage.",
     "action_low": "Take the normal table",
-    "action_high": "Take the VIP table"
+    "action_high": "Take the VIP table",
+    "type": "long"
   },
   {
     "id": 286,
     "situation": "You can have a job title upgrade without a salary increase.",
     "action_low": "Decline",
-    "action_high": "Accept the title"
+    "action_high": "Accept the title",
+    "type": "long"
   },
   {
     "id": 287,
     "situation": "A group photo can place you prominently or everyone equally.",
     "action_low": "Stand wherever",
-    "action_high": "Choose the prominent position"
+    "action_high": "Choose the prominent position",
+    "type": "long"
   },
   {
     "id": 288,
     "situation": "You can enter an event through a special entrance that identifies you as a VIP.",
     "action_low": "Use the normal entrance",
-    "action_high": "Use the VIP entrance"
+    "action_high": "Use the VIP entrance",
+    "type": "long"
   },
   {
     "id": 289,
     "situation": "A colleague receives praise for work you know you did better.",
     "action_low": "Ignore it",
-    "action_high": "Seek recognition"
+    "action_high": "Seek recognition",
+    "type": "long"
   },
   {
     "id": 290,
     "situation": "You can own a rare object that impresses visitors but has little practical use.",
     "action_low": "Skip it",
-    "action_high": "Buy it"
+    "action_high": "Buy it",
+    "type": "long"
   },
   {
     "id": 291,
     "situation": "€300 now or €450 in two years.",
     "action_low": "Take €300 now",
-    "action_high": "Wait for €450"
+    "action_high": "Wait for €450",
+    "type": "long"
   },
   {
     "id": 292,
     "situation": "A free dessert today or a voucher for three desserts next month.",
     "action_low": "Take today's dessert",
-    "action_high": "Take the voucher"
+    "action_high": "Take the voucher",
+    "type": "long"
   },
   {
     "id": 293,
     "situation": "Finish a project now with a decent result or spend another week making it excellent.",
     "action_low": "Finish now",
-    "action_high": "Improve it"
+    "action_high": "Improve it",
+    "type": "long"
   },
   {
     "id": 294,
     "situation": "Use your vacation days now or save them for a larger trip next year.",
     "action_low": "Use them now",
-    "action_high": "Save them"
+    "action_high": "Save them",
+    "type": "long"
   },
   {
     "id": 295,
     "situation": "Buy a modest computer now or save for a better one in six months.",
     "action_low": "Buy now",
-    "action_high": "Wait"
+    "action_high": "Wait",
+    "type": "long"
   },
   {
     "id": 296,
     "situation": "Receive a small guaranteed bonus or a larger bonus next year based on performance.",
     "action_low": "Take the guaranteed bonus",
-    "action_high": "Wait for the larger bonus"
+    "action_high": "Wait for the larger bonus",
+    "type": "long"
   },
   {
     "id": 297,
     "situation": "You can learn a useful skill quickly or a more valuable one slowly.",
     "action_low": "Learn quickly",
-    "action_high": "Invest in the longer skill"
+    "action_high": "Invest in the longer skill",
+    "type": "long"
   },
   {
     "id": 298,
     "situation": "A repair can be patched today or replaced properly next month.",
     "action_low": "Patch it",
-    "action_high": "Wait for the proper repair"
+    "action_high": "Wait for the proper repair",
+    "type": "long"
   },
   {
     "id": 299,
     "situation": "A book is available now in paperback or next month in a better edition.",
     "action_low": "Buy now",
-    "action_high": "Wait"
+    "action_high": "Wait",
+    "type": "long"
   },
   {
     "id": 300,
     "situation": "A small party can happen tonight or a larger one can be organized next month.",
     "action_low": "Party tonight",
-    "action_high": "Wait for the larger party"
+    "action_high": "Wait for the larger party",
+    "type": "long"
   },
   {
     "id": 301,
     "situation": "You are at home. A museum ticket costs €12 now or is free after 90 minutes.",
     "action_low": "Wait",
-    "action_high": "Pay and enter now"
+    "action_high": "Pay and enter now",
+    "type": "long"
   },
   {
     "id": 302,
     "situation": "You are traveling. A shortcut saves 40 minutes but has a 20% chance of a major delay.",
     "action_low": "Take the safe route",
-    "action_high": "Take the shortcut"
+    "action_high": "Take the shortcut",
+    "type": "long"
   },
   {
     "id": 303,
     "situation": "You are at work. Your friends unanimously choose a movie you dislike.",
     "action_low": "Suggest another",
-    "action_high": "Go with them"
+    "action_high": "Go with them",
+    "type": "long"
   },
   {
     "id": 304,
     "situation": "You are with friends. Someone occupies your reserved seat by mistake.",
     "action_low": "Find another seat",
-    "action_high": "Ask them to move"
+    "action_high": "Ask them to move",
+    "type": "long"
   },
   {
     "id": 305,
     "situation": "You are on a weekend. You can revisit a favorite place or explore somewhere new.",
     "action_low": "Return",
-    "action_high": "Explore"
+    "action_high": "Explore",
+    "type": "long"
   },
   {
     "id": 306,
     "situation": "You are at home. You have a month before an important presentation.",
     "action_low": "Prepare early",
-    "action_high": "Wait until later"
+    "action_high": "Wait until later",
+    "type": "long"
   },
   {
     "id": 307,
     "situation": "You are traveling. You receive €20 more than you were supposed to receive.",
     "action_low": "Keep it",
-    "action_high": "Correct it"
+    "action_high": "Correct it",
+    "type": "long"
   },
   {
     "id": 308,
     "situation": "You are at work. A friend asks you to conceal a minor mistake.",
     "action_low": "Tell someone",
-    "action_high": "Keep it private"
+    "action_high": "Keep it private",
+    "type": "long"
   },
   {
     "id": 309,
     "situation": "You are with friends. A VIP option costs €30 but has no practical advantage.",
     "action_low": "Choose normal",
-    "action_high": "Choose VIP"
+    "action_high": "Choose VIP",
+    "type": "long"
   },
   {
     "id": 310,
     "situation": "You are on a weekend. €300 now or €450 in two years.",
     "action_low": "Take now",
-    "action_high": "Wait"
+    "action_high": "Wait",
+    "type": "long"
   },
   {
     "id": 311,
     "situation": "You are at home. A repair costs €35 next week or €80 today.",
     "action_low": "Wait",
-    "action_high": "Pay for today"
+    "action_high": "Pay for today",
+    "type": "long"
   },
   {
     "id": 312,
     "situation": "You are traveling. You can invest €100 with a 50% chance of receiving €220.",
     "action_low": "Keep it",
-    "action_high": "Invest it"
+    "action_high": "Invest it",
+    "type": "long"
   },
   {
     "id": 313,
     "situation": "You are at work. Most people at a meeting favor an option you slightly dislike.",
     "action_low": "Vote independently",
-    "action_high": "Follow the group"
+    "action_high": "Follow the group",
+    "type": "long"
   },
   {
     "id": 314,
     "situation": "You are with friends. A shop overcharges you by €10.",
     "action_low": "Accept it",
-    "action_high": "Request correction"
+    "action_high": "Request correction",
+    "type": "long"
   },
   {
     "id": 315,
     "situation": "You are on a weekend. You can order your usual dish or a chef's surprise.",
     "action_low": "Usual dish",
-    "action_high": "Surprise"
+    "action_high": "Surprise",
+    "type": "long"
   },
   {
     "id": 316,
     "situation": "You are at home. A trip can be planned in detail or left open.",
     "action_low": "Plan it",
-    "action_high": "Leave it open"
+    "action_high": "Leave it open",
+    "type": "long"
   },
   {
     "id": 317,
     "situation": "You are traveling. A teammate did most of the work.",
     "action_low": "Take equal credit",
-    "action_high": "Give them more credit"
+    "action_high": "Give them more credit",
+    "type": "long"
   },
   {
     "id": 318,
     "situation": "You are at work. A friend is criticized unfairly.",
     "action_low": "Stay silent",
-    "action_high": "Defend them"
+    "action_high": "Defend them",
+    "type": "long"
   },
   {
     "id": 319,
     "situation": "You are with friends. A brand costs twice as much for the same quality.",
     "action_low": "Choose unbranded",
-    "action_high": "Choose the brand"
+    "action_high": "Choose the brand",
+    "type": "long"
   },
   {
     "id": 320,
     "situation": "You are on a weekend. A modest product now or a better one in six months.",
     "action_low": "Buy now",
-    "action_high": "Wait"
+    "action_high": "Wait",
+    "type": "long"
   },
   {
     "id": 321,
     "situation": "You are at home. A taxi costs €18 and takes 8 minutes; the bus is free and takes 30.",
     "action_low": "Take the bus",
-    "action_high": "Take the taxi"
+    "action_high": "Take the taxi",
+    "type": "long"
   },
   {
     "id": 322,
     "situation": "You are traveling. A new restaurant has no reviews but is half price.",
     "action_low": "Choose the known restaurant",
-    "action_high": "Try it"
+    "action_high": "Try it",
+    "type": "long"
   },
   {
     "id": 323,
     "situation": "You are at work. Everyone at dinner orders the unfamiliar special.",
     "action_low": "Order something else",
-    "action_high": "Order the special"
+    "action_high": "Order the special",
+    "type": "long"
   },
   {
     "id": 324,
     "situation": "You are with friends. A colleague interrupts you repeatedly.",
     "action_low": "Ignore it",
-    "action_high": "Stop them politely"
+    "action_high": "Stop them politely",
+    "type": "long"
   },
   {
     "id": 325,
     "situation": "You are on a weekend. You can read a favorite author or an unfamiliar author.",
     "action_low": "Favorite",
-    "action_high": "Unfamiliar"
+    "action_high": "Unfamiliar",
+    "type": "long"
   },
   {
     "id": 326,
     "situation": "You are at home. You have a complicated task with no immediate deadline.",
     "action_low": "Start now",
-    "action_high": "Wait"
+    "action_high": "Wait",
+    "type": "long"
   },
   {
     "id": 327,
     "situation": "You are traveling. A bill error benefits you.",
     "action_low": "Say nothing",
-    "action_high": "Point it out"
+    "action_high": "Point it out",
+    "type": "long"
   },
   {
     "id": 328,
     "situation": "You are at work. A teammate is blamed for your mistake.",
     "action_low": "Let it stand",
-    "action_high": "Correct the record"
+    "action_high": "Correct the record",
+    "type": "long"
   },
   {
     "id": 329,
     "situation": "You are with friends. You can have a prestigious title without more money.",
     "action_low": "Decline",
-    "action_high": "Accept it"
+    "action_high": "Accept it",
+    "type": "long"
   },
   {
     "id": 330,
     "situation": "You are on a weekend. A small reward today or a larger one next year.",
     "action_low": "Take today",
-    "action_high": "Wait"
+    "action_high": "Wait",
+    "type": "long"
   },
   {
     "id": 331,
     "situation": "You are at home. A meal arrives in 20 minutes for €4 extra or in 50 minutes for free.",
     "action_low": "Wait",
-    "action_high": "Pay for speed"
+    "action_high": "Pay for speed",
+    "type": "long"
   },
   {
     "id": 332,
     "situation": "You are traveling. A difficult hiking route offers exceptional views.",
     "action_low": "Take the easy route",
-    "action_high": "Take the difficult route"
+    "action_high": "Take the difficult route",
+    "type": "long"
   },
   {
     "id": 333,
     "situation": "You are at work. A group changes plans suddenly and expects everyone to follow.",
     "action_low": "Keep your plan",
-    "action_high": "Follow them"
+    "action_high": "Follow them",
+    "type": "long"
   },
   {
     "id": 334,
     "situation": "You are with friends. A neighbor is making noise late at night.",
     "action_low": "Tolerate it",
-    "action_high": "Ask them to stop"
+    "action_high": "Ask them to stop",
+    "type": "long"
   },
   {
     "id": 335,
     "situation": "You are on a weekend. You can take the known route or a scenic unknown route.",
     "action_low": "Known route",
-    "action_high": "Unknown route"
+    "action_high": "Unknown route",
+    "type": "long"
   },
   {
     "id": 336,
     "situation": "You are at home. You are camping with uncertain weather.",
     "action_low": "Pack contingencies",
-    "action_high": "Pack minimally"
+    "action_high": "Pack minimally",
+    "type": "long"
   },
   {
     "id": 337,
     "situation": "You are traveling. A stranger receives less than you in an equal-share situation.",
     "action_low": "Accept it",
-    "action_high": "Offer a fairer split"
+    "action_high": "Offer a fairer split",
+    "type": "long"
   },
   {
     "id": 338,
     "situation": "You are at work. A friend needs help after a disagreement with your group.",
     "action_low": "Decline",
-    "action_high": "Help them"
+    "action_high": "Help them",
+    "type": "long"
   },
   {
     "id": 339,
     "situation": "You are with friends. You can be prominently featured in a group photo.",
     "action_low": "Stand anywhere",
-    "action_high": "Take the prominent position"
+    "action_high": "Take the prominent position",
+    "type": "long"
   },
   {
     "id": 340,
     "situation": "You are on a weekend. Finish now with a good result or improve it for another week.",
     "action_low": "Finish",
-    "action_high": "Improve"
+    "action_high": "Improve",
+    "type": "long"
   },
   {
     "id": 341,
     "situation": "Ice cream",
     "action_low": "Vanilla",
-    "action_high": "Fancy pistachio gelato"
+    "action_high": "Fancy pistachio gelato",
+    "type": "short"
   },
   {
     "id": 342,
     "situation": "Coffee order",
     "action_low": "Black coffee",
-    "action_high": "Triple caramel oat-milk macchiato"
+    "action_high": "Triple caramel oat-milk macchiato",
+    "type": "short"
   },
   {
     "id": 343,
     "situation": "Pizza topping",
     "action_low": "Pepperoni",
-    "action_high": "Pineapple"
+    "action_high": "Pineapple",
+    "type": "short"
   },
   {
     "id": 344,
     "situation": "Late night snack",
     "action_low": "Bowl of cereal",
-    "action_high": "Cold leftover pizza"
+    "action_high": "Cold leftover pizza",
+    "type": "short"
   },
   {
     "id": 345,
     "situation": "Sushi",
     "action_low": "California roll",
-    "action_high": "Raw uni"
+    "action_high": "Raw uni",
+    "type": "short"
   },
   {
     "id": 346,
     "situation": "Breakfast",
     "action_low": "Bowl of cereal",
-    "action_high": "Avocado toast"
+    "action_high": "Avocado toast",
+    "type": "short"
   },
   {
     "id": 347,
     "situation": "Burger",
     "action_low": "Classic cheeseburger",
-    "action_high": "Truffle wagyu burger"
+    "action_high": "Truffle wagyu burger",
+    "type": "short"
   },
   {
     "id": 348,
     "situation": "Hot sauce",
     "action_low": "Mild",
-    "action_high": "Ghost pepper"
+    "action_high": "Ghost pepper",
+    "type": "short"
   },
   {
     "id": 349,
     "situation": "Wine",
     "action_low": "Boxed wine",
-    "action_high": "Vintage champagne"
+    "action_high": "Vintage champagne",
+    "type": "short"
   },
   {
     "id": 350,
     "situation": "Fast food",
     "action_low": "Drive-thru combo",
-    "action_high": "Fine dining seven-course meal"
+    "action_high": "Fine dining seven-course meal",
+    "type": "short"
   },
   {
     "id": 351,
     "situation": "Candy",
     "action_low": "Chocolate bar",
-    "action_high": "Sour gummy worms"
+    "action_high": "Sour gummy worms",
+    "type": "short"
   },
   {
     "id": 352,
     "situation": "Brunch drink",
     "action_low": "Orange juice",
-    "action_high": "Bottomless mimosas"
+    "action_high": "Bottomless mimosas",
+    "type": "short"
   },
   {
     "id": 353,
     "situation": "Steak",
     "action_low": "Well-done",
-    "action_high": "Blue rare"
+    "action_high": "Blue rare",
+    "type": "short"
   },
   {
     "id": 354,
     "situation": "Cheese",
     "action_low": "Mild cheddar",
-    "action_high": "Stinky blue cheese"
+    "action_high": "Stinky blue cheese",
+    "type": "short"
   },
   {
     "id": 355,
     "situation": "Soda",
     "action_low": "Classic cola",
-    "action_high": "Exotic bubble tea"
+    "action_high": "Exotic bubble tea",
+    "type": "short"
   },
   {
     "id": 356,
     "situation": "Concert",
     "action_low": "Local cover band",
-    "action_high": "Taylor Swift stadium tour"
+    "action_high": "Taylor Swift stadium tour",
+    "type": "short"
   },
   {
     "id": 357,
     "situation": "Karaoke song",
     "action_low": "Sweet Caroline",
-    "action_high": "Bohemian Rhapsody"
+    "action_high": "Bohemian Rhapsody",
+    "type": "short"
   },
   {
     "id": 358,
     "situation": "Music genre",
     "action_low": "Elevator jazz",
-    "action_high": "Death metal"
+    "action_high": "Death metal",
+    "type": "short"
   },
   {
     "id": 359,
     "situation": "Boy band era",
     "action_low": "Backstreet Boys",
-    "action_high": "BTS"
+    "action_high": "BTS",
+    "type": "short"
   },
   {
     "id": 360,
     "situation": "Celebrity crush",
     "action_low": "Ryan Gosling",
-    "action_high": "Timothée Chalamet"
+    "action_high": "Timothée Chalamet",
+    "type": "short"
   },
   {
     "id": 361,
     "situation": "Festival",
     "action_low": "Local jazz fest",
-    "action_high": "Coachella"
+    "action_high": "Coachella",
+    "type": "short"
   },
   {
     "id": 362,
     "situation": "Dance move",
     "action_low": "Slow sway",
-    "action_high": "Full choreography"
+    "action_high": "Full choreography",
+    "type": "short"
   },
   {
     "id": 363,
     "situation": "Singing in the car",
     "action_low": "Humming along",
-    "action_high": "Full concert performance"
+    "action_high": "Full concert performance",
+    "type": "short"
   },
   {
     "id": 364,
     "situation": "Music format",
     "action_low": "Dusty vinyl records",
-    "action_high": "Curated Spotify playlist"
+    "action_high": "Curated Spotify playlist",
+    "type": "short"
   },
   {
     "id": 365,
     "situation": "Music video era",
     "action_low": "MTV classics",
-    "action_high": "Viral TikTok dance"
+    "action_high": "Viral TikTok dance",
+    "type": "short"
   },
   {
     "id": 366,
     "situation": "Air guitar",
     "action_low": "Shy little strum",
-    "action_high": "Full rockstar solo"
+    "action_high": "Full rockstar solo",
+    "type": "short"
   },
   {
     "id": 367,
     "situation": "Duet partner",
     "action_low": "Grandma",
-    "action_high": "Beyoncé"
+    "action_high": "Beyoncé",
+    "type": "short"
   },
   {
     "id": 368,
     "situation": "Ringtone",
     "action_low": "Classic marimba",
-    "action_high": "Viral TikTok sound"
+    "action_high": "Viral TikTok sound",
+    "type": "short"
   },
   {
     "id": 369,
     "situation": "Musical instrument",
     "action_low": "Recorder",
-    "action_high": "Electric guitar"
+    "action_high": "Electric guitar",
+    "type": "short"
   },
   {
     "id": 370,
     "situation": "Award show",
     "action_low": "Read the highlights next day",
-    "action_high": "Live red carpet coverage"
+    "action_high": "Live red carpet coverage",
+    "type": "short"
   },
   {
     "id": 371,
     "situation": "Movie night",
     "action_low": "Rom-com",
-    "action_high": "Slasher horror"
+    "action_high": "Slasher horror",
+    "type": "short"
   },
   {
     "id": 372,
     "situation": "Streaming binge",
     "action_low": "One episode",
-    "action_high": "Entire season overnight"
+    "action_high": "Entire season overnight",
+    "type": "short"
   },
   {
     "id": 373,
     "situation": "Movie snack",
     "action_low": "Plain popcorn",
-    "action_high": "Loaded nachos"
+    "action_high": "Loaded nachos",
+    "type": "short"
   },
   {
     "id": 374,
     "situation": "Superhero",
     "action_low": "Batman",
-    "action_high": "Deadpool"
+    "action_high": "Deadpool",
+    "type": "short"
   },
   {
     "id": 375,
     "situation": "Reality TV",
     "action_low": "Cooking competition",
-    "action_high": "Dating show drama"
+    "action_high": "Dating show drama",
+    "type": "short"
   },
   {
     "id": 376,
     "situation": "Rewatch",
     "action_low": "Comfort sitcom",
-    "action_high": "New prestige drama"
+    "action_high": "New prestige drama",
+    "type": "short"
   },
   {
     "id": 377,
     "situation": "Documentary topic",
     "action_low": "Nature",
-    "action_high": "True crime"
+    "action_high": "True crime",
+    "type": "short"
   },
   {
     "id": 378,
     "situation": "Movie ending",
     "action_low": "Happy ending",
-    "action_high": "Twist ending"
+    "action_high": "Twist ending",
+    "type": "short"
   },
   {
     "id": 379,
     "situation": "Rom-com lead",
     "action_low": "The girl next door",
-    "action_high": "The billionaire"
+    "action_high": "The billionaire",
+    "type": "short"
   },
   {
     "id": 380,
     "situation": "Cinema experience",
     "action_low": "Home couch",
-    "action_high": "IMAX recliner seats"
+    "action_high": "IMAX recliner seats",
+    "type": "short"
   },
   {
     "id": 381,
     "situation": "Franchise",
     "action_low": "Marvel",
-    "action_high": "Star Wars"
+    "action_high": "Star Wars",
+    "type": "short"
   },
   {
     "id": 382,
     "situation": "Sitcom",
     "action_low": "The Office",
-    "action_high": "Friends"
+    "action_high": "Friends",
+    "type": "short"
   },
   {
     "id": 383,
     "situation": "Villain",
     "action_low": "Loveable rogue",
-    "action_high": "Pure evil mastermind"
+    "action_high": "Pure evil mastermind",
+    "type": "short"
   },
   {
     "id": 384,
     "situation": "Cartoon",
     "action_low": "Saturday morning classics",
-    "action_high": "Anime"
+    "action_high": "Anime",
+    "type": "short"
   },
   {
     "id": 385,
     "situation": "Talk show host",
     "action_low": "Cozy daytime chat",
-    "action_high": "Late-night comedy roast"
+    "action_high": "Late-night comedy roast",
+    "type": "short"
   },
   {
     "id": 386,
     "situation": "Sport to watch",
     "action_low": "Chess",
-    "action_high": "Extreme skateboarding"
+    "action_high": "Extreme skateboarding",
+    "type": "short"
   },
   {
     "id": 387,
     "situation": "Gym style",
     "action_low": "Slow yoga",
-    "action_high": "Intense CrossFit"
+    "action_high": "Intense CrossFit",
+    "type": "short"
   },
   {
     "id": 388,
     "situation": "Team sport",
     "action_low": "Casual backyard soccer",
-    "action_high": "Pro stadium football"
+    "action_high": "Pro stadium football",
+    "type": "short"
   },
   {
     "id": 389,
     "situation": "Winter sport",
     "action_low": "Ice skating rink",
-    "action_high": "Downhill skiing"
+    "action_high": "Downhill skiing",
+    "type": "short"
   },
   {
     "id": 390,
     "situation": "Water sport",
     "action_low": "Lazy river float",
-    "action_high": "Cliff diving"
+    "action_high": "Cliff diving",
+    "type": "short"
   },
   {
     "id": 391,
     "situation": "Marathon",
     "action_low": "Watch from the sidelines",
-    "action_high": "Run it yourself"
+    "action_high": "Run it yourself",
+    "type": "short"
   },
   {
     "id": 392,
     "situation": "Sports fandom",
     "action_low": "Casual fan",
-    "action_high": "Face-painted superfan"
+    "action_high": "Face-painted superfan",
+    "type": "short"
   },
   {
     "id": 393,
     "situation": "Home workout",
     "action_low": "Gentle stretching",
-    "action_high": "Intense HIIT bootcamp"
+    "action_high": "Intense HIIT bootcamp",
+    "type": "short"
   },
   {
     "id": 394,
     "situation": "Extreme sport",
     "action_low": "Zip-lining",
-    "action_high": "Skydiving"
+    "action_high": "Skydiving",
+    "type": "short"
   },
   {
     "id": 395,
     "situation": "Ball game",
     "action_low": "Ping pong",
-    "action_high": "Rugby"
+    "action_high": "Rugby",
+    "type": "short"
   },
   {
     "id": 396,
     "situation": "Fitness tracker",
     "action_low": "Ignore the step count",
-    "action_high": "Obsess over closing the rings"
+    "action_high": "Obsess over closing the rings",
+    "type": "short"
   },
   {
     "id": 397,
     "situation": "Fantasy league",
     "action_low": "Skip it",
-    "action_high": "Draft day is sacred"
+    "action_high": "Draft day is sacred",
+    "type": "short"
   },
   {
     "id": 398,
     "situation": "Vacation style",
     "action_low": "Beach resort",
-    "action_high": "Backpacking through the jungle"
+    "action_high": "Backpacking through the jungle",
+    "type": "short"
   },
   {
     "id": 399,
     "situation": "Hotel",
     "action_low": "Budget motel",
-    "action_high": "Overwater bungalow"
+    "action_high": "Overwater bungalow",
+    "type": "short"
   },
   {
     "id": 400,
     "situation": "Road trip",
     "action_low": "Playlist and snacks",
-    "action_high": "GPS-free adventure"
+    "action_high": "GPS-free adventure",
+    "type": "short"
   },
   {
     "id": 401,
     "situation": "Airport wait",
     "action_low": "Nap at the gate",
-    "action_high": "Lounge with cocktails"
+    "action_high": "Lounge with cocktails",
+    "type": "short"
   },
   {
     "id": 402,
     "situation": "Camping",
     "action_low": "Tent in the backyard",
-    "action_high": "Deep wilderness with bears"
+    "action_high": "Deep wilderness with bears",
+    "type": "short"
   },
   {
     "id": 403,
     "situation": "City break",
     "action_low": "Museums",
-    "action_high": "Nightclubs"
+    "action_high": "Nightclubs",
+    "type": "short"
   },
   {
     "id": 404,
     "situation": "Souvenir",
     "action_low": "Fridge magnet",
-    "action_high": "Full designer shopping spree"
+    "action_high": "Full designer shopping spree",
+    "type": "short"
   },
   {
     "id": 405,
     "situation": "Passport stamps",
     "action_low": "One familiar country",
-    "action_high": "As many countries as possible"
+    "action_high": "As many countries as possible",
+    "type": "short"
   },
   {
     "id": 406,
     "situation": "Travel pace",
     "action_low": "Slow relaxing days",
-    "action_high": "Every hour packed with activities"
+    "action_high": "Every hour packed with activities",
+    "type": "short"
   },
   {
     "id": 407,
     "situation": "Cruise",
     "action_low": "Quiet reading deck",
-    "action_high": "All-night casino"
+    "action_high": "All-night casino",
+    "type": "short"
   },
   {
     "id": 408,
     "situation": "Language abroad",
     "action_low": "Google Translate",
-    "action_high": "Fluent before you land"
+    "action_high": "Fluent before you land",
+    "type": "short"
   },
   {
     "id": 409,
     "situation": "Luggage",
     "action_low": "One carry-on",
-    "action_high": "Three overweight suitcases"
+    "action_high": "Three overweight suitcases",
+    "type": "short"
   },
   {
     "id": 410,
     "situation": "Adventure activity",
     "action_low": "Sightseeing bus tour",
-    "action_high": "Paragliding off a cliff"
+    "action_high": "Paragliding off a cliff",
+    "type": "short"
   },
   {
     "id": 411,
     "situation": "Beach day",
     "action_low": "Sunbathing",
-    "action_high": "Jet skiing"
+    "action_high": "Jet skiing",
+    "type": "short"
   },
   {
     "id": 412,
     "situation": "Travel companion",
     "action_low": "Solo silence",
-    "action_high": "Big noisy group"
+    "action_high": "Big noisy group",
+    "type": "short"
   },
   {
     "id": 413,
     "situation": "Outfit",
     "action_low": "Sweatpants",
-    "action_high": "Full sequin gown"
+    "action_high": "Full sequin gown",
+    "type": "short"
   },
   {
     "id": 414,
     "situation": "Shoes",
     "action_low": "Comfy sneakers",
-    "action_high": "Sky-high heels"
+    "action_high": "Sky-high heels",
+    "type": "short"
   },
   {
     "id": 415,
     "situation": "Hair color",
     "action_low": "Natural brown",
-    "action_high": "Neon pink"
+    "action_high": "Neon pink",
+    "type": "short"
   },
   {
     "id": 416,
     "situation": "Accessory",
     "action_low": "Simple watch",
-    "action_high": "Diamond-studded everything"
+    "action_high": "Diamond-studded everything",
+    "type": "short"
   },
   {
     "id": 417,
     "situation": "Suit color",
     "action_low": "Classic navy",
-    "action_high": "Bold hot pink"
+    "action_high": "Bold hot pink",
+    "type": "short"
   },
   {
     "id": 418,
     "situation": "Sunglasses",
     "action_low": "Basic aviators",
-    "action_high": "Oversized designer frames"
+    "action_high": "Oversized designer frames",
+    "type": "short"
   },
   {
     "id": 419,
     "situation": "Tattoo",
     "action_low": "None",
-    "action_high": "Full sleeve"
+    "action_high": "Full sleeve",
+    "type": "short"
   },
   {
     "id": 420,
     "situation": "Nail art",
     "action_low": "Plain manicure",
-    "action_high": "Wild rhinestone design"
+    "action_high": "Wild rhinestone design",
+    "type": "short"
   },
   {
     "id": 421,
     "situation": "Shopping",
     "action_low": "Thrift store finds",
-    "action_high": "Luxury boutique haul"
+    "action_high": "Luxury boutique haul",
+    "type": "short"
   },
   {
     "id": 422,
     "situation": "Socks",
     "action_low": "Plain white",
-    "action_high": "Loud clashing pattern"
+    "action_high": "Loud clashing pattern",
+    "type": "short"
   },
   {
     "id": 423,
     "situation": "Perfume",
     "action_low": "Light and clean",
-    "action_high": "Overpowering and exotic"
+    "action_high": "Overpowering and exotic",
+    "type": "short"
   },
   {
     "id": 424,
     "situation": "Wardrobe color",
     "action_low": "All black",
-    "action_high": "Rainbow of colors"
+    "action_high": "Rainbow of colors",
+    "type": "short"
   },
   {
     "id": 425,
     "situation": "Social platform",
     "action_low": "Facebook",
-    "action_high": "TikTok"
+    "action_high": "TikTok",
+    "type": "short"
   },
   {
     "id": 426,
     "situation": "Selfie",
     "action_low": "No filter",
-    "action_high": "Full glam filter"
+    "action_high": "Full glam filter",
+    "type": "short"
   },
   {
     "id": 427,
     "situation": "Text vs call",
     "action_low": "Quick text",
-    "action_high": "Surprise phone call"
+    "action_high": "Surprise phone call",
+    "type": "short"
   },
   {
     "id": 428,
     "situation": "Online status",
     "action_low": "Always online",
-    "action_high": "Permanent airplane mode"
+    "action_high": "Permanent airplane mode",
+    "type": "short"
   },
   {
     "id": 429,
     "situation": "Group chat",
     "action_low": "Silent observer",
-    "action_high": "Meme-spamming chaos"
+    "action_high": "Meme-spamming chaos",
+    "type": "short"
   },
   {
     "id": 430,
     "situation": "Photo dump",
     "action_low": "Curated and edited",
-    "action_high": "Messy raw dump"
+    "action_high": "Messy raw dump",
+    "type": "short"
   },
   {
     "id": 431,
     "situation": "Dating app bio",
     "action_low": "One-liner",
-    "action_high": "Full paragraph essay"
+    "action_high": "Full paragraph essay",
+    "type": "short"
   },
   {
     "id": 432,
     "situation": "Notifications",
     "action_low": "Silence everything",
-    "action_high": "Every ping turned on"
+    "action_high": "Every ping turned on",
+    "type": "short"
   },
   {
     "id": 433,
     "situation": "Video call",
     "action_low": "Camera off",
-    "action_high": "Full ring-light glow-up"
+    "action_high": "Full ring-light glow-up",
+    "type": "short"
   },
   {
     "id": 434,
     "situation": "Emoji use",
     "action_low": "One thumbs up",
-    "action_high": "Twelve emojis per message"
+    "action_high": "Twelve emojis per message",
+    "type": "short"
   },
   {
     "id": 435,
     "situation": "Online shopping",
     "action_low": "Add to cart, wait a week",
-    "action_high": "One-click impulse buy"
+    "action_high": "One-click impulse buy",
+    "type": "short"
   },
   {
     "id": 436,
     "situation": "Influencer style",
     "action_low": "Down-to-earth vlogger",
-    "action_high": "Glamorous lifestyle guru"
+    "action_high": "Glamorous lifestyle guru",
+    "type": "short"
   },
   {
     "id": 437,
     "situation": "Weekend hobby",
     "action_low": "Puzzle at home",
-    "action_high": "Rock climbing outdoors"
+    "action_high": "Rock climbing outdoors",
+    "type": "short"
   },
   {
     "id": 438,
     "situation": "Craft",
     "action_low": "Knitting",
-    "action_high": "Pottery throwing"
+    "action_high": "Pottery throwing",
+    "type": "short"
   },
   {
     "id": 439,
     "situation": "Collecting",
     "action_low": "Postcards",
-    "action_high": "Sneakers"
+    "action_high": "Sneakers",
+    "type": "short"
   },
   {
     "id": 440,
     "situation": "Board games",
     "action_low": "Classic Monopoly",
-    "action_high": "Complex strategy game"
+    "action_high": "Complex strategy game",
+    "type": "short"
   },
   {
     "id": 441,
     "situation": "Reading",
     "action_low": "Beach paperback",
-    "action_high": "Dense fantasy epic"
+    "action_high": "Dense fantasy epic",
+    "type": "short"
   },
   {
     "id": 442,
     "situation": "Gardening",
     "action_low": "One houseplant",
-    "action_high": "Full backyard jungle"
+    "action_high": "Full backyard jungle",
+    "type": "short"
   },
   {
     "id": 443,
     "situation": "DIY project",
     "action_low": "Simple shelf",
-    "action_high": "Full room renovation"
+    "action_high": "Full room renovation",
+    "type": "short"
   },
   {
     "id": 444,
     "situation": "Photography",
     "action_low": "Phone snapshots",
-    "action_high": "Professional camera gear"
+    "action_high": "Professional camera gear",
+    "type": "short"
   },
   {
     "id": 445,
     "situation": "Cooking",
     "action_low": "Follow the recipe exactly",
-    "action_high": "Improvise wildly"
+    "action_high": "Improvise wildly",
+    "type": "short"
   },
   {
     "id": 446,
     "situation": "Puzzle size",
     "action_low": "100 pieces",
-    "action_high": "5000-piece masterpiece"
+    "action_high": "5000-piece masterpiece",
+    "type": "short"
   },
   {
     "id": 447,
     "situation": "Party role",
     "action_low": "Wallflower",
-    "action_high": "Life of the party"
+    "action_high": "Life of the party",
+    "type": "short"
   },
   {
     "id": 448,
     "situation": "Party game",
     "action_low": "Charades",
-    "action_high": "Truth or dare"
+    "action_high": "Truth or dare",
+    "type": "short"
   },
   {
     "id": 449,
     "situation": "Dance floor",
     "action_low": "Watch from the side",
-    "action_high": "First one dancing"
+    "action_high": "First one dancing",
+    "type": "short"
   },
   {
     "id": 450,
     "situation": "Birthday party",
     "action_low": "Quiet dinner",
-    "action_high": "Wild rager"
+    "action_high": "Wild rager",
+    "type": "short"
   },
   {
     "id": 451,
     "situation": "Costume party",
     "action_low": "Simple mask",
-    "action_high": "Full elaborate costume"
+    "action_high": "Full elaborate costume",
+    "type": "short"
   },
   {
     "id": 452,
     "situation": "Karaoke bar",
     "action_low": "Sing backup",
-    "action_high": "Grab the mic first"
+    "action_high": "Grab the mic first",
+    "type": "short"
   },
   {
     "id": 453,
     "situation": "Cocktail",
     "action_low": "Classic beer",
-    "action_high": "Flaming tropical cocktail"
+    "action_high": "Flaming tropical cocktail",
+    "type": "short"
   },
   {
     "id": 454,
     "situation": "Party favor",
     "action_low": "Goodie bag",
-    "action_high": "Confetti cannon"
+    "action_high": "Confetti cannon",
+    "type": "short"
   },
   {
     "id": 455,
     "situation": "New Year's Eve",
     "action_low": "Home on the couch",
-    "action_high": "Times Square crowd"
+    "action_high": "Times Square crowd",
+    "type": "short"
   },
   {
     "id": 456,
     "situation": "Bar choice",
     "action_low": "Quiet pub",
-    "action_high": "Packed nightclub"
+    "action_high": "Packed nightclub",
+    "type": "short"
   },
   {
     "id": 457,
     "situation": "Party host",
     "action_low": "Potluck",
-    "action_high": "Catered extravaganza"
+    "action_high": "Catered extravaganza",
+    "type": "short"
   },
   {
     "id": 458,
     "situation": "After-party",
     "action_low": "Head home",
-    "action_high": "Chase the sunrise"
+    "action_high": "Chase the sunrise",
+    "type": "short"
   },
   {
     "id": 459,
     "situation": "First date",
     "action_low": "Coffee shop",
-    "action_high": "Helicopter tour"
+    "action_high": "Helicopter tour",
+    "type": "short"
   },
   {
     "id": 460,
     "situation": "Date night",
     "action_low": "Home-cooked dinner",
-    "action_high": "Fancy tasting menu"
+    "action_high": "Fancy tasting menu",
+    "type": "short"
   },
   {
     "id": 461,
     "situation": "Romantic gesture",
     "action_low": "Handwritten note",
-    "action_high": "Skywriting"
+    "action_high": "Skywriting",
+    "type": "short"
   },
   {
     "id": 462,
     "situation": "Proposal",
     "action_low": "Quiet at home",
-    "action_high": "Jumbotron at a stadium"
+    "action_high": "Jumbotron at a stadium",
+    "type": "short"
   },
   {
     "id": 463,
     "situation": "Date outfit",
     "action_low": "Jeans and t-shirt",
-    "action_high": "Full formal wear"
+    "action_high": "Full formal wear",
+    "type": "short"
   },
   {
     "id": 464,
     "situation": "First kiss",
     "action_low": "Doorstep peck",
-    "action_high": "Movie-style dramatic kiss"
+    "action_high": "Movie-style dramatic kiss",
+    "type": "short"
   },
   {
     "id": 465,
     "situation": "Anniversary gift",
     "action_low": "Homemade card",
-    "action_high": "Diamond jewelry"
+    "action_high": "Diamond jewelry",
+    "type": "short"
   },
   {
     "id": 466,
     "situation": "Blind date",
     "action_low": "Tea at a quiet café",
-    "action_high": "Whitewater rafting together"
+    "action_high": "Whitewater rafting together",
+    "type": "short"
   },
   {
     "id": 467,
     "situation": "Love language",
     "action_low": "Quality time",
-    "action_high": "Extravagant gifts"
+    "action_high": "Extravagant gifts",
+    "type": "short"
   },
   {
     "id": 468,
     "situation": "Wedding",
     "action_low": "Backyard ceremony",
-    "action_high": "Destination extravaganza"
+    "action_high": "Destination extravaganza",
+    "type": "short"
   },
   {
     "id": 469,
     "situation": "Valentine's Day",
     "action_low": "Skip it",
-    "action_high": "Go all out"
+    "action_high": "Go all out",
+    "type": "short"
   },
   {
     "id": 470,
     "situation": "Flirting style",
     "action_low": "Shy glances",
-    "action_high": "Bold pickup lines"
+    "action_high": "Bold pickup lines",
+    "type": "short"
   },
   {
     "id": 471,
     "situation": "Morning routine",
     "action_low": "Snooze five times",
-    "action_high": "Up before sunrise"
+    "action_high": "Up before sunrise",
+    "type": "short"
   },
   {
     "id": 472,
     "situation": "Bedroom",
     "action_low": "Minimalist",
-    "action_high": "Covered in posters"
+    "action_high": "Covered in posters",
+    "type": "short"
   },
   {
     "id": 473,
     "situation": "Cleaning",
     "action_low": "Once a month",
-    "action_high": "Spotless every day"
+    "action_high": "Spotless every day",
+    "type": "short"
   },
   {
     "id": 474,
     "situation": "Living room",
     "action_low": "Cozy and cluttered",
-    "action_high": "Sleek and modern"
+    "action_high": "Sleek and modern",
+    "type": "short"
   },
   {
     "id": 475,
     "situation": "Kitchen gadget",
     "action_low": "Basic toaster",
-    "action_high": "Fancy espresso machine"
+    "action_high": "Fancy espresso machine",
+    "type": "short"
   },
   {
     "id": 476,
     "situation": "Decor style",
     "action_low": "Thrifted eclectic",
-    "action_high": "Matching showroom set"
+    "action_high": "Matching showroom set",
+    "type": "short"
   },
   {
     "id": 477,
     "situation": "Weekend chore",
     "action_low": "Ignore it",
-    "action_high": "Deep clean everything"
+    "action_high": "Deep clean everything",
+    "type": "short"
   },
   {
     "id": 478,
     "situation": "Roommate style",
     "action_low": "Neat freak",
-    "action_high": "Happy mess"
+    "action_high": "Happy mess",
+    "type": "short"
   },
   {
     "id": 479,
     "situation": "Houseplants",
     "action_low": "Fake plastic ones",
-    "action_high": "Rainforest of real ones"
+    "action_high": "Rainforest of real ones",
+    "type": "short"
   },
   {
     "id": 480,
     "situation": "Bed making",
     "action_low": "Never",
-    "action_high": "Hotel-perfect every morning"
+    "action_high": "Hotel-perfect every morning",
+    "type": "short"
   },
   {
     "id": 481,
     "situation": "Lighting",
     "action_low": "Bright overhead lights",
-    "action_high": "Mood candles everywhere"
+    "action_high": "Mood candles everywhere",
+    "type": "short"
   },
   {
     "id": 482,
     "situation": "Home smell",
     "action_low": "Unscented",
-    "action_high": "Signature candle collection"
+    "action_high": "Signature candle collection",
+    "type": "short"
   },
   {
     "id": 483,
     "situation": "Phone",
     "action_low": "Basic flip phone",
-    "action_high": "Latest foldable flagship"
+    "action_high": "Latest foldable flagship",
+    "type": "short"
   },
   {
     "id": 484,
     "situation": "Smart home",
     "action_low": "No gadgets",
-    "action_high": "Voice-controls everything"
+    "action_high": "Voice-controls everything",
+    "type": "short"
   },
   {
     "id": 485,
     "situation": "Gaming setup",
     "action_low": "Handheld console",
-    "action_high": "Full RGB battle station"
+    "action_high": "Full RGB battle station",
+    "type": "short"
   },
   {
     "id": 486,
     "situation": "Laptop",
     "action_low": "Hand-me-down",
-    "action_high": "Top-of-the-line"
+    "action_high": "Top-of-the-line",
+    "type": "short"
   },
   {
     "id": 487,
     "situation": "Wearable tech",
     "action_low": "No watch",
-    "action_high": "Smart ring, watch, and glasses"
+    "action_high": "Smart ring, watch, and glasses",
+    "type": "short"
   },
   {
     "id": 488,
     "situation": "Streaming device",
     "action_low": "One subscription",
-    "action_high": "Every service at once"
+    "action_high": "Every service at once",
+    "type": "short"
   },
   {
     "id": 489,
     "situation": "Charging cable",
     "action_low": "Tangled drawer",
-    "action_high": "Perfectly labeled organizer"
+    "action_high": "Perfectly labeled organizer",
+    "type": "short"
   },
   {
     "id": 490,
     "situation": "Password",
     "action_low": "Same one everywhere",
-    "action_high": "Fortress of unique passwords"
+    "action_high": "Fortress of unique passwords",
+    "type": "short"
   },
   {
     "id": 491,
     "situation": "Smart speaker",
     "action_low": "None",
-    "action_high": "One in every room"
+    "action_high": "One in every room",
+    "type": "short"
   },
   {
     "id": 492,
     "situation": "Camera drone",
     "action_low": "Never flown one",
-    "action_high": "Own a professional drone"
+    "action_high": "Own a professional drone",
+    "type": "short"
   },
   {
     "id": 493,
     "situation": "VR headset",
     "action_low": "Never tried",
-    "action_high": "Live in the metaverse"
+    "action_high": "Live in the metaverse",
+    "type": "short"
   },
   {
     "id": 494,
     "situation": "Tech upgrade",
     "action_low": "Use it till it breaks",
-    "action_high": "Newest model every year"
+    "action_high": "Newest model every year",
+    "type": "short"
   },
   {
     "id": 495,
     "situation": "Video game genre",
     "action_low": "Cozy farming sim",
-    "action_high": "Intense first-person shooter"
+    "action_high": "Intense first-person shooter",
+    "type": "short"
   },
   {
     "id": 496,
     "situation": "Trivia night",
     "action_low": "Guess and giggle",
-    "action_high": "Study beforehand"
+    "action_high": "Study beforehand",
+    "type": "short"
   },
   {
     "id": 497,
     "situation": "Card game",
     "action_low": "Go Fish",
-    "action_high": "High-stakes poker"
+    "action_high": "High-stakes poker",
+    "type": "short"
   },
   {
     "id": 498,
     "situation": "Arcade",
     "action_low": "Skee-ball",
-    "action_high": "Claw machine obsession"
+    "action_high": "Claw machine obsession",
+    "type": "short"
   },
   {
     "id": 499,
     "situation": "Chess vs checkers",
     "action_low": "Checkers",
-    "action_high": "Chess"
+    "action_high": "Chess",
+    "type": "short"
   },
   {
     "id": 500,
     "situation": "Escape room",
     "action_low": "Follow the group",
-    "action_high": "Take charge and solve it"
+    "action_high": "Take charge and solve it",
+    "type": "short"
   },
   {
     "id": 501,
     "situation": "Mobile game",
     "action_low": "Casual puzzle",
-    "action_high": "Competitive battle royale"
+    "action_high": "Competitive battle royale",
+    "type": "short"
   },
   {
     "id": 502,
     "situation": "Board game night",
     "action_low": "Cooperative game",
-    "action_high": "Cutthroat competitive game"
+    "action_high": "Cutthroat competitive game",
+    "type": "short"
   },
   {
     "id": 503,
     "situation": "Retro gaming",
     "action_low": "Old-school pixel games",
-    "action_high": "Cutting-edge VR"
+    "action_high": "Cutting-edge VR",
+    "type": "short"
   },
   {
     "id": 504,
     "situation": "Puzzle hunt",
     "action_low": "Sudoku",
-    "action_high": "Elaborate scavenger hunt"
+    "action_high": "Elaborate scavenger hunt",
+    "type": "short"
   },
   {
     "id": 505,
     "situation": "Pet",
     "action_low": "Goldfish",
-    "action_high": "Great Dane"
+    "action_high": "Great Dane",
+    "type": "short"
   },
   {
     "id": 506,
     "situation": "Dog walk",
     "action_low": "Quick lap around the block",
-    "action_high": "Full hiking adventure"
+    "action_high": "Full hiking adventure",
+    "type": "short"
   },
   {
     "id": 507,
     "situation": "Pet grooming",
     "action_low": "Basic bath",
-    "action_high": "Professional spa day"
+    "action_high": "Professional spa day",
+    "type": "short"
   },
   {
     "id": 508,
     "situation": "Pet costume",
     "action_low": "None",
-    "action_high": "Full themed outfit"
+    "action_high": "Full themed outfit",
+    "type": "short"
   },
   {
     "id": 509,
     "situation": "Pet food",
     "action_low": "Basic kibble",
-    "action_high": "Gourmet homemade meals"
+    "action_high": "Gourmet homemade meals",
+    "type": "short"
   },
   {
     "id": 510,
     "situation": "Pet name",
     "action_low": "Simple, like Max",
-    "action_high": "Elaborate, like Sir Fluffington III"
+    "action_high": "Elaborate, like Sir Fluffington III",
+    "type": "short"
   },
   {
     "id": 511,
     "situation": "Cat vs dog",
     "action_low": "Cat person",
-    "action_high": "Dog person"
+    "action_high": "Dog person",
+    "type": "short"
   },
   {
     "id": 512,
     "situation": "Pet bed",
     "action_low": "Cardboard box",
-    "action_high": "Custom furniture"
+    "action_high": "Custom furniture",
+    "type": "short"
   },
   {
     "id": 513,
     "situation": "Favorite season",
     "action_low": "Cozy autumn",
-    "action_high": "Sunny summer"
+    "action_high": "Sunny summer",
+    "type": "short"
   },
   {
     "id": 514,
     "situation": "Rainy day",
     "action_low": "Stay in and nap",
-    "action_high": "Dance in the rain"
+    "action_high": "Dance in the rain",
+    "type": "short"
   },
   {
     "id": 515,
     "situation": "Snow day",
     "action_low": "Hot cocoa inside",
-    "action_high": "Snowball fight outside"
+    "action_high": "Snowball fight outside",
+    "type": "short"
   },
   {
     "id": 516,
     "situation": "Heatwave",
     "action_low": "Stay in the AC",
-    "action_high": "Beach all day"
+    "action_high": "Beach all day",
+    "type": "short"
   },
   {
     "id": 517,
     "situation": "Thunderstorm",
     "action_low": "Hide under blankets",
-    "action_high": "Watch from the porch"
+    "action_high": "Watch from the porch",
+    "type": "short"
   },
   {
     "id": 518,
     "situation": "Winter activity",
     "action_low": "Hot tub",
-    "action_high": "Polar bear plunge"
+    "action_high": "Polar bear plunge",
+    "type": "short"
   },
   {
     "id": 519,
     "situation": "Spring cleaning",
     "action_low": "Skip it",
-    "action_high": "Declutter everything"
+    "action_high": "Declutter everything",
+    "type": "short"
   },
   {
     "id": 520,
     "situation": "Summer heat",
     "action_low": "Chase the ice cream truck",
-    "action_high": "Backyard sprinkler"
+    "action_high": "Backyard sprinkler",
+    "type": "short"
   },
   {
     "id": 521,
     "situation": "Halloween costume",
     "action_low": "Simple and classic",
-    "action_high": "Over-the-top elaborate"
+    "action_high": "Over-the-top elaborate",
+    "type": "short"
   },
   {
     "id": 522,
     "situation": "Christmas",
     "action_low": "Quiet family dinner",
-    "action_high": "Full light-up yard display"
+    "action_high": "Full light-up yard display",
+    "type": "short"
   },
   {
     "id": 523,
     "situation": "Thanksgiving dish",
     "action_low": "Plain turkey",
-    "action_high": "Wild new recipe"
+    "action_high": "Wild new recipe",
+    "type": "short"
   },
   {
     "id": 524,
     "situation": "Birthday cake",
     "action_low": "Store-bought",
-    "action_high": "Elaborate homemade masterpiece"
+    "action_high": "Elaborate homemade masterpiece",
+    "type": "short"
   },
   {
     "id": 525,
     "situation": "Holiday music",
     "action_low": "Skip it entirely",
-    "action_high": "Blast it from November on"
+    "action_high": "Blast it from November on",
+    "type": "short"
   },
   {
     "id": 526,
     "situation": "Fireworks",
     "action_low": "Watch from the couch",
-    "action_high": "Front row on the beach"
+    "action_high": "Front row on the beach",
+    "type": "short"
   },
   {
     "id": 527,
     "situation": "Gift wrapping",
     "action_low": "Gift bag",
-    "action_high": "Perfectly wrapped with bow"
+    "action_high": "Perfectly wrapped with bow",
+    "type": "short"
   },
   {
     "id": 528,
     "situation": "New Year's resolution",
     "action_low": "Ignore it by February",
-    "action_high": "Track it all year"
+    "action_high": "Track it all year",
+    "type": "short"
   },
   {
     "id": 529,
     "situation": "April Fools",
     "action_low": "Never prank anyone",
-    "action_high": "Elaborate prank mastermind"
+    "action_high": "Elaborate prank mastermind",
+    "type": "short"
   },
   {
     "id": 530,
     "situation": "Holiday travel",
     "action_low": "Stay home",
-    "action_high": "Fly across the world"
+    "action_high": "Fly across the world",
+    "type": "short"
   },
   {
     "id": 531,
     "situation": "Guilty pleasure show",
     "action_low": "Trashy reality TV",
-    "action_high": "Soap opera drama"
+    "action_high": "Soap opera drama",
+    "type": "short"
   },
   {
     "id": 532,
     "situation": "Snack at 2am",
     "action_low": "Plain crackers",
-    "action_high": "Entire tub of ice cream"
+    "action_high": "Entire tub of ice cream",
+    "type": "short"
   },
   {
     "id": 533,
     "situation": "Guilty pleasure song",
     "action_low": "Hum it under your breath",
-    "action_high": "Belt it out on karaoke night"
+    "action_high": "Belt it out on karaoke night",
+    "type": "short"
   },
   {
     "id": 534,
     "situation": "Procrastination",
     "action_low": "Five extra minutes",
-    "action_high": "An afternoon lost to scrolling"
+    "action_high": "An afternoon lost to scrolling",
+    "type": "short"
   },
   {
     "id": 535,
     "situation": "Gossip",
     "action_low": "Stay out of it",
-    "action_high": "Know all the tea"
+    "action_high": "Know all the tea",
+    "type": "short"
   },
   {
     "id": 536,
     "situation": "Selfie count",
     "action_low": "One and done",
-    "action_high": "Fifty before picking the best"
+    "action_high": "Fifty before picking the best",
+    "type": "short"
   },
   {
     "id": 537,
     "situation": "Nap",
     "action_low": "Quick fifteen minutes",
-    "action_high": "Full REM-cycle marathon"
+    "action_high": "Full REM-cycle marathon",
+    "type": "short"
   },
   {
     "id": 538,
     "situation": "Online shopping cart",
     "action_low": "Just the basics",
-    "action_high": "Add everything, regret later"
+    "action_high": "Add everything, regret later",
+    "type": "short"
   },
   {
     "id": 539,
     "situation": "Comfort food",
     "action_low": "Slice of toast",
-    "action_high": "Entire bag of chips"
+    "action_high": "Entire bag of chips",
+    "type": "short"
   },
   {
     "id": 540,
     "situation": "Skincare routine",
     "action_low": "Splash of water",
-    "action_high": "Twelve-step routine"
+    "action_high": "Twelve-step routine",
+    "type": "short"
   }
 ]

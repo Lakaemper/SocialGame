@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% import "_timer.html" as timer %}
+{% block title %}Read the Room!{% endblock %}
+{% block content %}
+    <h1>Read the Room!</h1>
+    <p>Waiting for all players to finish&hellip;</p>
+
+    <div class="timer-center">
+        {{ timer.widget(timer_start) }}
+    </div>
+
+    {{ timer.player_status_table(player_statuses) }}
+
+    {{ timer.script(timer_start, timer_duration, url_for('finish_status')) }}
+
+    <script>
+        const finishStatusUrl = {{ url_for('finish_status')|tojson }};
+        const initialDoneCount = {{ done_count|tojson }};
+
+        async function pollFinish() {
+            try {
+                const res = await fetch(finishStatusUrl);
+                const data = await res.json();
+                if (!data.active) {
+                    window.location.href = {{ url_for('index')|tojson }};
+                    return;
+                }
+                if (data.done_count !== initialDoneCount) {
+                    window.location.reload();
+                    return;
+                }
+            } catch (err) {
+                // ignore transient network errors and keep polling
+            }
+            setTimeout(pollFinish, 2000);
+        }
+
+        pollFinish();
+    </script>
+{% endblock %}

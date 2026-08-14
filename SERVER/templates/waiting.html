@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "_timer.html" as timer %}
 {% block title %}Read the Room!{% endblock %}
 {% block content %}
     <h1>Read the Room!</h1>
@@ -6,9 +7,16 @@
 
     <p>Joined: <span id="joined-list">{{ game.players|join(', ') }}</span></p>
 
+    <div class="timer-center">
+        {{ timer.widget(timer_start) }}
+    </div>
+
+    {{ timer.script(timer_start, timer_duration, url_for('waiting_status')) }}
+
     <script>
         const statusUrl = {{ url_for('waiting_status')|tojson }};
         const playUrl = {{ url_for('play')|tojson }};
+        const indexUrl = {{ url_for('index')|tojson }};
 
         async function poll() {
             try {
@@ -16,6 +24,7 @@
                 const data = await res.json();
 
                 if (!data.active) {
+                    window.location.href = indexUrl;
                     return;
                 }
 

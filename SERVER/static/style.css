@@ -92,18 +92,46 @@ label {
     color: var(--muted);
 }
 
-input {
+input,
+select {
     width: 100%;
     padding: 12px 14px;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-family: inherit;
     border-radius: 10px;
     border: 1px solid var(--border);
     background: var(--bg);
     color: var(--text);
 }
 
-input:focus {
+input:focus,
+select:focus {
     outline: 2px solid var(--accent);
+}
+
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+.form-table td {
+    padding: 10px 4px;
+    vertical-align: middle;
+}
+
+.form-table td:first-child {
+    color: var(--muted);
+    font-size: 1.1rem;
+    white-space: nowrap;
+    padding-right: 12px;
+}
+
+.form-table label {
+    display: inline;
+    margin: 0;
+    font-size: inherit;
+    color: inherit;
 }
 
 .button-stack {
@@ -198,6 +226,30 @@ input:focus {
     color: var(--muted);
     font-weight: 600;
     font-size: 0.9rem;
+}
+
+.results-table tr.top-score td {
+    background: var(--light-bg);
+    color: var(--on-light);
+    font-weight: 700;
+}
+
+.status-cell {
+    text-align: right;
+}
+
+.status-busy {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e24b4a;
+}
+
+.status-done {
+    color: #4fbe6e;
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .situation {
@@ -304,68 +356,6 @@ input[type="range"].slider-them {
     text-align: center;
 }
 
-.scatter-plot {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1;
-    background: linear-gradient(to top right, #4a1414, #123a1a);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    margin: 4px 0;
-}
-
-.scatter-axis {
-    position: absolute;
-    background: var(--border);
-}
-
-.scatter-axis-v {
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-}
-
-.scatter-axis-h {
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-}
-
-.scatter-point {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    transform: translate(-50%, -50%);
-}
-
-.scatter-dot {
-    border-radius: 50%;
-}
-
-.scatter-dot-you {
-    width: 26px;
-    height: 26px;
-    background: var(--accent);
-    border: 2px solid var(--bg);
-}
-
-.scatter-dot-them {
-    width: 12px;
-    height: 12px;
-    background: transparent;
-    border: 2px solid var(--light-bg);
-}
-
-.scatter-label {
-    font-size: 0.7rem;
-    color: var(--muted);
-    white-space: nowrap;
-}
-
 .score-row {
     margin-top: 20px;
 }
@@ -376,15 +366,6 @@ input[type="range"].slider-them {
     background: var(--bg);
     border-radius: 8px;
     margin: 8px 0;
-}
-
-.score-band {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    background: var(--light-bg);
-    opacity: 0.35;
-    border-radius: 8px;
 }
 
 .score-line {
@@ -409,14 +390,11 @@ input[type="range"].slider-them {
 }
 
 .score-dot-them {
-    background: var(--light-bg);
-}
-
-.score-legend {
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin: 8px 0 0;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    background: transparent;
+    border: 2px solid var(--light-bg);
 }
 
 .points-highlight {
@@ -427,6 +405,10 @@ input[type="range"].slider-them {
     font-weight: 700;
     padding: 4px 12px;
     border-radius: 8px;
+}
+
+.points-highlight-xl {
+    font-size: 2.6rem;
 }
 
 
@@ -449,4 +431,40 @@ input[type="range"].slider-them {
 
 .btn-lg {
     font-size: 1.3rem;
+}
+
+.timer-button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.timer-button-row .btn {
+    flex: 0 0 auto;
+    min-width: 140px;
+}
+
+.timer-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.timer-pie {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: conic-gradient(var(--accent) 0deg 360deg, var(--border) 360deg 360deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-pie-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+    text-shadow: 0 0 4px var(--bg), 0 0 4px var(--bg);
 }

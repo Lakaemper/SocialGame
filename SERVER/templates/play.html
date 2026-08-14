@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+{% import "_timer.html" as timer %}
 {% block title %}Read the Room!{% endblock %}
+
 {% block content %}
     {% if step == 'wait' %}
         <h1>Read the Room!</h1>
@@ -23,7 +25,7 @@
                         <span class="slider-label-sep">|</span>
                         <span class="slider-label-high">{{ question.action_high }}</span>
                     </div>
-                    <input type="range" name="value" min="-10" max="10" value="0" step="5">
+                    <input type="range" name="value" min="-10" max="10" value="0" step="10">
                 </div>
 
                 <hr class="separator separator-light">
@@ -32,11 +34,12 @@
                 {% for other in other_players %}
                     <div class="slider-block">
                         <p class="predict-name">{{ other }}</p>
-                        <input type="range" class="slider-them" name="prediction_{{ other }}" min="-10" max="10" value="0" step="5">
+                        <input type="range" class="slider-them" name="prediction_{{ other }}" min="-10" max="10" value="0" step="10">
                     </div>
                 {% endfor %}
 
-                <div class="button-center">
+                <div class="timer-button-row">
+                    {{ timer.widget(timer_start) }}
                     <button class="btn btn-primary" type="submit">OK</button>
                 </div>
             </form>
@@ -53,56 +56,56 @@
         <p class="hint">Question {{ round_number }} of {{ total_rounds }}</p>
         <p>Waiting for other players to answer&hellip;</p>
 
+        <div class="timer-center">
+            {{ timer.widget(timer_start) }}
+        </div>
+
+        {{ timer.player_status_table(player_statuses) }}
+
+    {% elif step == 'wait_next' %}
+        <h1>Read the Room!</h1>
+        <p>Waiting for all players to enter the next round&hellip;</p>
+
+        {{ timer.player_status_table(player_statuses) }}
+
     {% elif step == 'reveal' %}
         <p class="situation question-number">Score Card Question {{ round_number }}</p>
 
         <div id="scorecard-summary">
-            <p class="score-legend">Other&rsquo;s view &uarr;</p>
-            <div class="scatter-plot">
-                <div class="scatter-axis scatter-axis-v"></div>
-                <div class="scatter-axis scatter-axis-h"></div>
-                {% for pt in scatter_points %}
-                    <div class="scatter-point" style="left: {{ 10 + pt.x_pct * 0.8 }}%; top: {{ 10 + (100 - pt.y_pct) * 0.8 }}%;">
-                        <span class="scatter-label">{{ 'YOU' if pt.is_you else pt.name }}</span>
-                        <span class="scatter-dot {{ 'scatter-dot-you' if pt.is_you else 'scatter-dot-them' }}"></span>
-                    </div>
-                {% endfor %}
-            </div>
-            <p class="score-legend">Self-view &rarr;</p>
+            {% if not two_player_game %}
+                <p class="hint label-large">Self-assessment: {{ own_points }}</p>
+            {% endif %}
+            <p class="hint label-large">Friends&rsquo; assessment: {{ guess_total }}</p>
+            <p class="hint label-large">Total:</p>
+            <p class="hint"><span class="points-highlight points-highlight-xl">{{ round_points }}</span></p>
         </div>
 
         <div id="scorecard-details" class="hidden">
-            <h2 class="center-heading"><span class="hl-you">YOUR</span> points for being predictable:</h2>
-            <div class="slider-labels">
-                <span class="slider-label-low">{{ question.action_low }}</span>
-                <span class="slider-label-sep">|</span>
-                <span class="slider-label-high">{{ question.action_high }}</span>
-            </div>
-            <div class="score-track">
-                {% if own_mean is not none %}
-                    <div class="score-band" style="left: {{ own_band_left_pct }}%; width: {{ own_band_width_pct }}%;"></div>
-                {% endif %}
-                <div class="score-dot score-dot-you" style="left: {{ own_answer_pct }}%;"></div>
-            </div>
-            <p class="hint"><span class="points-highlight">Points: {{ own_points }}</span></p>
+            {% if not two_player_game %}
+                <h2 class="center-heading"><span class="hl-you">YOUR</span> points for being predictable:</h2>
+                <div class="score-track">
+                    <div class="score-dot score-dot-you" style="left: {{ own_answer_pct }}%;"></div>
+                    {% for row in own_rows %}
+                        <div class="score-dot score-dot-them" style="left: {{ row.guess_pct }}%;" title="{{ row.name }}"></div>
+                    {% endfor %}
+                </div>
+                <p class="hint"><span class="points-highlight">Points: {{ own_points }}</span></p>
 
-            <hr class="separator separator-light">
+                <hr class="separator separator-light">
+            {% endif %}
 
             <h2 class="center-heading"><span class="hl-you">YOUR</span> points for reading the room:</h2>
             {% for row in reveal_rows %}
                 <div class="score-row">
                     <p class="predict-name">{{ row.name }}</p>
                     <div class="score-track">
-                        <div class="score-line" style="left: {{ row.line_left_pct }}%; width: {{ row.line_width_pct }}%;"></div>
-                        <div class="score-dot score-dot-them" style="left: {{ row.actual_pct }}%;"></div>
                         <div class="score-dot score-dot-you" style="left: {{ row.predicted_pct }}%;"></div>
+                        <div class="score-dot score-dot-them" style="left: {{ row.actual_pct }}%;"></div>
                     </div>
                 </div>
             {% endfor %}
             <p class="hint"><span class="points-highlight">Points: {{ guess_total }}</span></p>
         </div>
-
-        <p class="hint"><span class="points-highlight">Round total: {{ round_points }}</span></p>
 
         <hr class="separator separator-light">
 
@@ -134,17 +137,26 @@
         </script>
     {% endif %}
 
-    {% if step == 'wait' %}
+    {% if step in ('play', 'wait') %}
+        {{ timer.script(timer_start, timer_duration, url_for('play_status'), "#question-content form" if step == "play" else none) }}
+    {% endif %}
+
+    {% if step in ('wait', 'wait_next') %}
         <script>
             const statusUrl = {{ url_for('play_status')|tojson }};
             const initialStep = {{ step|tojson }};
             const initialRound = {{ (round_number - 1)|tojson }};
+            const initialDoneCount = {{ done_count|tojson }};
 
             async function poll() {
                 try {
                     const res = await fetch(statusUrl);
                     const data = await res.json();
-                    if (data.active && (data.step !== initialStep || data.round_index !== initialRound)) {
+                    if (data.active && (
+                        data.step !== initialStep ||
+                        data.round_index !== initialRound ||
+                        data.done_count !== initialDoneCount
+                    )) {
                         window.location.reload();
                         return;
                     }

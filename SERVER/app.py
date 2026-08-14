@@ -1,8 +1,8 @@
 import json
-import math
 import os
 import random
 import statistics
+import time
 
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 
@@ -12,11 +12,32 @@ app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-key")
 # Only one game can be active at a time.
 current_game = None
 
+# Set while someone is on the create-game form, so a second player who clicks
+# "Create Game" at the same moment gets bounced back instead of racing them.
+creating_game_since = None
+CREATE_LOCK_TIMEOUT_SECONDS = 120
+
+FINISH_TIMER_SECONDS = 15
+JOIN_TIMEOUT_SECONDS = 30
+
+NUM_PLAYERS_OPTIONS = [2, 3, 4, 5, 6, 7, 8]
+NUM_QUESTIONS_OPTIONS = [3, 5, 8, 10, 13, 15, 20]
+ANSWER_TIME_OPTIONS = [5, 10, 15, 20, 25, 30, 40, 50, 60]
+
+DEFAULT_NUM_PLAYERS = 3
+DEFAULT_NUM_QUESTIONS = 5
+DEFAULT_ANSWER_TIME = 15
+
+# Points awarded for a guess, keyed by its distance from the actual answer.
+# Slider values are restricted to -10/0/10, so distances are always 0, 10, or 20.
+DISTANCE_POINTS = {0: 10, 10: 3, 20: 0}
+
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 LANGUAGES = {
-    "en": {"label": "English", "file": "QuestionsAndActions_eng.json"},
     "de": {"label": "Deutsch", "file": "QuestionsAndAnswers_ger.json"},
+    "en": {"label": "English", "file": "QuestionsAndActions_eng.json"},
 }
+DEFAULT_LANGUAGE = "de"
 
 COLOR_SCHEMES = {
     "red": {"label": "Red"},
@@ -24,6 +45,38 @@ COLOR_SCHEMES = {
     "green": {"label": "Green"},
     "pop": {"label": "Pop (colorful)"},
 }
+DEFAULT_COLOR_SCHEME = "pop"
+
+
+def default_settings():
+    return {
+        "num_players": DEFAULT_NUM_PLAYERS,
+        "num_questions": DEFAULT_NUM_QUESTIONS,
+        "answer_time": DEFAULT_ANSWER_TIME,
+        "color_scheme": DEFAULT_COLOR_SCHEME,
+    }
+
+
+# Remembers the last-used create-game settings so starting another round is quick.
+last_settings = default_settings()
+
+
+def is_creating():
+    return (
+        creating_game_since is not None
+        and (time.time() - creating_game_since) < CREATE_LOCK_TIMEOUT_SECONDS
+    )
+
+
+@app.before_request
+def expire_stale_game():
+    global current_game
+    if (
+        current_game is not None
+        and len(current_game["players"]) < current_game["num_players"]
+        and time.time() >= current_game["created_at"] + JOIN_TIMEOUT_SECONDS
+    ):
+        current_game = None
 
 
 @app.context_processor
@@ -37,12 +90,37 @@ for lang_code, lang_info in LANGUAGES.items():
 
 
 def init_game_state(game):
-    question_pool = QUESTION_POOLS[game["language"]]
-    num_rounds = min(game["num_questions"], len(question_pool))
-    questions = random.sample(question_pool, num_rounds)
+    reference_pool = QUESTION_POOLS[DEFAULT_LANGUAGE]
+    long_indices = [i for i, q in enumerate(reference_pool) if q["type"] == "long"]
+    short_indices = [i for i, q in enumerate(reference_pool) if q["type"] == "short"]
+    random.shuffle(long_indices)
+    random.shuffle(short_indices)
+
+    num_rounds = min(game["num_questions"], len(long_indices) + len(short_indices))
+
+    question_indices = []
+    long_pos = short_pos = 0
+    want_long = True
+    while len(question_indices) < num_rounds:
+        if want_long and long_pos < len(long_indices):
+            question_indices.append(long_indices[long_pos])
+            long_pos += 1
+        elif not want_long and short_pos < len(short_indices):
+            question_indices.append(short_indices[short_pos])
+            short_pos += 1
+        elif long_pos < len(long_indices):
+            question_indices.append(long_indices[long_pos])
+            long_pos += 1
+        elif short_pos < len(short_indices):
+            question_indices.append(short_indices[short_pos])
+            short_pos += 1
+        else:
+            break
+        want_long = not want_long
+
     game["game_state"] = {
-        "questions": questions,
-        "rounds": [{"answers": {}, "predictions": {}} for _ in range(num_rounds)],
+        "question_indices": question_indices,
+        "rounds": [{"answers": {}, "predictions": {}, "continued": set()} for _ in range(len(question_indices))],
         "scores": {name: 0 for name in game["players"]},
     }
 
@@ -55,121 +133,135 @@ def ensure_game_state(game):
 
 def player_step(game, player_name, round_index):
     gs = game["game_state"]
-    if round_index >= len(gs["questions"]):
-        return "finished", round_index
-
-    round_data = gs["rounds"][round_index]
     num_players = game["num_players"]
 
-    if player_name not in round_data["answers"]:
-        return "play", round_index
-    if len(round_data["answers"]) < num_players:
-        return "wait", round_index
-    return "reveal", round_index
+    while round_index < len(gs["question_indices"]):
+        round_data = gs["rounds"][round_index]
+        is_last_round = round_index + 1 >= len(gs["question_indices"])
+
+        if player_name not in round_data["answers"]:
+            return "play", round_index
+        if len(round_data["answers"]) < num_players:
+            return "wait", round_index
+        if player_name not in round_data["continued"]:
+            return "reveal", round_index
+        if not is_last_round and len(round_data["continued"]) < num_players:
+            return "wait_next", round_index
+
+        round_index += 1
+
+    return "finished", round_index
 
 
 def guess_score(round_data, player_name):
     predictions = round_data["predictions"][player_name]
-    return sum(
-        max(0, 10 - abs(predicted - round_data["answers"][other]))
+    points = [
+        DISTANCE_POINTS.get(abs(predicted - round_data["answers"][other]), 0)
         for other, predicted in predictions.items()
-    )
+    ]
+    return statistics.mean(points) if points else 0
 
 
 def own_score_breakdown(game, round_data, player_name):
-    guesses_about_me = [
-        round_data["predictions"][other][player_name]
+    my_answer = round_data["answers"][player_name]
+    guesses = [
+        (other, round_data["predictions"][other][player_name])
         for other in game["players"]
         if other != player_name
     ]
-    my_answer = round_data["answers"][player_name]
 
-    if not guesses_about_me:
-        return {"mean": None, "std": None, "my_answer": my_answer, "own_score": 0}
+    if not guesses:
+        return {"my_answer": my_answer, "own_score": 0, "guesses": []}
 
-    mean = statistics.mean(guesses_about_me)
-    std = max(statistics.pstdev(guesses_about_me), 1)
-    z = (my_answer - mean) / std
-    own_score = 10 * math.exp(-0.5 * z ** 2)
+    points = [DISTANCE_POINTS.get(abs(my_answer - guess), 0) for _, guess in guesses]
+    own_score = statistics.mean(points)
 
-    return {
-        "mean": mean,
-        "std": std,
-        "my_answer": my_answer,
-        "own_score": own_score,
-    }
+    return {"my_answer": my_answer, "own_score": own_score, "guesses": guesses}
 
 
 def value_to_pct(value):
     return max(0, min(100, (value + 10) / 20 * 100))
 
 
-def ratio_to_pct(value, max_value):
-    if max_value <= 0:
-        return 0
-    return max(0, min(100, value / max_value * 100))
+def waiting_on_set(round_data, step):
+    if step == "wait":
+        return round_data["answers"]
+    if step == "wait_next":
+        return round_data["continued"]
+    return None
 
 
 def award_round_scores(game, round_data):
     scores = game["game_state"]["scores"]
+    two_player_game = game["num_players"] == 2
     for player_name in game["players"]:
-        own = own_score_breakdown(game, round_data, player_name)
-        scores[player_name] += round(own["own_score"]) + guess_score(round_data, player_name)
+        guess_points = round(guess_score(round_data, player_name))
+        if two_player_game:
+            scores[player_name] += guess_points
+        else:
+            own = own_score_breakdown(game, round_data, player_name)
+            scores[player_name] += round(own["own_score"]) + guess_points
 
 
 @app.route("/")
 def index():
-    return render_template("index.html", game_exists=current_game is not None)
-
-
-@app.route("/manage")
-def manage_game():
     return render_template(
-        "manage.html",
-        can_create=current_game is None,
-        can_remove=current_game is not None,
+        "index.html",
+        game_exists=current_game is not None,
+        creating=current_game is None and is_creating(),
+        timer_start=current_game["created_at"] if current_game else None,
+        timer_duration=JOIN_TIMEOUT_SECONDS,
     )
 
 
-@app.route("/manage/remove", methods=["POST"])
+@app.route("/remove")
 def remove_game():
     global current_game
-    if current_game is not None:
-        current_game = None
-    return redirect(url_for("manage_game"))
+    current_game = None
+    return redirect(url_for("index"))
 
 
 @app.route("/create", methods=["GET", "POST"])
 def create_game():
-    global current_game
+    global current_game, last_settings, creating_game_since
 
     if current_game is not None:
-        return redirect(url_for("manage_game"))
+        return redirect(url_for("index"))
 
     if request.method == "GET":
+        if request.args.get("reset"):
+            last_settings = default_settings()
+        if not session.get("is_creator") and is_creating():
+            return redirect(url_for("index"))
+        creating_game_since = time.time()
+        session["is_creator"] = True
         return render_template(
             "create.html",
-            languages=LANGUAGES,
-            language="de",
-            num_players=3,
-            num_questions=10,
+            num_players_options=NUM_PLAYERS_OPTIONS,
+            num_players=last_settings["num_players"],
+            num_questions_options=NUM_QUESTIONS_OPTIONS,
+            num_questions=last_settings["num_questions"],
+            answer_time_options=ANSWER_TIME_OPTIONS,
+            answer_time=last_settings["answer_time"],
             color_schemes=COLOR_SCHEMES,
-            color_scheme="red",
+            color_scheme=last_settings["color_scheme"],
         )
 
-    password = request.form.get("password", "").strip()
+    if not session.get("is_creator") and is_creating():
+        return redirect(url_for("index"))
+
     num_players = request.form.get("num_players", "").strip()
     num_questions = request.form.get("num_questions", "").strip()
-    language = request.form.get("language", "").strip()
+    answer_time = request.form.get("answer_time", "").strip()
     color_scheme = request.form.get("color_scheme", "").strip()
 
     errors = []
-    if not num_players.isdigit() or int(num_players) < 1:
-        errors.append("Number of players must be a positive number.")
-    if not num_questions.isdigit() or int(num_questions) < 1:
-        errors.append("Number of questions must be a positive number.")
-    if language not in LANGUAGES:
-        errors.append("Please choose a valid language.")
+    if not num_players.isdigit() or int(num_players) not in NUM_PLAYERS_OPTIONS:
+        errors.append("Please choose a valid number of players.")
+    if not num_questions.isdigit() or int(num_questions) not in NUM_QUESTIONS_OPTIONS:
+        errors.append("Please choose a valid number of questions.")
+    if not answer_time.isdigit() or int(answer_time) not in ANSWER_TIME_OPTIONS:
+        errors.append("Please choose a valid time to answer.")
     if color_scheme not in COLOR_SCHEMES:
         errors.append("Please choose a valid color scheme.")
 
@@ -177,25 +269,48 @@ def create_game():
         return render_template(
             "create.html",
             errors=errors,
-            password=password,
+            num_players_options=NUM_PLAYERS_OPTIONS,
             num_players=num_players,
+            num_questions_options=NUM_QUESTIONS_OPTIONS,
             num_questions=num_questions,
-            language=language,
-            languages=LANGUAGES,
+            answer_time_options=ANSWER_TIME_OPTIONS,
+            answer_time=answer_time,
             color_scheme=color_scheme,
             color_schemes=COLOR_SCHEMES,
         )
 
-    current_game = {
-        "password": password,
+    last_settings = {
         "num_players": int(num_players),
         "num_questions": int(num_questions),
-        "language": language,
+        "answer_time": int(answer_time),
         "color_scheme": color_scheme,
-        "players": [],
-        "started": False,
     }
 
+    current_game = {
+        "password": "",
+        "num_players": int(num_players),
+        "num_questions": int(num_questions),
+        "answer_time": int(answer_time),
+        "color_scheme": color_scheme,
+        "players": [],
+        "player_languages": {},
+        "started": False,
+        "finished_players": set(),
+        "finish_timer_start": None,
+        "created_at": time.time(),
+    }
+    creating_game_since = None
+    session.pop("is_creator", None)
+
+    return redirect(url_for("index"))
+
+
+@app.route("/create/cancel")
+def cancel_create():
+    global creating_game_since
+    if session.get("is_creator"):
+        creating_game_since = None
+        session.pop("is_creator", None)
     return redirect(url_for("index"))
 
 
@@ -224,18 +339,22 @@ def welcome():
         return redirect(url_for("waiting_room"))
 
     if request.method == "GET":
-        return render_template("welcome.html", game=current_game)
+        return render_template("welcome.html", game=current_game, languages=LANGUAGES, language=DEFAULT_LANGUAGE)
 
     name = request.form.get("name", "").strip()
+    language = request.form.get("language", "").strip()
+    if language not in LANGUAGES:
+        language = DEFAULT_LANGUAGE
 
     if not name:
-        return render_template("welcome.html", game=current_game, error="Please enter your name.")
+        return render_template("welcome.html", game=current_game, languages=LANGUAGES, language=language, error="Please enter your name.")
     if name in current_game["players"]:
-        return render_template("welcome.html", game=current_game, error="That name is already taken.")
+        return render_template("welcome.html", game=current_game, languages=LANGUAGES, language=language, error="That name is already taken.")
     if len(current_game["players"]) >= current_game["num_players"]:
-        return render_template("welcome.html", game=current_game, error="This game is already full.")
+        return render_template("welcome.html", game=current_game, languages=LANGUAGES, language=language, error="This game is already full.")
 
     current_game["players"].append(name)
+    current_game["player_languages"][name] = language
     session["player_name"] = name
     session["round_index"] = 0
 
@@ -251,7 +370,12 @@ def waiting_room():
     if not player_name or player_name not in current_game["players"]:
         return redirect(url_for("welcome"))
 
-    return render_template("waiting.html", game=current_game)
+    return render_template(
+        "waiting.html",
+        game=current_game,
+        timer_start=current_game["created_at"],
+        timer_duration=JOIN_TIMEOUT_SECONDS,
+    )
 
 
 @app.route("/waiting/status")
@@ -265,6 +389,8 @@ def waiting_status():
             "players": current_game["players"],
             "num_players": current_game["num_players"],
             "ready": len(current_game["players"]) >= current_game["num_players"],
+            "timer_start": current_game["created_at"],
+            "timer_duration": JOIN_TIMEOUT_SECONDS,
         }
     )
 
@@ -284,12 +410,26 @@ def play():
     gs = ensure_game_state(current_game)
     round_index = session.get("round_index", 0)
     step, round_index = player_step(current_game, player_name, round_index)
+    session["round_index"] = round_index
 
     if step == "finished":
-        standings = sorted(gs["scores"].items(), key=lambda kv: -kv[1])
-        return render_template("scoreboard.html", game=current_game, standings=standings)
+        if player_name in current_game["finished_players"]:
+            return redirect(url_for("finish_wait"))
 
-    question = gs["questions"][round_index]
+        if current_game.get("finish_timer_start") is None:
+            current_game["finish_timer_start"] = time.time()
+
+        standings = sorted(gs["scores"].items(), key=lambda kv: -kv[1])
+        return render_template(
+            "scoreboard.html",
+            game=current_game,
+            standings=standings,
+            timer_start=current_game["finish_timer_start"],
+            timer_duration=FINISH_TIMER_SECONDS,
+        )
+
+    player_language = current_game["player_languages"].get(player_name, DEFAULT_LANGUAGE)
+    question = QUESTION_POOLS[player_language][gs["question_indices"][round_index]]
     round_data = gs["rounds"][round_index]
     other_players = [p for p in current_game["players"] if p != player_name]
 
@@ -298,64 +438,58 @@ def play():
         "step": step,
         "question": question,
         "round_number": round_index + 1,
-        "total_rounds": len(gs["questions"]),
+        "total_rounds": len(gs["question_indices"]),
         "other_players": other_players,
-        "is_last_round": round_index + 1 >= len(gs["questions"]),
+        "is_last_round": round_index + 1 >= len(gs["question_indices"]),
+        "timer_start": round_data.get("timer_start"),
+        "timer_duration": current_game["answer_time"],
     }
 
-    if step == "reveal":
-        my_predictions = round_data["predictions"][player_name]
-        reveal_rows = []
-        for other in other_players:
-            actual = round_data["answers"][other]
-            predicted = my_predictions[other]
-            points = max(0, 10 - abs(predicted - actual))
-            reveal_rows.append({
-                "name": other,
-                "actual": actual,
-                "predicted": predicted,
-                "points": points,
-                "actual_pct": value_to_pct(actual),
-                "predicted_pct": value_to_pct(predicted),
-                "line_left_pct": value_to_pct(min(actual, predicted)),
-                "line_width_pct": value_to_pct(max(actual, predicted)) - value_to_pct(min(actual, predicted)),
-            })
+    done_set = waiting_on_set(round_data, step)
+    if done_set is not None:
+        context["player_statuses"] = [
+            {"name": p, "done": p in done_set} for p in current_game["players"]
+        ]
+        context["done_count"] = len(done_set)
 
-        guess_total = guess_score(round_data, player_name)
-        own = own_score_breakdown(current_game, round_data, player_name)
-        own_points = round(own["own_score"])
+    if step == "reveal":
+        two_player_game = current_game["num_players"] == 2
+
+        my_predictions = round_data["predictions"][player_name]
+        reveal_rows = [
+            {
+                "name": other,
+                "actual_pct": value_to_pct(round_data["answers"][other]),
+                "predicted_pct": value_to_pct(my_predictions[other]),
+            }
+            for other in other_players
+        ]
+
+        guess_total = round(guess_score(round_data, player_name))
 
         context["reveal_rows"] = reveal_rows
         context["guess_total"] = guess_total
-        context["own_answer"] = own["my_answer"]
-        context["own_answer_pct"] = value_to_pct(own["my_answer"])
-        context["own_mean"] = round(own["mean"], 1) if own["mean"] is not None else None
-        context["own_std"] = round(own["std"], 1) if own["std"] is not None else None
-        if own["mean"] is not None:
-            band_low = own["mean"] - own["std"]
-            band_high = own["mean"] + own["std"]
-            context["own_band_left_pct"] = value_to_pct(band_low)
-            context["own_band_width_pct"] = value_to_pct(band_high) - value_to_pct(band_low)
-        context["own_points"] = own_points
-        context["round_points"] = guess_total + own_points
-        context["standings"] = sorted(gs["scores"].items(), key=lambda kv: -kv[1])
+        context["two_player_game"] = two_player_game
 
-        num_players = current_game["num_players"]
-        max_guess_per_round = 10 * (num_players - 1)
-        scatter_points = []
-        for p in current_game["players"]:
-            if p == player_name:
-                p_own_points, p_guess_points = own_points, guess_total
-            else:
-                p_own_points = round(own_score_breakdown(current_game, round_data, p)["own_score"])
-                p_guess_points = guess_score(round_data, p)
-            scatter_points.append({
-                "name": p,
-                "is_you": p == player_name,
-                "x_pct": ratio_to_pct(p_own_points, 10),
-                "y_pct": ratio_to_pct(p_guess_points, max_guess_per_round),
-            })
-        context["scatter_points"] = scatter_points
+        if two_player_game:
+            context["round_points"] = guess_total
+        else:
+            own = own_score_breakdown(current_game, round_data, player_name)
+            own_points = round(own["own_score"])
+            my_answer = own["my_answer"]
+
+            own_rows = [
+                {"name": other, "guess": guess, "guess_pct": value_to_pct(guess)}
+                for other, guess in own["guesses"]
+            ]
+
+            context["own_answer"] = my_answer
+            context["own_answer_pct"] = value_to_pct(my_answer)
+            context["own_rows"] = own_rows
+            context["own_points"] = own_points
+            context["round_points"] = guess_total + own_points
+
+        context["standings"] = sorted(gs["scores"].items(), key=lambda kv: -kv[1])
 
     return render_template("play.html", **context)
 
@@ -368,11 +502,14 @@ def play_submit():
 
     gs = ensure_game_state(current_game)
     round_index = session.get("round_index", 0)
-    if gs is None or round_index >= len(gs["questions"]):
+    if gs is None or round_index >= len(gs["question_indices"]):
         return redirect(url_for("play"))
 
     round_data = gs["rounds"][round_index]
     if player_name not in round_data["answers"]:
+        if not round_data["answers"]:
+            round_data["timer_start"] = time.time()
+
         try:
             value = int(request.form.get("value", "0"))
         except ValueError:
@@ -402,7 +539,10 @@ def play_continue():
     if current_game is None or not player_name or player_name not in current_game["players"]:
         return redirect(url_for("index"))
 
-    session["round_index"] = session.get("round_index", 0) + 1
+    gs = ensure_game_state(current_game)
+    round_index = session.get("round_index", 0)
+    if gs is not None and round_index < len(gs["question_indices"]):
+        gs["rounds"][round_index]["continued"].add(player_name)
 
     return redirect(url_for("play"))
 
@@ -419,7 +559,78 @@ def play_status():
 
     round_index = session.get("round_index", 0)
     step, round_index = player_step(current_game, player_name, round_index)
-    return jsonify({"active": True, "step": step, "round_index": round_index})
+
+    timer_start = None
+    done_count = None
+    if round_index < len(gs["question_indices"]):
+        round_data = gs["rounds"][round_index]
+        timer_start = round_data.get("timer_start")
+        done_set = waiting_on_set(round_data, step)
+        if done_set is not None:
+            done_count = len(done_set)
+
+    return jsonify({
+        "active": True,
+        "step": step,
+        "round_index": round_index,
+        "timer_start": timer_start,
+        "timer_duration": current_game["answer_time"],
+        "done_count": done_count,
+    })
+
+
+@app.route("/finish", methods=["POST"])
+def finish_game():
+    global current_game
+    player_name = session.get("player_name")
+    if current_game is None or not player_name or player_name not in current_game["players"]:
+        return redirect(url_for("index"))
+
+    current_game["finished_players"].add(player_name)
+
+    if len(current_game["finished_players"]) >= current_game["num_players"]:
+        current_game = None
+        return redirect(url_for("index"))
+
+    return redirect(url_for("finish_wait"))
+
+
+@app.route("/finish/wait")
+def finish_wait():
+    if current_game is None:
+        return redirect(url_for("index"))
+
+    player_name = session.get("player_name")
+    if not player_name or player_name not in current_game["players"]:
+        return redirect(url_for("index"))
+
+    if player_name not in current_game["finished_players"]:
+        return redirect(url_for("play"))
+
+    done_set = current_game["finished_players"]
+    player_statuses = [{"name": p, "done": p in done_set} for p in current_game["players"]]
+
+    return render_template(
+        "finish_wait.html",
+        game=current_game,
+        player_statuses=player_statuses,
+        done_count=len(done_set),
+        timer_start=current_game.get("finish_timer_start"),
+        timer_duration=FINISH_TIMER_SECONDS,
+    )
+
+
+@app.route("/finish/status")
+def finish_status():
+    if current_game is None:
+        return jsonify({"active": False})
+
+    return jsonify({
+        "active": True,
+        "done_count": len(current_game["finished_players"]),
+        "timer_start": current_game.get("finish_timer_start"),
+        "timer_duration": FINISH_TIMER_SECONDS,
+    })
 
 
 if __name__ == "__main__":

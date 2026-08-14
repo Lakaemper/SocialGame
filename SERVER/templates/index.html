@@ -1,15 +1,28 @@
 {% extends "base.html" %}
+{% import "_timer.html" as timer %}
 {% block title %}Read the Room!{% endblock %}
 {% block content %}
     <h1>Read the Room!</h1>
     <div class="button-stack">
-        <a class="btn {{ 'btn-secondary' if game_exists else 'btn-primary' }}" href="{{ url_for('manage_game') }}">Manage Game</a>
-        <a class="btn {{ 'btn-primary' if game_exists else 'btn-secondary' }}" href="{{ url_for('join_game') }}">Join Game</a>
+        {% if game_exists %}
+            <a class="btn btn-primary" href="{{ url_for('join_game') }}">Join Game</a>
+        {% elif creating %}
+            <span class="btn btn-disabled">Game being created, please wait&hellip;</span>
+        {% else %}
+            <a class="btn btn-primary" href="{{ url_for('create_game') }}">Create Game</a>
+        {% endif %}
     </div>
+
+    {% if game_exists %}
+        <div class="timer-center">
+            {{ timer.widget(timer_start) }}
+        </div>
+        {{ timer.script(timer_start, timer_duration, url_for('waiting_status')) }}
+    {% endif %}
 
     <script>
         setTimeout(function () {
             window.location.reload();
-        }, 1000);
+        }, 3000);
     </script>
 {% endblock %}
