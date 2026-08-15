@@ -1,0 +1,202 @@
+[
+    {
+        "id": "title_read_the_room",
+        "text_eng": "Read the Room!",
+        "text_ger": "Durchschaut!"
+    },
+    {
+        "id": "waiting_for_players",
+        "text_eng": "Waiting for {num_players} players",
+        "text_ger": "Warte auf {num_players} Spieler"
+    },
+    {
+        "id": "joined_label",
+        "text_eng": "Joined:",
+        "text_ger": "Beigetreten:"
+    },
+    {
+        "id": "question_of_total",
+        "text_eng": "Question {round_number} of {total_rounds}",
+        "text_ger": "Frage {round_number} von {total_rounds}"
+    },
+    {
+        "id": "you_word",
+        "text_eng": "YOU",
+        "text_ger": "DU"
+    },
+    {
+        "id": "they_word",
+        "text_eng": "THEY",
+        "text_ger": "DIE ANDEREN"
+    },
+    {
+        "id": "your_word",
+        "text_eng": "YOUR",
+        "text_ger": "DEINE"
+    },
+    {
+        "id": "what_would_you_do",
+        "text_eng": "What would {word} do?",
+        "text_ger": "Was würdest {word} machen?"
+    },
+    {
+        "id": "what_would_they_do",
+        "text_eng": "What would {word} do?",
+        "text_ger": "Was würden {word} machen?"
+    },
+    {
+        "id": "your_points_predictable",
+        "text_eng": "{word} points for being predictable:",
+        "text_ger": "{word} Punkte für Selbsteinschaetzung:"
+    },
+    {
+        "id": "your_points_reading_room",
+        "text_eng": "{word} points for reading the room:",
+        "text_ger": "{word} Punkte für Fremdeinschaetzung:"
+    },
+    {
+        "id": "ok_button",
+        "text_eng": "OK",
+        "text_ger": "OK"
+    },
+    {
+        "id": "waiting_for_answers",
+        "text_eng": "Waiting for other players to answer…",
+        "text_ger": "Warte auf die Antworten der anderen Spieler…"
+    },
+    {
+        "id": "waiting_for_next_round",
+        "text_eng": "Waiting for all players to enter the next round…",
+        "text_ger": "Warte, bis alle Spieler bereit sind für die nächste Runde…"
+    },
+    {
+        "id": "score_card_question",
+        "text_eng": "Score Card after Question {round_number}",
+        "text_ger": "Punktestand nach Frage {round_number}"
+    },
+    {
+        "id": "self_assessment",
+        "text_eng": "Self-assessment: {points}",
+        "text_ger": "Selbsteinschätzung: {points}"
+    },
+    {
+        "id": "friends_assessment",
+        "text_eng": "Friends' assessment: {points}",
+        "text_ger": "Deine Einschätzung der anderen: {points}"
+    },
+    {
+        "id": "total_label",
+        "text_eng": "Total:",
+        "text_ger": "Gesamt:"
+    },
+    {
+        "id": "points_label",
+        "text_eng": "Points: {points}",
+        "text_ger": "Punkte: {points}"
+    },
+    {
+        "id": "details_button",
+        "text_eng": "Details",
+        "text_ger": "Details"
+    },
+    {
+        "id": "next_button",
+        "text_eng": "Next",
+        "text_ger": "Weiter"
+    },
+    {
+        "id": "show_final_score_button",
+        "text_eng": "Final Score",
+        "text_ger": "Endergebnis"
+    },
+    {
+        "id": "final_results_title",
+        "text_eng": "Final Results",
+        "text_ger": "Endergebnis"
+    },
+    {
+        "id": "position_header",
+        "text_eng": "Position",
+        "text_ger": "Rang"
+    },
+    {
+        "id": "name_header",
+        "text_eng": "Name",
+        "text_ger": "Name"
+    },
+    {
+        "id": "score_header",
+        "text_eng": "Score",
+        "text_ger": "Punkte"
+    },
+    {
+        "id": "finish_button",
+        "text_eng": "Finish",
+        "text_ger": "Fertig"
+    },
+    {
+        "id": "waiting_for_all_to_finish",
+        "text_eng": "Waiting for all players to finish…",
+        "text_ger": "Warte, bis alle Spieler fertig sind…"
+    },
+    {
+        "id": "removing_game",
+        "text_eng": "Removing game…",
+        "text_ger": "Spiel wird entfernt…"
+    },
+    {
+        "id": "create_game_button",
+        "text_eng": "Create New Game",
+        "text_ger": "Neues Spiel Erstellen"
+    },
+    {
+        "id": "join_game_button",
+        "text_eng": "Join Game",
+        "text_ger": "Mitspielen"
+    },
+    {
+        "id": "game_being_created",
+        "text_eng": "Game being prepared, please wait…",
+        "text_ger": "Spiel wird vorbereitet, bitte warten…"
+    },
+    {
+        "id": "welcome_heading",
+        "text_eng": "Welcome to Read the Room!",
+        "text_ger": "Willkommen bei Durchschaut!"
+    },
+    {
+        "id": "name_question",
+        "text_eng": "What's YOUR name?",
+        "text_ger": "Wie heißt DU?"
+    },
+    {
+        "id": "language_label",
+        "text_eng": "Language",
+        "text_ger": "Sprache"
+    },
+    {
+        "id": "quit_button",
+        "text_eng": "Quit",
+        "text_ger": "Abbrechen"
+    },
+    {
+        "id": "join_button",
+        "text_eng": "Join",
+        "text_ger": "Los"
+    },
+    {
+        "id": "error_enter_name",
+        "text_eng": "Please enter your name.",
+        "text_ger": "Dein Name:"
+    },
+    {
+        "id": "error_name_taken",
+        "text_eng": "That name is already taken.",
+        "text_ger": "Dieser Name ist vergeben."
+    },
+    {
+        "id": "error_game_full",
+        "text_eng": "This game is already full.",
+        "text_ger": "Dieses Spiel ist bereits voll."
+    }
+]

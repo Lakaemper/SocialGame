@@ -44,6 +44,16 @@
                 </td>
             </tr>
             <tr>
+                <td><label for="num_choices">Number of choices</label></td>
+                <td>
+                    <select id="num_choices" name="num_choices">
+                        {% for n in num_choices_options %}
+                            <option value="{{ n }}" {% if n == num_choices|int %}selected{% endif %}>{{ n }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
                 <td><label for="color_scheme">Color scheme</label></td>
                 <td>
                     <select id="color_scheme" name="color_scheme">

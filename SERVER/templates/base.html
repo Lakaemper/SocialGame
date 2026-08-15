@@ -10,5 +10,30 @@
     <main class="card">
         {% block content %}{% endblock %}
     </main>
+
+    <script>
+        (function () {
+            var secretClickCount = 0;
+            var lastSecretClickTime = 0;
+            var secretRemoveUrl = {{ url_for('secret_remove')|tojson }};
+
+            document.addEventListener("click", function (event) {
+                if (event.target.closest("a, button, input, select, textarea, label")) {
+                    return;
+                }
+
+                var now = Date.now();
+                if (now - lastSecretClickTime > 1500) {
+                    secretClickCount = 0;
+                }
+                secretClickCount += 1;
+                lastSecretClickTime = now;
+
+                if (secretClickCount >= 5) {
+                    window.location.href = secretRemoveUrl;
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

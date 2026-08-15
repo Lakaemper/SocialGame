@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% import "_timer.html" as timer %}
-{% block title %}Read the Room!{% endblock %}
+{% block title %}{{ t('title_read_the_room') }}{% endblock %}
 {% block content %}
-    <h1>Read the Room!</h1>
-    <p>Waiting for all players to finish&hellip;</p>
+    <img class="greeting-logo" src="{{ url_for('serve_image', filename=logo_filename) }}" alt="{{ t('title_read_the_room') }}">
+    <p>{{ t('waiting_for_all_to_finish') }}</p>
 
     <div class="timer-center">
         {{ timer.widget(timer_start) }}

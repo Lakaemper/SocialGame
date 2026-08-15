@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% import "_timer.html" as timer %}
-{% block title %}Final Results{% endblock %}
+{% block title %}{{ t('final_results_title') }}{% endblock %}
 {% block content %}
-    <h1>Final Results</h1>
+    <h1>{{ t('final_results_title') }}</h1>
 
     <table class="results-table">
         <thead>
-            <tr><th>Position</th><th>Name</th><th>Score</th></tr>
+            <tr><th>{{ t('position_header') }}</th><th>{{ t('name_header') }}</th><th>{{ t('score_header') }}</th></tr>
         </thead>
         <tbody>
             {% for name, score in standings %}
@@ -25,7 +25,7 @@
 
     <form method="post" action="{{ url_for('finish_game') }}" id="finish-form">
         <div class="button-stack">
-            <button class="btn btn-primary" type="submit">Finish</button>
+            <button class="btn btn-primary" type="submit">{{ t('finish_button') }}</button>
         </div>
     </form>
 

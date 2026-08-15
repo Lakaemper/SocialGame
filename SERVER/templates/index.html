@@ -1,15 +1,28 @@
 {% extends "base.html" %}
 {% import "_timer.html" as timer %}
-{% block title %}Read the Room!{% endblock %}
+{% block title %}{{ t('title_read_the_room') }}{% endblock %}
 {% block content %}
-    <h1>Read the Room!</h1>
+    <img class="greeting-logo" id="greeting-logo" src="{{ url_for('serve_image', filename=logo_filename) }}" alt="{{ t('title_read_the_room') }}">
+    <img class="greeting-title-image" src="{{ url_for('serve_image', filename='TitleImage.jpg') }}" alt="">
+
+    <div class="language-checkbox-group">
+        <label class="language-checkbox">
+            <input type="checkbox" id="lang-en" {% if language == 'en' %}checked{% endif %}>
+            English
+        </label>
+        <label class="language-checkbox">
+            <input type="checkbox" id="lang-de" {% if language == 'de' %}checked{% endif %}>
+            Deutsch
+        </label>
+    </div>
+
     <div class="button-stack">
         {% if game_exists %}
-            <a class="btn btn-primary" href="{{ url_for('join_game') }}">Join Game</a>
+            <a class="btn btn-primary" href="{{ url_for('join_game') }}" id="main-button">{{ t('join_game_button') }}</a>
         {% elif creating %}
-            <span class="btn btn-disabled">Game being created, please wait&hellip;</span>
+            <span class="btn btn-disabled" id="main-button">{{ t('game_being_created') }}</span>
         {% else %}
-            <a class="btn btn-primary" href="{{ url_for('create_game') }}">Create Game</a>
+            <a class="btn btn-primary" href="{{ url_for('create_game') }}" id="main-button">{{ t('create_game_button') }}</a>
         {% endif %}
     </div>
 
@@ -19,6 +32,63 @@
         </div>
         {{ timer.script(timer_start, timer_duration, url_for('waiting_status')) }}
     {% endif %}
+
+    <script>
+        var indexTranslations = {
+            en: {
+                title: {{ t_lang('title_read_the_room', 'en')|tojson }},
+                createBtn: {{ t_lang('create_game_button', 'en')|tojson }},
+                joinBtn: {{ t_lang('join_game_button', 'en')|tojson }},
+                waitBtn: {{ t_lang('game_being_created', 'en')|tojson }},
+                logo: {{ url_for('serve_image', filename='Logo_eng.jpg')|tojson }}
+            },
+            de: {
+                title: {{ t_lang('title_read_the_room', 'de')|tojson }},
+                createBtn: {{ t_lang('create_game_button', 'de')|tojson }},
+                joinBtn: {{ t_lang('join_game_button', 'de')|tojson }},
+                waitBtn: {{ t_lang('game_being_created', 'de')|tojson }},
+                logo: {{ url_for('serve_image', filename='Logo_ger.jpg')|tojson }}
+            }
+        };
+        var indexGameExists = {{ game_exists|tojson }};
+        var indexCreating = {{ creating|tojson }};
+        var setLanguageUrl = {{ url_for('set_language')|tojson }};
+
+        var enCheckbox = document.getElementById("lang-en");
+        var deCheckbox = document.getElementById("lang-de");
+
+        function applyIndexLanguage(lang) {
+            var strings = indexTranslations[lang];
+            document.getElementById("greeting-logo").src = strings.logo;
+            document.getElementById("greeting-logo").alt = strings.title;
+            document.title = strings.title;
+
+            var mainButton = document.getElementById("main-button");
+            if (indexGameExists) {
+                mainButton.textContent = strings.joinBtn;
+            } else if (indexCreating) {
+                mainButton.textContent = strings.waitBtn;
+            } else {
+                mainButton.textContent = strings.createBtn;
+            }
+
+            enCheckbox.checked = (lang === "en");
+            deCheckbox.checked = (lang === "de");
+
+            fetch(setLanguageUrl, {
+                method: "POST",
+                headers: {"Content-Type": "application/x-www-form-urlencoded"},
+                body: "language=" + lang
+            });
+        }
+
+        enCheckbox.addEventListener("change", function () {
+            if (enCheckbox.checked) applyIndexLanguage("en");
+        });
+        deCheckbox.addEventListener("change", function () {
+            if (deCheckbox.checked) applyIndexLanguage("de");
+        });
+    </script>
 
     <script>
         setTimeout(function () {

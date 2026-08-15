@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% import "_timer.html" as timer %}
-{% block title %}Read the Room!{% endblock %}
+{% block title %}{{ t('title_read_the_room') }}{% endblock %}
 
 {% block content %}
     {% if step == 'wait' %}
-        <h1>Read the Room!</h1>
+        <img class="greeting-logo" src="{{ url_for('serve_image', filename=logo_filename) }}" alt="{{ t('title_read_the_room') }}">
     {% endif %}
 
     {% if step == 'play' %}
         <div id="intro-overlay" class="intro-overlay">
-            <p class="intro-text">Question {{ round_number }} of {{ total_rounds }}</p>
+            <p class="intro-text">{{ t('question_of_total', round_number=round_number, total_rounds=total_rounds) }}</p>
         </div>
 
         <div id="question-content" class="hidden">
@@ -18,29 +18,29 @@
             <hr class="separator separator-light">
 
             <form method="post" action="{{ url_for('play_submit') }}">
-                <h2 class="center-heading">What would <span class="hl-you">YOU</span> do?</h2>
+                <h2 class="center-heading">{{ t('what_would_you_do', word='<span class="hl-you">' ~ t('you_word') ~ '</span>')|safe }}</h2>
                 <div class="slider-block">
                     <div class="slider-labels">
                         <span class="slider-label-low">{{ question.action_low }}</span>
                         <span class="slider-label-sep">|</span>
                         <span class="slider-label-high">{{ question.action_high }}</span>
                     </div>
-                    <input type="range" name="value" min="-10" max="10" value="0" step="10">
+                    <input type="range" name="value" min="-10" max="10" value="0" step="{{ slider_step }}">
                 </div>
 
                 <hr class="separator separator-light">
 
-                <h2 class="center-heading">What would <span class="hl-them">THEY</span> do?</h2>
+                <h2 class="center-heading">{{ t('what_would_they_do', word='<span class="hl-them">' ~ t('they_word') ~ '</span>')|safe }}</h2>
                 {% for other in other_players %}
                     <div class="slider-block">
                         <p class="predict-name">{{ other }}</p>
-                        <input type="range" class="slider-them" name="prediction_{{ other }}" min="-10" max="10" value="0" step="10">
+                        <input type="range" class="slider-them" name="prediction_{{ other }}" min="-10" max="10" value="0" step="{{ slider_step }}">
                     </div>
                 {% endfor %}
 
                 <div class="timer-button-row">
                     {{ timer.widget(timer_start) }}
-                    <button class="btn btn-primary" type="submit">OK</button>
+                    <button class="btn btn-primary" type="submit">{{ t('ok_button') }}</button>
                 </div>
             </form>
         </div>
@@ -53,8 +53,8 @@
         </script>
 
     {% elif step == 'wait' %}
-        <p class="hint">Question {{ round_number }} of {{ total_rounds }}</p>
-        <p>Waiting for other players to answer&hellip;</p>
+        <p class="hint">{{ t('question_of_total', round_number=round_number, total_rounds=total_rounds) }}</p>
+        <p>{{ t('waiting_for_answers') }}</p>
 
         <div class="timer-center">
             {{ timer.widget(timer_start) }}
@@ -63,38 +63,38 @@
         {{ timer.player_status_table(player_statuses) }}
 
     {% elif step == 'wait_next' %}
-        <h1>Read the Room!</h1>
-        <p>Waiting for all players to enter the next round&hellip;</p>
+        <img class="greeting-logo" src="{{ url_for('serve_image', filename=logo_filename) }}" alt="{{ t('title_read_the_room') }}">
+        <p>{{ t('waiting_for_next_round') }}</p>
 
         {{ timer.player_status_table(player_statuses) }}
 
     {% elif step == 'reveal' %}
-        <p class="situation question-number">Score Card Question {{ round_number }}</p>
+        <p class="situation question-number">{{ t('score_card_question', round_number=round_number) }}</p>
 
         <div id="scorecard-summary">
             {% if not two_player_game %}
-                <p class="hint label-large">Self-assessment: {{ own_points }}</p>
+                <p class="hint label-large">{{ t('self_assessment', points=own_points) }}</p>
             {% endif %}
-            <p class="hint label-large">Friends&rsquo; assessment: {{ guess_total }}</p>
-            <p class="hint label-large">Total:</p>
+            <p class="hint label-large">{{ t('friends_assessment', points=guess_total) }}</p>
+            <p class="hint label-large">{{ t('total_label') }}</p>
             <p class="hint"><span class="points-highlight points-highlight-xl">{{ round_points }}</span></p>
         </div>
 
         <div id="scorecard-details" class="hidden">
             {% if not two_player_game %}
-                <h2 class="center-heading"><span class="hl-you">YOUR</span> points for being predictable:</h2>
+                <h2 class="center-heading">{{ t('your_points_predictable', word='<span class="hl-you">' ~ t('your_word') ~ '</span>')|safe }}</h2>
                 <div class="score-track">
                     <div class="score-dot score-dot-you" style="left: {{ own_answer_pct }}%;"></div>
                     {% for row in own_rows %}
                         <div class="score-dot score-dot-them" style="left: {{ row.guess_pct }}%;" title="{{ row.name }}"></div>
                     {% endfor %}
                 </div>
-                <p class="hint"><span class="points-highlight">Points: {{ own_points }}</span></p>
+                <p class="hint"><span class="points-highlight">{{ t('points_label', points=own_points) }}</span></p>
 
                 <hr class="separator separator-light">
             {% endif %}
 
-            <h2 class="center-heading"><span class="hl-you">YOUR</span> points for reading the room:</h2>
+            <h2 class="center-heading">{{ t('your_points_reading_room', word='<span class="hl-you">' ~ t('your_word') ~ '</span>')|safe }}</h2>
             {% for row in reveal_rows %}
                 <div class="score-row">
                     <p class="predict-name">{{ row.name }}</p>
@@ -104,7 +104,7 @@
                     </div>
                 </div>
             {% endfor %}
-            <p class="hint"><span class="points-highlight">Points: {{ guess_total }}</span></p>
+            <p class="hint"><span class="points-highlight">{{ t('points_label', points=guess_total) }}</span></p>
         </div>
 
         <hr class="separator separator-light">
@@ -121,10 +121,10 @@
         </table>
 
         <div class="button-row">
-            <button type="button" class="btn btn-secondary" id="details-toggle">Details</button>
+            <button type="button" class="btn btn-secondary" id="details-toggle">{{ t('details_button') }}</button>
             <form method="post" action="{{ url_for('play_continue') }}" class="btn-form">
                 <button class="btn btn-primary" type="submit">
-                    {% if is_last_round %}Show Final Score{% else %}Next{% endif %}
+                    {% if is_last_round %}{{ t('show_final_score_button') }}{% else %}{{ t('next_button') }}{% endif %}
                 </button>
             </form>
         </div>

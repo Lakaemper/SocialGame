@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% import "_timer.html" as timer %}
-{% block title %}Read the Room!{% endblock %}
+{% block title %}{{ t('title_read_the_room') }}{% endblock %}
 {% block content %}
-    <h1>Read the Room!</h1>
-    <p class="hint">Waiting for {{ game.num_players }} players</p>
+    <img class="greeting-logo" src="{{ url_for('serve_image', filename=logo_filename) }}" alt="{{ t('title_read_the_room') }}">
+    <p class="hint">{{ t('waiting_for_players', num_players=game.num_players) }}</p>
 
-    <p>Joined: <span id="joined-list">{{ game.players|join(', ') }}</span></p>
+    <p>{{ t('joined_label') }} <span id="joined-list">{{ game.players|join(', ') }}</span></p>
 
     <div class="timer-center">
         {{ timer.widget(timer_start) }}

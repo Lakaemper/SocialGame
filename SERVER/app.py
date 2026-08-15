@@ -4,7 +4,7 @@ import random
 import statistics
 import time
 
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-key")
@@ -23,16 +23,20 @@ JOIN_TIMEOUT_SECONDS = 30
 NUM_PLAYERS_OPTIONS = [2, 3, 4, 5, 6, 7, 8]
 NUM_QUESTIONS_OPTIONS = [3, 5, 8, 10, 13, 15, 20]
 ANSWER_TIME_OPTIONS = [5, 10, 15, 20, 25, 30, 40, 50, 60]
+NUM_CHOICES_OPTIONS = [3, 5]
 
 DEFAULT_NUM_PLAYERS = 3
 DEFAULT_NUM_QUESTIONS = 5
 DEFAULT_ANSWER_TIME = 15
+DEFAULT_NUM_CHOICES = 5
 
 # Points awarded for a guess, keyed by its distance from the actual answer.
-# Slider values are restricted to -10/0/10, so distances are always 0, 10, or 20.
-DISTANCE_POINTS = {0: 10, 10: 3, 20: 0}
+# Slider values are one of -10/-5/0/5/10 (or just -10/0/10 for a 3-choice game),
+# so distances are always a multiple of 5 between 0 and 20.
+DISTANCE_POINTS = {0: 10, 5: 5, 10: 3, 15: 1, 20: 0}
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+IMAGES_DIR = os.path.join(DATA_DIR, "images")
 LANGUAGES = {
     "de": {"label": "Deutsch", "file": "QuestionsAndAnswers_ger.json"},
     "en": {"label": "English", "file": "QuestionsAndActions_eng.json"},
@@ -53,6 +57,7 @@ def default_settings():
         "num_players": DEFAULT_NUM_PLAYERS,
         "num_questions": DEFAULT_NUM_QUESTIONS,
         "answer_time": DEFAULT_ANSWER_TIME,
+        "num_choices": DEFAULT_NUM_CHOICES,
         "color_scheme": DEFAULT_COLOR_SCHEME,
     }
 
@@ -87,6 +92,37 @@ QUESTION_POOLS = {}
 for lang_code, lang_info in LANGUAGES.items():
     with open(os.path.join(DATA_DIR, lang_info["file"]), encoding="utf-8") as f:
         QUESTION_POOLS[lang_code] = json.load(f)
+
+with open(os.path.join(DATA_DIR, "InGameStrings.json"), encoding="utf-8") as f:
+    IN_GAME_STRINGS = {entry["id"]: entry for entry in json.load(f)}
+
+
+def tr(string_id, lang, **kwargs):
+    entry = IN_GAME_STRINGS.get(string_id)
+    if entry is None:
+        return string_id
+    text = entry["text_ger"] if lang == "de" else entry["text_eng"]
+    return text.format(**kwargs) if kwargs else text
+
+
+def current_player_language():
+    fallback = session.get("ui_language", "de")
+    if current_game is not None:
+        player_name = session.get("player_name")
+        if player_name:
+            return current_game["player_languages"].get(player_name, fallback)
+    return fallback
+
+
+@app.context_processor
+def inject_translator():
+    lang = current_player_language()
+    return {
+        "t": lambda string_id, **kwargs: tr(string_id, lang, **kwargs),
+        "t_lang": tr,
+        "language": lang,
+        "logo_filename": "Logo_ger.jpg" if lang == "de" else "Logo_eng.jpg",
+    }
 
 
 def init_game_state(game):
@@ -214,11 +250,29 @@ def index():
     )
 
 
+@app.route("/set_language", methods=["POST"])
+def set_language():
+    language = request.form.get("language", "").strip()
+    if language in LANGUAGES:
+        session["ui_language"] = language
+    return jsonify({"ok": True})
+
+
+@app.route("/images/<path:filename>")
+def serve_image(filename):
+    return send_from_directory(IMAGES_DIR, filename)
+
+
 @app.route("/remove")
 def remove_game():
     global current_game
     current_game = None
     return redirect(url_for("index"))
+
+
+@app.route("/secret_remove")
+def secret_remove():
+    return render_template("secret_remove.html")
 
 
 @app.route("/create", methods=["GET", "POST"])
@@ -243,6 +297,8 @@ def create_game():
             num_questions=last_settings["num_questions"],
             answer_time_options=ANSWER_TIME_OPTIONS,
             answer_time=last_settings["answer_time"],
+            num_choices_options=NUM_CHOICES_OPTIONS,
+            num_choices=last_settings["num_choices"],
             color_schemes=COLOR_SCHEMES,
             color_scheme=last_settings["color_scheme"],
         )
@@ -253,6 +309,7 @@ def create_game():
     num_players = request.form.get("num_players", "").strip()
     num_questions = request.form.get("num_questions", "").strip()
     answer_time = request.form.get("answer_time", "").strip()
+    num_choices = request.form.get("num_choices", "").strip()
     color_scheme = request.form.get("color_scheme", "").strip()
 
     errors = []
@@ -262,6 +319,8 @@ def create_game():
         errors.append("Please choose a valid number of questions.")
     if not answer_time.isdigit() or int(answer_time) not in ANSWER_TIME_OPTIONS:
         errors.append("Please choose a valid time to answer.")
+    if not num_choices.isdigit() or int(num_choices) not in NUM_CHOICES_OPTIONS:
+        errors.append("Please choose a valid number of choices.")
     if color_scheme not in COLOR_SCHEMES:
         errors.append("Please choose a valid color scheme.")
 
@@ -275,6 +334,8 @@ def create_game():
             num_questions=num_questions,
             answer_time_options=ANSWER_TIME_OPTIONS,
             answer_time=answer_time,
+            num_choices_options=NUM_CHOICES_OPTIONS,
+            num_choices=num_choices,
             color_scheme=color_scheme,
             color_schemes=COLOR_SCHEMES,
         )
@@ -283,6 +344,7 @@ def create_game():
         "num_players": int(num_players),
         "num_questions": int(num_questions),
         "answer_time": int(answer_time),
+        "num_choices": int(num_choices),
         "color_scheme": color_scheme,
     }
 
@@ -291,6 +353,7 @@ def create_game():
         "num_players": int(num_players),
         "num_questions": int(num_questions),
         "answer_time": int(answer_time),
+        "num_choices": int(num_choices),
         "color_scheme": color_scheme,
         "players": [],
         "player_languages": {},
@@ -339,19 +402,17 @@ def welcome():
         return redirect(url_for("waiting_room"))
 
     if request.method == "GET":
-        return render_template("welcome.html", game=current_game, languages=LANGUAGES, language=DEFAULT_LANGUAGE)
+        return render_template("welcome.html", game=current_game)
 
     name = request.form.get("name", "").strip()
-    language = request.form.get("language", "").strip()
-    if language not in LANGUAGES:
-        language = DEFAULT_LANGUAGE
+    language = session.get("ui_language", "de")
 
     if not name:
-        return render_template("welcome.html", game=current_game, languages=LANGUAGES, language=language, error="Please enter your name.")
+        return render_template("welcome.html", game=current_game, error=tr("error_enter_name", language))
     if name in current_game["players"]:
-        return render_template("welcome.html", game=current_game, languages=LANGUAGES, language=language, error="That name is already taken.")
+        return render_template("welcome.html", game=current_game, error=tr("error_name_taken", language))
     if len(current_game["players"]) >= current_game["num_players"]:
-        return render_template("welcome.html", game=current_game, languages=LANGUAGES, language=language, error="This game is already full.")
+        return render_template("welcome.html", game=current_game, error=tr("error_game_full", language))
 
     current_game["players"].append(name)
     current_game["player_languages"][name] = language
@@ -443,6 +504,7 @@ def play():
         "is_last_round": round_index + 1 >= len(gs["question_indices"]),
         "timer_start": round_data.get("timer_start"),
         "timer_duration": current_game["answer_time"],
+        "slider_step": 20 // (current_game["num_choices"] - 1),
     }
 
     done_set = waiting_on_set(round_data, step)
