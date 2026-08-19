@@ -84,9 +84,9 @@
             {% if not two_player_game %}
                 <h2 class="center-heading">{{ t('your_points_predictable', word='<span class="hl-you">' ~ t('your_word') ~ '</span>')|safe }}</h2>
                 <div class="score-track">
-                    <div class="score-dot score-dot-you" style="left: {{ own_answer_pct }}%;"></div>
+                    <div class="score-dot score-dot-you score-dot-animated" style="--target-left: {{ own_answer_pct }}%;"></div>
                     {% for row in own_rows %}
-                        <div class="score-dot score-dot-them" style="left: {{ row.guess_pct }}%;" title="{{ row.name }}"></div>
+                        <div class="score-dot score-dot-them score-dot-animated" style="--target-left: {{ row.guess_pct }}%;" title="{{ row.name }}"></div>
                     {% endfor %}
                 </div>
                 <p class="hint"><span class="points-highlight">{{ t('points_label', points=own_points) }}</span></p>
@@ -98,13 +98,16 @@
             {% for row in reveal_rows %}
                 <div class="score-row">
                     <p class="predict-name">{{ row.name }}</p>
-                    <div class="score-track">
-                        <div class="score-dot score-dot-you" style="left: {{ row.predicted_pct }}%;"></div>
-                        <div class="score-dot score-dot-them" style="left: {{ row.actual_pct }}%;"></div>
+                    <div class="score-row-track-line">
+                        <div class="score-track">
+                            <div class="score-dot score-dot-you score-dot-animated" style="--target-left: {{ row.predicted_pct }}%;"></div>
+                            <div class="score-dot score-dot-them score-dot-animated" style="--target-left: {{ row.actual_pct }}%;"></div>
+                        </div>
+                        <span class="score-row-points">{{ row.points }}</span>
                     </div>
                 </div>
             {% endfor %}
-            <p class="hint"><span class="points-highlight">{{ t('points_label', points=guess_total) }}</span></p>
+            <p class="hint"><span class="points-highlight">{{ t('average_points_label', points=guess_total) }}</span></p>
         </div>
 
         <hr class="separator separator-light">

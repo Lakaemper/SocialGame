@@ -1,7 +1,13 @@
 {% extends "base.html" %}
+{% import "_timer.html" as timer %}
 {% block title %}Create Game{% endblock %}
 {% block content %}
     <h1>Create Game</h1>
+
+    <div class="timer-center">
+        {{ timer.widget(timer_start) }}
+    </div>
+    {{ timer.script(timer_start, timer_duration, url_for('create_status'), redirect_url=url_for('cancel_create')) }}
 
     {% if errors %}
         <ul class="errors">

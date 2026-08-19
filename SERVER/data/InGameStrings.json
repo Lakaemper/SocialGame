@@ -95,6 +95,11 @@
         "text_ger": "Punkte: {points}"
     },
     {
+        "id": "average_points_label",
+        "text_eng": "Ø Points: {points}",
+        "text_ger": "Ø Punkte: {points}"
+    },
+    {
         "id": "details_button",
         "text_eng": "Details",
         "text_ger": "Details"

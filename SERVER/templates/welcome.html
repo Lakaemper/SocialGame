@@ -11,7 +11,7 @@
 
     <form method="post" action="{{ url_for('welcome') }}">
         <label for="name" class="label-large">{{ t('name_question') }}</label>
-        <input type="text" id="name" name="name" autofocus>
+        <input type="text" id="name" name="name" value="{{ last_name|default('', true) }}" autofocus>
 
         <div class="button-row">
             <a class="btn btn-secondary" href="{{ url_for('index') }}">{{ t('quit_button') }}</a>

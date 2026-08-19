@@ -18,7 +18,8 @@ creating_game_since = None
 CREATE_LOCK_TIMEOUT_SECONDS = 120
 
 FINISH_TIMER_SECONDS = 15
-JOIN_TIMEOUT_SECONDS = 30
+JOIN_TIMEOUT_SECONDS = 60
+CREATE_FORM_TIMEOUT_SECONDS = 30
 
 NUM_PLAYERS_OPTIONS = [2, 3, 4, 5, 6, 7, 8]
 NUM_QUESTIONS_OPTIONS = [3, 5, 8, 10, 13, 15, 20]
@@ -36,7 +37,7 @@ DEFAULT_NUM_CHOICES = 5
 DISTANCE_POINTS = {0: 10, 5: 5, 10: 3, 15: 1, 20: 0}
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
-IMAGES_DIR = os.path.join(DATA_DIR, "images")
+IMAGES_DIR = os.path.join(DATA_DIR, "Images")
 LANGUAGES = {
     "de": {"label": "Deutsch", "file": "QuestionsAndAnswers_ger.json"},
     "en": {"label": "English", "file": "QuestionsAndActions_eng.json"},
@@ -301,6 +302,8 @@ def create_game():
             num_choices=last_settings["num_choices"],
             color_schemes=COLOR_SCHEMES,
             color_scheme=last_settings["color_scheme"],
+            timer_start=creating_game_since,
+            timer_duration=CREATE_FORM_TIMEOUT_SECONDS,
         )
 
     if not session.get("is_creator") and is_creating():
@@ -338,6 +341,8 @@ def create_game():
             num_choices=num_choices,
             color_scheme=color_scheme,
             color_schemes=COLOR_SCHEMES,
+            timer_start=creating_game_since,
+            timer_duration=CREATE_FORM_TIMEOUT_SECONDS,
         )
 
     last_settings = {
@@ -377,6 +382,15 @@ def cancel_create():
     return redirect(url_for("index"))
 
 
+@app.route("/create/status")
+def create_status():
+    return jsonify({
+        "active": bool(session.get("is_creator")) and creating_game_since is not None,
+        "timer_start": creating_game_since,
+        "timer_duration": CREATE_FORM_TIMEOUT_SECONDS,
+    })
+
+
 @app.route("/join", methods=["GET", "POST"])
 def join_game():
     if request.method == "GET":
@@ -402,17 +416,17 @@ def welcome():
         return redirect(url_for("waiting_room"))
 
     if request.method == "GET":
-        return render_template("welcome.html", game=current_game)
+        return render_template("welcome.html", game=current_game, last_name=session.get("player_name", ""))
 
     name = request.form.get("name", "").strip()
     language = session.get("ui_language", "de")
 
     if not name:
-        return render_template("welcome.html", game=current_game, error=tr("error_enter_name", language))
+        return render_template("welcome.html", game=current_game, error=tr("error_enter_name", language), last_name=name)
     if name in current_game["players"]:
-        return render_template("welcome.html", game=current_game, error=tr("error_name_taken", language))
+        return render_template("welcome.html", game=current_game, error=tr("error_name_taken", language), last_name=name)
     if len(current_game["players"]) >= current_game["num_players"]:
-        return render_template("welcome.html", game=current_game, error=tr("error_game_full", language))
+        return render_template("welcome.html", game=current_game, error=tr("error_game_full", language), last_name=name)
 
     current_game["players"].append(name)
     current_game["player_languages"][name] = language
@@ -523,6 +537,7 @@ def play():
                 "name": other,
                 "actual_pct": value_to_pct(round_data["answers"][other]),
                 "predicted_pct": value_to_pct(my_predictions[other]),
+                "points": DISTANCE_POINTS.get(abs(my_predictions[other] - round_data["answers"][other]), 0),
             }
             for other in other_players
         ]

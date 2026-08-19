@@ -23,7 +23,7 @@
     </table>
 {% endmacro %}
 
-{% macro script(timer_start, timer_duration, status_url, submit_selector=none) %}
+{% macro script(timer_start, timer_duration, status_url, submit_selector=none, redirect_url=none) %}
     <script>
         (function () {
             function startRoundTimer(startTs, duration, onExpire) {
@@ -53,6 +53,8 @@
             const onTimerExpire = {% if submit_selector %}function () {
                 const form = document.querySelector({{ submit_selector|tojson }});
                 if (form) form.submit();
+            }{% elif redirect_url %}function () {
+                window.location.href = {{ redirect_url|tojson }};
             }{% else %}null{% endif %};
 
             const initialTimerStart = {{ (timer_start or 0)|tojson }};
